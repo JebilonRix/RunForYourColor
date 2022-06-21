@@ -1,0 +1,16 @@
+{
+    "name": "_RedPanda.CollectSystem",
+    "rootNamespace": "RedPanda",
+    "references": [
+        "GUID:736a9b9e82716d148b61c0f16a3d71d5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

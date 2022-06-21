@@ -1,0 +1,16 @@
+{
+    "name": "_RedPanda.PointSystem",
+    "rootNamespace": "RedPanda",
+    "references": [
+        "GUID:c8a109bc16474ea498be36433e53d838"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

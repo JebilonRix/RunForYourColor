@@ -1,25 +1,26 @@
-using RedPanda.Upgrade;
+using RedPanda.StateMachine;
 using UnityEngine;
 
 namespace RedPanda.PointSystem
 {
     public class CheckPoint : Point
     {
+        #region Fields
         [SerializeField] private float _speedAddAmount = 1f;
+        #endregion Fields
 
+        #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag(_playerTag))
+            if (other.CompareTag("Racer"))
             {
-                SpeedChange(other.GetComponent<PlayerStat>());
-            }
-            else if (other.CompareTag(_racerTag))
-            {
-                SpeedChange(other.GetComponent<RacerStat>());
+                SpeedChange(other.GetComponent<CharacterStateManager>());
             }
         }
+        #endregion Unity Methods
 
-        private void SpeedChange(CharacterStat character)
+        #region Private Methods
+        private void SpeedChange(CharacterStateManager character)
         {
             if (character.ColorType == _colorType)
             {
@@ -30,5 +31,6 @@ namespace RedPanda.PointSystem
                 character.UpdateSpeed(-_speedAddAmount);
             }
         }
+        #endregion Private Methods
     }
 }

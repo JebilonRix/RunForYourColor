@@ -65,6 +65,7 @@ namespace RedPanda.ObjectPooling
 
             return prefab;
         }
+
         public void RelaseObject(SO_PooledObject pooledObject)
         {
             string tag = pooledObject.PooledObjectTag;

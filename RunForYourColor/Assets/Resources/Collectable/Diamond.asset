@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5168771528fc4cf459cec197cdeaeafd, type: 3}
-  m_Name: Pool
+  m_Script: {fileID: 11500000, guid: 4176c47432fd7ad4f82a12d06df85c62, type: 3}
+  m_Name: Diamond
   m_EditorClassIdentifier: 
-  _poolList:
-  - {fileID: 11400000, guid: c375547a290911e4b8f2d2f88706b2a2, type: 2}
+  _pooledObjectTag: Diamond
+  _prefab: {fileID: 2655399852694746615, guid: 78ca44b7c8f5da94b846c9acacc6db49, type: 3}
+  _pool: {fileID: 11400000, guid: ce790786584b3d04aab2275c2468b127, type: 2}

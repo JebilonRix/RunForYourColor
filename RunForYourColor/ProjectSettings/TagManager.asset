@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Racer
+  - Ground
+  - Wall
+  - ClimbPoint
   layers:
   - Default
   - TransparentFX

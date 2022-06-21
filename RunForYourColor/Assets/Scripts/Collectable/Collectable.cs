@@ -1,36 +1,45 @@
 using RedPanda.ObjectPooling;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RedPanda.Collectable
 {
     [RequireComponent(typeof(SphereCollider))]
-    public class Collectable : MonoBehaviour,IPooled
+    public class Collectable : MonoBehaviour, IPooled
     {
-       [field:SerializeField] public SO_PooledObject PooledObject { get; set ; }
+        #region Fields
+        [SerializeField] private Vector3 _pos;
+        [SerializeField] private int _collectableValue = 1;
+        #endregion Fields
 
-        public void OnRelease()
-        {
-           
-        }
+        #region Properties
+        [field: SerializeField] public SO_PooledObject PooledObject { get; set; }
+        #endregion Properties
 
-        public void OnStart()
-        {
-           
-        }
-
-        private void Awake()
-        {
-            GetComponent<SphereCollider>().isTrigger = true;
-        }
-
+        #region Unity Methods
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Player")
+            if (other.CompareTag("Racer"))
             {
-               
+                other.GetComponent<Collector>().GainDiamond(_collectableValue);
+                OnRelease();
             }
         }
-    } 
+        #endregion Unity Methods
+
+        #region Public Methods
+        public void OnStart()
+        {
+            SphereCollider col = GetComponent<SphereCollider>();
+
+            if (!col.isTrigger)
+            {
+                col.isTrigger = true;
+            }
+        }
+        public void OnRelease()
+        {
+            PooledObject.RelaseObjectToPool();
+        }
+        #endregion Public Methods
+    }
 }

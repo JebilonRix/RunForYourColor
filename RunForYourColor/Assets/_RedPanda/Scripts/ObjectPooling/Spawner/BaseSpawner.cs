@@ -81,6 +81,10 @@ namespace RedPanda.ObjectPooling
 
             _routunieStarted = false;
         }
+        protected void SpawnRate(SO_PooledObject pooledObject, Location location)
+        {
+            _objectPool.GetObject(pooledObject, location.Position, location.Rotation, _isParentThis ? transform : null);
+        }
         #endregion Private Methods
     }
 }
