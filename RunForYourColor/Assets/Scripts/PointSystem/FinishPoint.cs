@@ -9,7 +9,7 @@ namespace RedPanda.PointSystem
         #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Racer"))
+            if (other.CompareTag(_racerTag))
             {
                 StartCoroutine(ToZero(other));
             }

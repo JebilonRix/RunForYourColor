@@ -12,9 +12,12 @@ namespace RedPanda.PointSystem
         #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Racer"))
+            if (other.CompareTag(_racerTag))
             {
-                SpeedChange(other.GetComponent<CharacterStateManager>());
+                CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
+
+                stateManager.SetCheckPoint(transform);
+                SpeedChange(stateManager);
             }
         }
         #endregion Unity Methods

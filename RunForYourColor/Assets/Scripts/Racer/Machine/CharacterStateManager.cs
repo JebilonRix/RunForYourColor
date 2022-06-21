@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace RedPanda.StateMachine
@@ -21,11 +22,13 @@ namespace RedPanda.StateMachine
         [Header("Horizontal Movement")]
         [SerializeField] private float _speed = 7;
         [SerializeField] private float _horizontalSpeed = 0.3f;
+        [SerializeField] private float _respawnTime = 0.5f;
 
         [Header("Vertical Movement")]
         [SerializeField] private float _jumpForce = 10;
         [SerializeField] private string _groundTag = "Ground";
         [SerializeField] private float _groundOffSet = 0.5f;
+        [SerializeField] private float _minDistanceForJumpInput = 15f;
 
         [Header("Visual Stuff")]
         [SerializeField] private Animator _animator;
@@ -33,19 +36,21 @@ namespace RedPanda.StateMachine
         private string _colorType;
         private float _lastFrameFingerPositionX = 0;
         private float _moveFactorX = 0;
+        private bool _startRun = false;
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
-        private bool _startRun = false;
+        private Transform _lastCheckPoint;
         #endregion Fields
 
         #region Properties
-        public string ColorType { get => _colorType; set => _colorType = value; }
         public Rigidbody Rb { get => _rb; private set => _rb = value; }
         public bool StartRun { get => _startRun; set => _startRun = value; }
+        public string ColorType { get => _colorType; set => _colorType = value; }
+        public string GroundTag { get => _groundTag; }
         public float Speed { get => _speed; set => _speed = value; }
         public float JumpForce { get => _jumpForce; }
-        public string GroundTag { get => _groundTag; }
         public float GroundOffSet { get => _groundOffSet; }
+        public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
         #endregion Properties
 
         #region Unity Methods
@@ -58,6 +63,10 @@ namespace RedPanda.StateMachine
             if (_animator == null)
             {
                 _animator = GetComponent<Animator>();
+            }
+            if (_meshRenderer == null)
+            {
+                _meshRenderer = GetComponent<MeshRenderer>();
             }
 
             gameObject.tag = "Racer";
@@ -145,6 +154,20 @@ namespace RedPanda.StateMachine
             }
 
             ColorType = colorTypes;
+        }
+        public void SetCheckPoint(Transform checkPoint)
+        {
+            _lastCheckPoint = checkPoint;
+        }
+        public IEnumerator Respawn()
+        {
+            transform.position = _lastCheckPoint.transform.position;
+
+            SwitchState(IdleState);
+
+            yield return new WaitForSeconds(_respawnTime);
+
+            SwitchState(RunState);
         }
         #endregion Public Methods
     }

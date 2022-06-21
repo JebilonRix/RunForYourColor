@@ -11,7 +11,7 @@ namespace RedPanda.ObjectPooling
         private struct ObjectAndLocation
         {
             public SO_PooledObject pooledObject;
-            public Location location;
+            public Location[] locations;
         }
 
         [SerializeField] private List<ObjectAndLocation> _objAndLocList = new List<ObjectAndLocation>();
@@ -21,8 +21,6 @@ namespace RedPanda.ObjectPooling
         private void Start()
         {
             SpawnObjects();
-
-            //Debug.Log("spawner started");
         }
         #endregion Unity Methods
 
@@ -31,7 +29,10 @@ namespace RedPanda.ObjectPooling
         {
             foreach (var item in _objAndLocList)
             {
-                SpawnRate(item.pooledObject, item.location);
+                for (int i = 0; i < item.locations.Length; i++)
+                {
+                    SpawnRate(item.pooledObject, item.locations[i]);
+                }
             }
         }
         #endregion Public Methods

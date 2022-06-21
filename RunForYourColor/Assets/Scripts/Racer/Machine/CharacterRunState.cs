@@ -25,7 +25,9 @@ namespace RedPanda.StateMachine
                 _moveFactorY = Input.mousePosition.y - _lastFrameFingerPositionY;
                 _lastFrameFingerPositionY = Input.mousePosition.y;
 
-                if (1f <= _moveFactorY)
+                Debug.Log(_moveFactorY);
+
+                if (manager.MinDistanceForJumpInput <= _moveFactorY)
                 {
                     manager.SwitchState(manager.JumpState);
                 }
