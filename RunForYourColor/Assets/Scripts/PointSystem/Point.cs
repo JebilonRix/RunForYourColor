@@ -1,6 +1,3 @@
-using RedPanda.ObjectPooling;
-using RedPanda.StateMachine;
-using RedPanda.UI;
 using UnityEngine;
 
 namespace RedPanda.PointSystem
@@ -30,6 +27,11 @@ namespace RedPanda.PointSystem
         public void OnStart()
         {
             var x = GetComponent<MeshRenderer>().material;
+
+            if (x == null)
+            {
+                return;
+            }
 
             if (_colorType == "blue")
             {
