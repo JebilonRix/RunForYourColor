@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RedPanda.CameraFollow
+namespace RedPanda.Camera_Follow
 {
     public class CameraFollow : MonoBehaviour
     {

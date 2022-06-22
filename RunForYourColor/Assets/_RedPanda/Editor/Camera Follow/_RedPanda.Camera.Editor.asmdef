@@ -1,6 +1,6 @@
 {
     "name": "_RedPanda.Camera.Editor",
-    "rootNamespace": "RedPanda",
+    "rootNamespace": "",
     "references": [
         "GUID:e0d837c2169cd9f40869d4d5c2c6c40e"
     ],

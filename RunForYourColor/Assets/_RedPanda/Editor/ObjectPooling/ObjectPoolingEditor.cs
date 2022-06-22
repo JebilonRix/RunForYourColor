@@ -13,10 +13,6 @@ namespace RedPanda.ObjectPooling_Editor
         {
             spawner = (SpawnerOnce)target;
         }
-        private void OnDisable()
-        {
-            //spawner.ReleaseAll();
-        }
 
         public override void OnInspectorGUI()
         {

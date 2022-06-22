@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 1913655629074185871}
   - component: {fileID: 3559005485377960954}
   - component: {fileID: 2790668252156640681}
-  - component: {fileID: 5594922725714015425}
+  - component: {fileID: -575825102924627514}
   m_Layer: 0
   m_Name: Building3
   m_TagString: Wall
@@ -147,7 +147,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.3451457, y: 17.239773, z: 7.6489844}
   m_Center: {x: 0, y: -0.9847393, z: 0}
---- !u!114 &5594922725714015425
+--- !u!114 &-575825102924627514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4711962864275720594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d05dbd590992524d889ee88350c5aab, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d067c8df4177e94bae8752df94ed56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <PooledObject>k__BackingField: {fileID: 11400000, guid: 00ff363916f42ae43aeae69a59b7ec17, type: 2}

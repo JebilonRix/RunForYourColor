@@ -1,9 +1,9 @@
 {
     "name": "ToonyColorsPro2.Demo",
+    "rootNamespace": "",
     "references": [
         "ToonyColorsPro.Runtime"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -11,5 +11,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }

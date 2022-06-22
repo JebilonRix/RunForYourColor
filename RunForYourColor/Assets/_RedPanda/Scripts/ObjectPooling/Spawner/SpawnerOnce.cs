@@ -7,15 +7,10 @@ namespace RedPanda.ObjectPooling
     {
         #region Fields
 
-        [System.Serializable]
-        private struct ObjectAndLocation
-        {
-            public SO_PooledObject pooledObject;
-            public Location[] locations;
-        }
-
         [SerializeField] private List<ObjectAndLocation> _objAndLocList = new List<ObjectAndLocation>();
         #endregion Fields
+
+        public List<ObjectAndLocation> ObjAndLocList { get => _objAndLocList; }
 
         #region Unity Methods
         private void Start()
@@ -27,9 +22,9 @@ namespace RedPanda.ObjectPooling
         #region Public Methods
         public void SpawnObjects()
         {
-            foreach (ObjectAndLocation item in _objAndLocList)
+            foreach (ObjectAndLocation item in ObjAndLocList)
             {
-                for (int i = 0; i < item.locations.Length; i++)
+                for (int i = 0; i < item.locations.Count; i++)
                 {
                     SpawnRate(item.pooledObject, item.locations[i]);
                 }

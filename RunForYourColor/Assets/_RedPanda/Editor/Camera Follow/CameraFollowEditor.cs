@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace RedPanda.CameraFollow
+namespace RedPanda.Camera_Follow
 {
     [CustomEditor(typeof(CameraFollow))]
     public class CameraFollowEditor : Editor

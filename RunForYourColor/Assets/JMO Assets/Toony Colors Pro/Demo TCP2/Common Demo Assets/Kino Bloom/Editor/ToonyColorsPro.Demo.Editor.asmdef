@@ -1,9 +1,10 @@
 {
     "name": "ToonyColorsPro.Demo.Editor",
+    "rootNamespace": "",
     "references": [
-        "ToonyColorsPro2.Demo"
+        "ToonyColorsPro2.Demo",
+        "Bllom"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"
     ],
@@ -12,5 +13,7 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
