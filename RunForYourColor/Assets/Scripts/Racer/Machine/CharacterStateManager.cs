@@ -38,6 +38,7 @@ namespace RedPanda.StateMachine
 
         [Header("Visual Stuff")]
         [SerializeField] private Animator _animator;
+       // [SerializeField] private Animation jumpAnim;
 
         private string _colorType;
         private float _lastFrameFingerPositionX = 0;
@@ -58,6 +59,8 @@ namespace RedPanda.StateMachine
         public float JumpForce { get => _jumpForce; }
         public float GroundOffSet { get => _groundOffSet; }
         public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
+        public Animator Animator { get => _animator; private set => _animator = value; }
+       // public Animation JumpAnim { get => jumpAnim; }
         #endregion Properties
 
         #region Unity Methods
@@ -67,9 +70,9 @@ namespace RedPanda.StateMachine
             {
                 Rb = GetComponent<Rigidbody>();
             }
-            if (_animator == null)
+            if (Animator == null)
             {
-                _animator = GetComponent<Animator>();
+                Animator = GetComponent<Animator>();
             }
             if (_meshRenderer == null)
             {
