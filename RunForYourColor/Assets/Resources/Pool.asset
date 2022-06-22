@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: Pool
   m_EditorClassIdentifier: 
   _poolList:
+  - {fileID: 11400000, guid: eaab5ff5ac12e514b8f400c579cd761e, type: 2}
+  - {fileID: 11400000, guid: 0eb1aeee225f8c94880c079ca48f118f, type: 2}
+  - {fileID: 11400000, guid: b96510355bb175a48a89121d7d390e7c, type: 2}
+  - {fileID: 11400000, guid: 4418390cee7ea3c4c83bb47bff6d2370, type: 2}
+  - {fileID: 11400000, guid: fc98aa9861d049549a25d6547c05b154, type: 2}
+  - {fileID: 11400000, guid: 00ff363916f42ae43aeae69a59b7ec17, type: 2}
+  - {fileID: 11400000, guid: 3340d7b409e1ef0408fac3e127bbe3ad, type: 2}
   - {fileID: 11400000, guid: c375547a290911e4b8f2d2f88706b2a2, type: 2}
+  - {fileID: 11400000, guid: a9b76f780bc0a5d43aa56f84b2914726, type: 2}
+  - {fileID: 11400000, guid: d7c87e0854c59f045b1b77ec4d887a86, type: 2}

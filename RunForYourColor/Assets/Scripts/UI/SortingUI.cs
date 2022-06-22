@@ -27,21 +27,30 @@ namespace RedPanda.UI
 
             int _sort = 0;
 
-            _playerScore = _finishPoint.transform.position.z - _player.transform.position.z;
-            _racer1Score = _finishPoint.transform.position.z - _racer1.transform.position.z;
-            _racer2Score = _finishPoint.transform.position.z - _racer2.transform.position.z;
+            if (_player != null)
+            {
+                _playerScore = _finishPoint.transform.position.z - _player.transform.position.z;
+            }
+            if (_racer1 != null)
+            {
+                _racer1Score = _finishPoint.transform.position.z - _racer1.transform.position.z;
+            }
+            if (_racer2 != null)
+            {
+                _racer2Score = _finishPoint.transform.position.z - _racer2.transform.position.z;
+            }
 
-            if (_playerScore < _racer1Score && _playerScore > _racer2Score)
+            if (_playerScore < _racer1Score && _playerScore < _racer2Score)
+            {
+                _sort = 1;
+            }
+            else if (_playerScore < _racer1Score && _playerScore > _racer2Score)
             {
                 _sort = 2;
             }
             else if (_playerScore > _racer1Score && _playerScore < _racer2Score)
             {
                 _sort = 2;
-            }
-            else if (_playerScore < _racer1Score && _playerScore < _racer2Score)
-            {
-                _sort = 1;
             }
             else if (_playerScore > _racer1Score && _playerScore > _racer2Score)
             {

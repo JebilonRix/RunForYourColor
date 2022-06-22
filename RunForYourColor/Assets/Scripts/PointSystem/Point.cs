@@ -6,6 +6,7 @@ using UnityEngine;
 namespace RedPanda.PointSystem
 {
     [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(MeshRenderer))]
     public abstract class Point : MonoBehaviour, IPooled
     {
         #region Fields
@@ -28,6 +29,20 @@ namespace RedPanda.PointSystem
         #region Public Methods
         public void OnStart()
         {
+            var x = GetComponent<MeshRenderer>().material;
+
+            if (_colorType == "blue")
+            {
+                x.color = Color.blue;
+            }
+            else if (_colorType == "red")
+            {
+                x.color = Color.red;
+            }
+            else if (_colorType == "yellow")
+            {
+                x.color = Color.yellow;
+            }
         }
         public void OnRelease() => PooledObject.RelaseObjectToPool();
         #endregion Public Methods

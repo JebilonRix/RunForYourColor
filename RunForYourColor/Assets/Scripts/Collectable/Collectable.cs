@@ -7,7 +7,6 @@ namespace RedPanda.Collectable
     public class Collectable : MonoBehaviour, IPooled
     {
         #region Fields
-        [SerializeField] private Vector3 _pos;
         [SerializeField] private int _collectableValue = 1;
         #endregion Fields
 

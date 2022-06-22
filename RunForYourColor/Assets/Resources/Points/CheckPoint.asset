@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CheckPoint
   m_EditorClassIdentifier: 
   _pooledObjectTag: CheckPoint
-  _prefab: {fileID: 5203942632631371879, guid: b0958fd79abfa6f4f86316d388a22ea8, type: 3}
+  _prefab: {fileID: 4234231838479721366, guid: 711113c86c9847748a28082ea8ce3941, type: 3}
   _pool: {fileID: 11400000, guid: ce790786584b3d04aab2275c2468b127, type: 2}

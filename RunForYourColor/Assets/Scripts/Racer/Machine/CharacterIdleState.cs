@@ -10,10 +10,10 @@ namespace RedPanda.StateMachine
         }
         public override void UpdateState(CharacterStateManager manager)
         {
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    manager.SwitchState(manager.RunState);
-            //}
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                manager.SwitchState(manager.RunState);
+            }
             if (manager.StartRun)
             {
                 manager.SwitchState(manager.RunState);

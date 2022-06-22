@@ -107,6 +107,8 @@ namespace RedPanda.StateMachine
 
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            Debug.Log("Current State: " + currentState);
         }
         #endregion Unity Methods
 

@@ -27,12 +27,29 @@ namespace RedPanda.ObjectPooling
         #region Public Methods
         public void SpawnObjects()
         {
-            foreach (var item in _objAndLocList)
+            foreach (ObjectAndLocation item in _objAndLocList)
             {
                 for (int i = 0; i < item.locations.Length; i++)
                 {
                     SpawnRate(item.pooledObject, item.locations[i]);
                 }
+            }
+        }
+        /// <summary>
+        /// This method is for editor.
+        /// </summary>
+        public void ReleaseAll()
+        {
+            _objectPool.ReleaseAllObjects();
+
+            _objectPool.InPool = new Dictionary<string, Queue<GameObject>>();
+            _objectPool.InUse = new Dictionary<string, Queue<GameObject>>();
+
+            PrefabPooled[] prefabs = FindObjectsOfType<PrefabPooled>(true);
+
+            for (int i = 0; i < prefabs.Length; i++)
+            {
+                DestroyImmediate(prefabs[i].gameObject);
             }
         }
         #endregion Public Methods

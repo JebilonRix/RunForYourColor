@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FinishPoint
   m_EditorClassIdentifier: 
   _pooledObjectTag: FinishPoint
-  _prefab: {fileID: 4177093389155234174, guid: 491eb3051611b8b41b19dddece1906b3, type: 3}
+  _prefab: {fileID: 1040998400658644109, guid: 2a085e62901978b4391e3fbb28f9a206, type: 3}
   _pool: {fileID: 11400000, guid: ce790786584b3d04aab2275c2468b127, type: 2}

@@ -9,13 +9,16 @@ namespace RedPanda.ObjectPooling
         #region Fields
         [SerializeField] private List<SO_PooledObject> _poolList = new List<SO_PooledObject>();
 
-        private readonly Dictionary<string, Queue<GameObject>> _inPool = new Dictionary<string, Queue<GameObject>>();
-        private readonly Dictionary<string, Queue<GameObject>> _inUse = new Dictionary<string, Queue<GameObject>>();
+        private Dictionary<string, Queue<GameObject>> _inPool = new Dictionary<string, Queue<GameObject>>();
+        private Dictionary<string, Queue<GameObject>> _inUse = new Dictionary<string, Queue<GameObject>>();
         private GameObject parent;
         #endregion Fields
 
         #region Properties
         public List<SO_PooledObject> PoolList => _poolList;
+
+        public Dictionary<string, Queue<GameObject>> InUse { get => _inUse; set => _inUse = value; }
+        public Dictionary<string, Queue<GameObject>> InPool { get => _inPool; set => _inPool = value; }
         #endregion Properties
 
         #region Unity Methods
@@ -32,17 +35,17 @@ namespace RedPanda.ObjectPooling
 
             string tag = pooledObject.PooledObjectTag;
 
-            if (!_inPool.ContainsKey(tag))
+            if (!InPool.ContainsKey(tag))
             {
                 //If pools does not contain the key, this adds the key and queues to the dictionary.
-                _inPool.Add(tag, new Queue<GameObject>());
-                _inUse.Add(tag, new Queue<GameObject>());
+                InPool.Add(tag, new Queue<GameObject>());
+                InUse.Add(tag, new Queue<GameObject>());
             }
 
-            if (_inPool[tag].Count > 0)
+            if (InPool[tag].Count > 0)
             {
                 //if there is the object in pool, this gets the object from pool.
-                prefab = _inPool.FromDictionary(tag);
+                prefab = InPool.FromDictionary(tag);
             }
             else
             {
@@ -57,7 +60,7 @@ namespace RedPanda.ObjectPooling
             prefab.SetActive(true);
 
             //This line adds the object to the in use dictionary.
-            _inUse.ToDictionary(tag, prefab);
+            InUse.ToDictionary(tag, prefab);
 
             //This line sets position and rotation of the object.
             prefab.transform.SetPositionAndRotation(position, Quaternion.Euler(rotation));
@@ -70,13 +73,13 @@ namespace RedPanda.ObjectPooling
         {
             string tag = pooledObject.PooledObjectTag;
 
-            if (!_inUse.ContainsKey(tag))
+            if (!InUse.ContainsKey(tag))
             {
                 return;
             }
 
             //This line gets the object from in use dictionary.
-            GameObject pooledObj = _inUse.FromDictionary(tag);
+            GameObject pooledObj = InUse.FromDictionary(tag);
 
             if (pooledObj == null)
             {
@@ -87,7 +90,7 @@ namespace RedPanda.ObjectPooling
             pooledObj.SetActive(false);
 
             //This line sets the object to the in pool dictionary.
-            _inPool.ToDictionary(tag, pooledObj);
+            InPool.ToDictionary(tag, pooledObj);
 
             if (parent == null)
             {
@@ -107,12 +110,12 @@ namespace RedPanda.ObjectPooling
             {
                 string tag = pooledObject.PooledObjectTag;
 
-                if (!_inUse.ContainsKey(tag))
+                if (!InUse.ContainsKey(tag))
                 {
                     continue;
                 }
 
-                int loopCount = _inUse[tag].Count;
+                int loopCount = InUse[tag].Count;
 
                 if (loopCount <= 0)
                 {
