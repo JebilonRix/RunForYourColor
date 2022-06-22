@@ -7,7 +7,6 @@ namespace RedPanda.StateMachine
         public override void EnterState(CharacterStateManager manager)
         {
             manager.Rb.velocity = Vector3.zero;
-            //manager.Animator.SetTrigger("Idle");
         }
         public override void UpdateState(CharacterStateManager manager)
         {

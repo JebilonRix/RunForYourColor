@@ -8,7 +8,6 @@ namespace RedPanda.StateMachine
 
         public override void EnterState(CharacterStateManager manager)
         {
-            manager.Animator.SetTrigger("Run");
             manager.Rb.useGravity = true;
         }
         public override void UpdateState(CharacterStateManager manager)
