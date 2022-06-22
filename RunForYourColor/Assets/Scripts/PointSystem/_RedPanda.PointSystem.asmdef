@@ -2,28 +2,12 @@
     "name": "_RedPanda.PointSystem",
     "rootNamespace": "",
     "references": [
-        "GUID:c8a109bc16474ea498be36433e53d838",
         "GUID:736a9b9e82716d148b61c0f16a3d71d5",
-        "GUID:3a1654144d9f16342bc6711690393863"
+        "GUID:3a1654144d9f16342bc6711690393863",
+        "GUID:c8a109bc16474ea498be36433e53d838"
     ],
     "includePlatforms": [],
-    "excludePlatforms": [
-        "Android",
-        "CloudRendering",
-        "Editor",
-        "iOS",
-        "LinuxStandalone64",
-        "Lumin",
-        "macOSStandalone",
-        "PS4",
-        "PS5",
-        "Stadia",
-        "Switch",
-        "tvOS",
-        "WSA",
-        "WindowsStandalone32",
-        "WindowsStandalone64"
-    ],
+    "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],

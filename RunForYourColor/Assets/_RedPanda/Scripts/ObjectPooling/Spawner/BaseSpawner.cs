@@ -83,7 +83,8 @@ namespace RedPanda.ObjectPooling
         }
         protected void SpawnRate(SO_PooledObject pooledObject, Location location)
         {
-            _objectPool.GetObject(pooledObject, location.Position, location.Rotation, _isParentThis ? transform : null);
+            var obj = _objectPool.GetObject(pooledObject, location.Position, location.Rotation, _isParentThis ? transform : null);
+            obj.transform.localScale = location.Scale;
         }
         #endregion Private Methods
     }

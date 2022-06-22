@@ -30,6 +30,7 @@ namespace RedPanda.StateMachine
         {
             manager.Rb.velocity = new Vector3(manager.Rb.velocity.x, manager.Rb.velocity.y, manager.Speed);
             manager.WallCheck();
+            manager.GroundCheck();
         }
         public override void ExitState(CharacterStateManager manager)
         {

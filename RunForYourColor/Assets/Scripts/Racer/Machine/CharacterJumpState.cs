@@ -22,19 +22,7 @@ namespace RedPanda.StateMachine
             }
 
             manager.WallCheck();
-
-            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.down), out RaycastHit _hit))
-            {
-                if (!_hit.collider.CompareTag(manager.GroundTag))
-                {
-                    return;
-                }
-
-                if (_hit.distance <= manager.GroundOffSet)
-                {
-                    manager.SwitchState(manager.RunState);
-                }
-            }
+            manager.GroundCheck();
         }
         public override void ExitState(CharacterStateManager manager)
         {

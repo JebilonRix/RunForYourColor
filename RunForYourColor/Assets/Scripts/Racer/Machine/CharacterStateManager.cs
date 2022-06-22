@@ -142,6 +142,21 @@ namespace RedPanda.StateMachine
                 }
             }
         }
+        public void GroundCheck()
+        {
+            if (Physics.Raycast(new Ray(transform.position, Vector3.down), out RaycastHit _hit))
+            {
+                if (!_hit.collider.CompareTag(GroundTag))
+                {
+                    return;
+                }
+
+                if (_hit.distance <= GroundOffSet)
+                {
+                    SwitchState(RunState);
+                }
+            }
+        }
         public void ChangeColor(string colorTypes)
         {
             switch (colorTypes.ToLower())

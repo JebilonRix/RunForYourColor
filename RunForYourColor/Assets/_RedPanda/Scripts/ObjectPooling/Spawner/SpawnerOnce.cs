@@ -6,11 +6,12 @@ namespace RedPanda.ObjectPooling
     public class SpawnerOnce : BaseSpawner
     {
         #region Fields
-
         [SerializeField] private List<ObjectAndLocation> _objAndLocList = new List<ObjectAndLocation>();
         #endregion Fields
 
+        #region Properties
         public List<ObjectAndLocation> ObjAndLocList { get => _objAndLocList; }
+        #endregion Properties
 
         #region Unity Methods
         private void Start()
@@ -37,15 +38,15 @@ namespace RedPanda.ObjectPooling
         {
             _objectPool.ReleaseAllObjects();
 
-            _objectPool.InPool = new Dictionary<string, Queue<GameObject>>();
-            _objectPool.InUse = new Dictionary<string, Queue<GameObject>>();
+            //_objectPool.InPool = new Dictionary<string, Queue<GameObject>>();
+            //_objectPool.InUse = new Dictionary<string, Queue<GameObject>>();
 
-            PrefabPooled[] prefabs = FindObjectsOfType<PrefabPooled>(true);
+            //PrefabPooled[] prefabs = FindObjectsOfType<PrefabPooled>(true);
 
-            for (int i = 0; i < prefabs.Length; i++)
-            {
-                DestroyImmediate(prefabs[i].gameObject);
-            }
+            //for (int i = 0; i < prefabs.Length; i++)
+            //{
+            //    DestroyImmediate(prefabs[i].gameObject);
+            //}
         }
         #endregion Public Methods
     }

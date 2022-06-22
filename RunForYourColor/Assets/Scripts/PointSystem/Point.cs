@@ -1,3 +1,6 @@
+using RedPanda.ObjectPooling;
+using RedPanda.StateMachine;
+using RedPanda.UI;
 using UnityEngine;
 
 namespace RedPanda.PointSystem
@@ -7,11 +10,12 @@ namespace RedPanda.PointSystem
     public abstract class Point : MonoBehaviour, IPooled
     {
         #region Fields
-        [SerializeField] protected SortingUI _sortingUI;
         [SerializeField] protected string _racerTag = "Racer";
         [SerializeField] protected string _colorType = "blue";
         [SerializeField] protected float _speedAddAmount = 1f;
-        [SerializeField] protected RandomLine _randomLine;
+
+        protected SortingUI _sortingUI;
+        protected RandomLine _randomLine;
         #endregion Fields
 
         #region Properties
@@ -26,24 +30,19 @@ namespace RedPanda.PointSystem
         #region Public Methods
         public void OnStart()
         {
-            var x = GetComponent<MeshRenderer>().material;
-
-            if (x == null)
-            {
-                return;
-            }
+            Material material = GetComponent<MeshRenderer>().materials[0];
 
             if (_colorType == "blue")
             {
-                x.color = Color.blue;
+                material.color = Color.blue;
             }
             else if (_colorType == "red")
             {
-                x.color = Color.red;
+                material.color = Color.red;
             }
             else if (_colorType == "yellow")
             {
-                x.color = Color.yellow;
+                material.color = Color.yellow;
             }
         }
         public void OnRelease() => PooledObject.RelaseObjectToPool();

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4176c47432fd7ad4f82a12d06df85c62, type: 3}
-  m_Name: RoadWithColor
+  m_Name: Point_Dead
   m_EditorClassIdentifier: 
-  _pooledObjectTag: Road
-  _prefab: {fileID: 3176964568607083586, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
+  _pooledObjectTag: DeadPoint
+  _prefab: {fileID: 7144535587077603673, guid: 3a8be8c8f45e0964dac082e39f729825, type: 3}
   _pool: {fileID: 11400000, guid: ce790786584b3d04aab2275c2468b127, type: 2}

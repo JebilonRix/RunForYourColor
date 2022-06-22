@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3176964568607083591}
   - component: {fileID: 3176964568607083588}
   - component: {fileID: 7032017163066311276}
+  - component: {fileID: 144029469939194859}
   m_Layer: 0
   m_Name: RoadWithColor
   m_TagString: Untagged
@@ -108,9 +109,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dff2ec693deca54ba3af465ce3bca7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sortingUI: {fileID: 0}
   _racerTag: Racer
   _colorType: blue
   _speedAddAmount: 1
-  _randomLine: {fileID: 0}
+  <PooledObject>k__BackingField: {fileID: 11400000, guid: edef2db809bd2404f84d891ac00f080f, type: 2}
+--- !u!114 &144029469939194859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176964568607083586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d067c8df4177e94bae8752df94ed56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   <PooledObject>k__BackingField: {fileID: 11400000, guid: edef2db809bd2404f84d891ac00f080f, type: 2}
