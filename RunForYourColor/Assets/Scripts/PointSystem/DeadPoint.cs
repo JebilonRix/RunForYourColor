@@ -11,6 +11,11 @@ namespace RedPanda.PointSystem
             {
                 CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
                 stateManager.StartCoroutine(stateManager.Respawn());
+
+                if (stateManager.IsPlayer)
+                {
+                    WriteRandomLine(PointType.Dead);
+                }
             }
         }
     }

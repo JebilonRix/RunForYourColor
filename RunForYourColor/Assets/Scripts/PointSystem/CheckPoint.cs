@@ -5,35 +5,30 @@ namespace RedPanda.PointSystem
 {
     public class CheckPoint : Point
     {
-        #region Fields
-        [SerializeField] private float _speedAddAmount = 1f;
-        #endregion Fields
-
         #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(_racerTag))
             {
-                CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
+                SortInTrigger();
 
+                CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
                 stateManager.SetCheckPoint(transform);
-                SpeedChange(stateManager);
+                SpeedChange(stateManager, _speedAddAmount);
+
+                if (stateManager.IsPlayer)
+                {
+                    WriteRandomLine(PointType.Check); 
+                }
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag(_racerTag))
+            {
+                SortInTrigger();
             }
         }
         #endregion Unity Methods
-
-        #region Private Methods
-        private void SpeedChange(CharacterStateManager character)
-        {
-            if (character.ColorType == _colorType)
-            {
-                character.UpdateSpeed(_speedAddAmount);
-            }
-            else
-            {
-                character.UpdateSpeed(-_speedAddAmount);
-            }
-        }
-        #endregion Private Methods
     }
 }

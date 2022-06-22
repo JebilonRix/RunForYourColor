@@ -4,7 +4,6 @@ namespace RedPanda.StateMachine
 {
     public class CharacterRunState : CharacterBaseState
     {
-        private float _moveFactorY;
         private float _lastFrameFingerPositionY;
 
         public override void EnterState(CharacterStateManager manager)
@@ -13,28 +12,18 @@ namespace RedPanda.StateMachine
         }
         public override void UpdateState(CharacterStateManager manager)
         {
-            //bura sýkýntýlý hala
-            //düþey girdi yani
-
             if (Input.GetMouseButtonDown(0))
             {
                 _lastFrameFingerPositionY = Input.mousePosition.y;
             }
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButtonUp(0))
             {
-                _moveFactorY = Input.mousePosition.y - _lastFrameFingerPositionY;
-                _lastFrameFingerPositionY = Input.mousePosition.y;
-
-                Debug.Log(_moveFactorY);
+                float _moveFactorY = Input.mousePosition.y - _lastFrameFingerPositionY;
 
                 if (manager.MinDistanceForJumpInput <= _moveFactorY)
                 {
                     manager.SwitchState(manager.JumpState);
                 }
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                _moveFactorY = 0f;
             }
         }
         public override void FixedUpdateState(CharacterStateManager manager)
@@ -44,7 +33,7 @@ namespace RedPanda.StateMachine
         }
         public override void ExitState(CharacterStateManager manager)
         {
-            //
+            _lastFrameFingerPositionY = 0f;
         }
     }
 }

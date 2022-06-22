@@ -5,15 +5,21 @@ namespace RedPanda.StateMachine
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(MeshRenderer))]
     public class CharacterStateManager : MonoBehaviour
     {
         #region Fields
-        //States
+
+        #region State
         private CharacterBaseState currentState;
         public CharacterIdleState IdleState = new CharacterIdleState();
         public CharacterRunState RunState = new CharacterRunState();
         public CharacterJumpState JumpState = new CharacterJumpState();
         public CharacterClimbState ClimbState = new CharacterClimbState();
+        #endregion State
+
+        [Header("Basic")]
+        [SerializeField] private bool _isPlayer;
 
         [Header("Climbing")]
         [SerializeField] private string _wallTag = "Wall";
@@ -27,8 +33,8 @@ namespace RedPanda.StateMachine
         [Header("Vertical Movement")]
         [SerializeField] private float _jumpForce = 10;
         [SerializeField] private string _groundTag = "Ground";
-        [SerializeField] private float _groundOffSet = 0.5f;
-        [SerializeField] private float _minDistanceForJumpInput = 15f;
+        [SerializeField] private float _groundOffSet = 1.1f;
+        [SerializeField] private float _minDistanceForJumpInput = 30f;
 
         [Header("Visual Stuff")]
         [SerializeField] private Animator _animator;
@@ -45,6 +51,7 @@ namespace RedPanda.StateMachine
         #region Properties
         public Rigidbody Rb { get => _rb; private set => _rb = value; }
         public bool StartRun { get => _startRun; set => _startRun = value; }
+        public bool IsPlayer { get => _isPlayer; }
         public string ColorType { get => _colorType; set => _colorType = value; }
         public string GroundTag { get => _groundTag; }
         public float Speed { get => _speed; set => _speed = value; }
@@ -71,34 +78,35 @@ namespace RedPanda.StateMachine
 
             gameObject.tag = "Racer";
         }
-        private void Start()
-        {
-            SwitchState(IdleState);
-        }
+        private void Start() => SwitchState(IdleState);
+        private void FixedUpdate() => currentState.FixedUpdateState(this);
         private void Update()
         {
             currentState.UpdateState(this);
 
-            if (Input.GetMouseButtonDown(0))
+            if (IsPlayer)
             {
-                _lastFrameFingerPositionX = Input.mousePosition.x;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    _lastFrameFingerPositionX = Input.mousePosition.x;
+                }
+                else if (Input.GetMouseButton(0))
+                {
+                    _moveFactorX = Input.mousePosition.x - _lastFrameFingerPositionX;
+                    _lastFrameFingerPositionX = Input.mousePosition.x;
+                }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    _moveFactorX = 0f;
+                }
             }
-            else if (Input.GetMouseButton(0))
+            else
             {
-                _moveFactorX = Input.mousePosition.x - _lastFrameFingerPositionX;
-                _lastFrameFingerPositionX = Input.mousePosition.x;
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                _moveFactorX = 0f;
+                //add ai here
             }
 
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        private void FixedUpdate()
-        {
-            currentState.FixedUpdateState(this);
         }
         #endregion Unity Methods
 
@@ -132,10 +140,6 @@ namespace RedPanda.StateMachine
                 }
             }
         }
-        public void UpdateSpeed(float amount)
-        {
-            _speed += amount;
-        }
         public void ChangeColor(string colorTypes)
         {
             switch (colorTypes.ToLower())
@@ -155,10 +159,6 @@ namespace RedPanda.StateMachine
 
             ColorType = colorTypes;
         }
-        public void SetCheckPoint(Transform checkPoint)
-        {
-            _lastCheckPoint = checkPoint;
-        }
         public IEnumerator Respawn()
         {
             transform.position = _lastCheckPoint.transform.position;
@@ -169,6 +169,9 @@ namespace RedPanda.StateMachine
 
             SwitchState(RunState);
         }
+        public void StartRace() => StartRun = true;
+        public void SetCheckPoint(Transform checkPoint) => _lastCheckPoint = checkPoint;
+        public void UpdateSpeed(float amount) => _speed += amount;
         #endregion Public Methods
     }
 }
