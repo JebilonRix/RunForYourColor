@@ -17,7 +17,11 @@ namespace RedPanda.ObjectPooling_Editor
         }
         private void OnDisable()
         {
-           // spawner.ReleaseAll();
+            if (_isSeen)
+            {
+                spawner.ReleaseAll();
+            }
+
             _isFinished = false;
             _isSeen = false;
         }
@@ -46,15 +50,8 @@ namespace RedPanda.ObjectPooling_Editor
                     return;
                 }
 
-                if (_isFinished)
-                {
-                    spawner.SpawnObjects();
-                    _isSeen = true;
-                }
-                else
-                {
-                    Debug.Log("Please, finish level first.");
-                }
+                spawner.SpawnObjects();
+                _isSeen = true;
             }
             if (GUILayout.Button("Delete Level"))
             {
