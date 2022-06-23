@@ -17,7 +17,7 @@ namespace RedPanda.ObjectPooling_Editor
         }
         private void OnDisable()
         {
-            spawner.ReleaseAll();
+           // spawner.ReleaseAll();
             _isFinished = false;
             _isSeen = false;
         }
