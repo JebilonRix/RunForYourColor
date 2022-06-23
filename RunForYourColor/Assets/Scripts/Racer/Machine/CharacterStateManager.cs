@@ -102,7 +102,7 @@ namespace RedPanda.StateMachine
             }
             else
             {
-                //add ai here
+                //ToDo: add ai here
             }
 
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
