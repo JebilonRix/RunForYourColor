@@ -5,11 +5,17 @@ namespace RedPanda.PointSystem
 {
     public class DeadPoint : Point
     {
+        private CharacterStateManager stateManager;
+
+        private void Start()
+        {
+            stateManager = FindObjectOfType<CharacterStateManager>();
+        }
         protected override void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(_racerTag))
             {
-                CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
+                //CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
                 stateManager.StartCoroutine(stateManager.Respawn());
 
                 if (stateManager.IsPlayer)

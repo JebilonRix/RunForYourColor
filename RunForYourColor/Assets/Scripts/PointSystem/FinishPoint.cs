@@ -37,8 +37,9 @@ namespace RedPanda.PointSystem
         private IEnumerator ToZero(Collider other)
         {
             yield return new WaitForSeconds(0.2f);
-
-            other.GetComponent<CharacterStateManager>().Speed = 0;
+            var character = other.GetComponent<CharacterStateManager>();
+            character.Speed = 0;
+            character.SwitchState(character.IdleState);
         }
         #endregion Private Methods
     }

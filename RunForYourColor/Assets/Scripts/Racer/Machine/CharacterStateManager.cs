@@ -58,6 +58,7 @@ namespace RedPanda.StateMachine
         public float JumpForce { get => _jumpForce; }
         public float GroundOffSet { get => _groundOffSet; }
         public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
+        public Animator Animator { get => _animator; private set => _animator = value; }
         #endregion Properties
 
         #region Unity Methods
@@ -67,9 +68,9 @@ namespace RedPanda.StateMachine
             {
                 Rb = GetComponent<Rigidbody>();
             }
-            if (_animator == null)
+            if (Animator == null)
             {
-                _animator = GetComponent<Animator>();
+                Animator = GetComponent<Animator>();
             }
             if (_meshRenderer == null)
             {
@@ -107,6 +108,11 @@ namespace RedPanda.StateMachine
 
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            if (Rb.velocity.y == 0)
+            {
+                Animator.SetBool("FallEnd", true);
+            }
 
             Debug.Log("Current State: " + currentState);
         }
