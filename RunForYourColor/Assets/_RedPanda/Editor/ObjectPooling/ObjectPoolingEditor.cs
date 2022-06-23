@@ -8,24 +8,50 @@ namespace RedPanda.ObjectPooling_Editor
     public class ObjectPoolingEditor : Editor
     {
         private SpawnerOnce spawner;
+        private bool _isFinished = false;
+        private bool _isSeen = false;
 
         private void OnEnable()
         {
             spawner = (SpawnerOnce)target;
+        }
+        private void OnDisable()
+        {
+            spawner.ReleaseAll();
+            _isFinished = false;
+            _isSeen = false;
         }
 
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            if (GUILayout.Button("Create Objects"))
+            if (GUILayout.Button("Finish Level"))
             {
-                spawner.SpawnObjects();
+                _isFinished = true;
+                spawner.ReleaseAll();
             }
 
-            if (GUILayout.Button("Delete All Objects"))
+            if (GUILayout.Button("See Level"))
             {
-                spawner.ReleaseAll();
+                if (_isSeen)
+                {
+                    return;
+                }
+
+                if (_isFinished)
+                {
+                    spawner.SpawnObjects();
+                    _isSeen = true;
+                }
+                else
+                {
+                    Debug.Log("Please, finish level first.");
+                }
+            }
+            if (GUILayout.Button("Delete Level"))
+            {
+                spawner.DeleteAll();
             }
         }
     }

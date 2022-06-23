@@ -112,7 +112,9 @@ namespace RedPanda.ObjectPooling
 
                 if (!InUse.ContainsKey(tag))
                 {
-                    continue;
+                    InPool.Add(tag, new Queue<GameObject>());
+                    InUse.Add(tag, new Queue<GameObject>());
+                    //continue;
                 }
 
                 int loopCount = InUse[tag].Count;

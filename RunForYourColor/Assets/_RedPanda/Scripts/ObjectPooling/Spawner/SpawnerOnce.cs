@@ -37,16 +37,20 @@ namespace RedPanda.ObjectPooling
         public void ReleaseAll()
         {
             _objectPool.ReleaseAllObjects();
+        }
+        public void DeleteAll()
+        {
+            ReleaseAll();
 
-            //_objectPool.InPool = new Dictionary<string, Queue<GameObject>>();
-            //_objectPool.InUse = new Dictionary<string, Queue<GameObject>>();
+            _objectPool.InPool = new Dictionary<string, Queue<GameObject>>();
+            _objectPool.InUse = new Dictionary<string, Queue<GameObject>>();
 
-            //PrefabPooled[] prefabs = FindObjectsOfType<PrefabPooled>(true);
+            PrefabPooled[] prefabs = FindObjectsOfType<PrefabPooled>(true);
 
-            //for (int i = 0; i < prefabs.Length; i++)
-            //{
-            //    DestroyImmediate(prefabs[i].gameObject);
-            //}
+            for (int i = 0; i < prefabs.Length; i++)
+            {
+                DestroyImmediate(prefabs[i].gameObject);
+            }
         }
         #endregion Public Methods
     }
