@@ -8,8 +8,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9185337847783564746, guid: 650ee572dd82f9843aa0b25a463d8607, type: 3}
+      propertyPath: _objectPool
+      value: 
+      objectReference: {fileID: 11400000, guid: ce790786584b3d04aab2275c2468b127, type: 2}
+    - target: {fileID: 9185337847783564746, guid: 650ee572dd82f9843aa0b25a463d8607, type: 3}
       propertyPath: _objAndLocList.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9185337847783564746, guid: 650ee572dd82f9843aa0b25a463d8607, type: 3}
       propertyPath: _objAndLocList.Array.data[0].pooledObject
@@ -121,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9185337847783564749, guid: 650ee572dd82f9843aa0b25a463d8607, type: 3}
       propertyPath: m_Name
-      value: Level1_Spawner
+      value: LevelSpawnerBase
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650ee572dd82f9843aa0b25a463d8607, type: 3}

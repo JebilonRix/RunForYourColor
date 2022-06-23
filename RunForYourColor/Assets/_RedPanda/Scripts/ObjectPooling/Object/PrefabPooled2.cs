@@ -1,11 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
-
-#if UNITY_EDITOR
-
-using UnityEditor;
-
-#endif
+using UnityEngine;
 
 namespace RedPanda.ObjectPooling
 {
@@ -13,14 +7,21 @@ namespace RedPanda.ObjectPooling
     {
         public void AddMeToPool()
         {
-            var spawner = FindObjectOfType<SpawnerOnce>();
-            bool icerir = false;
+            SpawnerOnce spawner = FindObjectOfType<SpawnerOnce>();
 
-            foreach (var item in spawner.ObjAndLocList)
+            if (spawner == null)
+            {
+                Debug.Log("Sahnede pool prefab'ý yok.");
+                return;
+            }
+
+            bool exist = false;
+
+            foreach (ObjectAndLocation item in spawner.ObjAndLocList)
             {
                 if (item.pooledObject == PooledObject)
                 {
-                    icerir = true;
+                    exist = true;
                     break;
                 }
             }
@@ -32,9 +33,9 @@ namespace RedPanda.ObjectPooling
                 Scale = transform.localScale
             };
 
-            if (icerir)
+            if (exist)
             {
-                foreach (var item in spawner.ObjAndLocList)
+                foreach (ObjectAndLocation item in spawner.ObjAndLocList)
                 {
                     if (item.pooledObject == PooledObject)
                     {
@@ -56,24 +57,4 @@ namespace RedPanda.ObjectPooling
             }
         }
     }
-
-#if UNITY_EDITOR
-
-    [CustomEditor(typeof(PrefabPooled2))]
-    public class PrefabPooled2Editor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-
-            PrefabPooled2 pre = (PrefabPooled2)target;
-
-            if (GUILayout.Button("Add To Pool"))
-            {
-                pre.AddMeToPool();
-            }
-        }
-    }
-
-#endif
 }

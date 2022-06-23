@@ -28,6 +28,13 @@ namespace RedPanda.ObjectPooling_Editor
 
             if (GUILayout.Button("Finish Level"))
             {
+                var prefabs = FindObjectsOfType<PrefabPooled2>();
+
+                for (int i = 0; i < prefabs.Length; i++)
+                {
+                    prefabs[i].AddMeToPool();
+                }
+
                 _isFinished = true;
                 spawner.ReleaseAll();
             }

@@ -1,7 +1,9 @@
 {
     "name": "_RedPanda.Camera",
     "rootNamespace": "RedPanda",
-    "references": [],
+    "references": [
+        "GUID:c8a109bc16474ea498be36433e53d838"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
