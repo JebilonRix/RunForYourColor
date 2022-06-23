@@ -5,12 +5,16 @@ namespace RedPanda.ObjectPooling
 {
     public class SpawnerOnce : BaseSpawner
     {
-        #region Fields
-        [SerializeField] private List<ObjectAndLocation> _objAndLocList = new List<ObjectAndLocation>();
-        #endregion Fields
+        [SerializeField]
+        private SO_SpawnerOnceHolder _holder;
+
+        //#region Fields
+        //[SerializeField] private List<ObjectAndLocation> _objAndLocList;
+        //public List<ObjectAndLocation> ObjAndLocList { get => _objAndLocList; }
+        //#endregion Fields
 
         #region Properties
-        public List<ObjectAndLocation> ObjAndLocList { get => _objAndLocList; }
+        public SO_SpawnerOnceHolder Holder { get => _holder; }
         #endregion Properties
 
         #region Unity Methods
@@ -23,7 +27,7 @@ namespace RedPanda.ObjectPooling
         #region Public Methods
         public void SpawnObjects()
         {
-            foreach (ObjectAndLocation item in ObjAndLocList)
+            foreach (ObjectAndLocation item in Holder.ObjAndLocList)
             {
                 for (int i = 0; i < item.locations.Count; i++)
                 {
@@ -34,25 +38,56 @@ namespace RedPanda.ObjectPooling
         /// <summary>
         /// This method is for editor.
         /// </summary>
-        public void ReleaseAll()
+        public void ReleaseAll(PrefabPooled2[] prefabs)
         {
+            for (int i = 0; i < prefabs.Length; i++)
+            {
+                prefabs[i].OnRelease();
+            }
+
             _objectPool.ReleaseAllObjects();
+        }
+        public void ResetList(PrefabPooled2[] prefabs)
+        {
+            Holder.ObjAndLocList = new List<ObjectAndLocation>();
 
-            PrefabPooled[] prefabs = FindObjectsOfType<PrefabPooled>(true);
+            for (int i = 0; i < prefabs.Length; i++)
+            {
+                prefabs[i].IsAddedToPool = false;
+            }
+        }
+        public void DeleteAndDestroyAll(PrefabPooled2[] prefabs)
+        {
+            ResetList(prefabs);
+            DeleteObjs(prefabs);
 
+            GameObject[] objs = FindObjectsOfType<GameObject>();
+
+            for (int i = 0; i < objs.Length; i++)
+            {
+                if (objs[i].name == "Garbage Collector")
+                {
+                    DestroyImmediate(objs[i]);
+                }
+            }
+        }
+        public void DeleteObjs(PrefabPooled2[] prefabs)
+        {
             for (int i = 0; i < prefabs.Length; i++)
             {
                 DestroyImmediate(prefabs[i].gameObject);
             }
         }
-        public void DeleteAll()
+        public void SeeLevel()
         {
-            ReleaseAll();
-
-            //_objectPool.InPool = new Dictionary<string, Queue<GameObject>>();
-            //_objectPool.InUse = new Dictionary<string, Queue<GameObject>>();
-
-            _objAndLocList = new List<ObjectAndLocation>();
+            foreach (ObjectAndLocation item in Holder.ObjAndLocList)
+            {
+                for (int i = 0; i < item.locations.Count; i++)
+                {
+                    GameObject obj = Instantiate<GameObject>(item.pooledObject.Prefab, item.locations[i].Position, Quaternion.Euler(item.locations[i].Rotation));
+                    obj.transform.localScale = item.locations[i].Scale;
+                }
+            }
         }
         #endregion Public Methods
     }

@@ -16,7 +16,6 @@ namespace RedPanda.ObjectPooling
 
         #region Properties
         public List<SO_PooledObject> PoolList => _poolList;
-
         public Dictionary<string, Queue<GameObject>> InUse { get => _inUse; set => _inUse = value; }
         public Dictionary<string, Queue<GameObject>> InPool { get => _inPool; set => _inPool = value; }
         #endregion Properties
@@ -77,6 +76,7 @@ namespace RedPanda.ObjectPooling
             {
                 InPool.Add(tag, new Queue<GameObject>());
                 InUse.Add(tag, new Queue<GameObject>());
+                InUse.ToDictionary(tag, pooledObject.Prefab.gameObject);
                 //return;
             }
 
@@ -96,17 +96,18 @@ namespace RedPanda.ObjectPooling
 
             if (parent == null)
             {
-                var objs = FindObjectsOfType<GameObject>();
                 string garbage = "Garbage Collector";
 
-                for (int i = 0; i < objs.Length; i++)
-                {
-                    if (objs[i].name == garbage)
-                    {
-                        parent = objs[i];
-                        break;
-                    }
-                }
+                //GameObject[] objs = FindObjectsOfType<GameObject>();
+
+                //for (int i = 0; i < objs.Length; i++)
+                //{
+                //    if (objs[i].name == garbage)
+                //    {
+                //        parent = objs[i];
+                //        break;
+                //    }
+                //}
 
                 parent = new GameObject(garbage)
                 {
@@ -126,10 +127,7 @@ namespace RedPanda.ObjectPooling
 
                 if (!InUse.ContainsKey(tag))
                 {
-                    InPool.Add(tag, new Queue<GameObject>());
-                    InUse.Add(tag, new Queue<GameObject>());
-
-                    Debug.Log("dic created");
+                    continue;
                 }
 
                 int loopCount = InUse[tag].Count;

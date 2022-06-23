@@ -8,7 +8,6 @@ namespace RedPanda.ObjectPooling_Editor
     public class ObjectPoolingEditor : Editor
     {
         private SpawnerOnce spawner;
-        private bool _isFinished = false;
         private bool _isSeen = false;
 
         private void OnEnable()
@@ -19,10 +18,9 @@ namespace RedPanda.ObjectPooling_Editor
         {
             if (_isSeen)
             {
-                spawner.ReleaseAll();
+                spawner.DeleteObjs(FindObjectsOfType<PrefabPooled2>(true));
             }
 
-            _isFinished = false;
             _isSeen = false;
         }
 
@@ -32,15 +30,18 @@ namespace RedPanda.ObjectPooling_Editor
 
             if (GUILayout.Button("Finish Level"))
             {
-                var prefabs = FindObjectsOfType<PrefabPooled2>();
+                var prefabs = FindObjectsOfType<PrefabPooled2>(true);
 
                 for (int i = 0; i < prefabs.Length; i++)
                 {
-                    prefabs[i].AddMeToPool();
+                    if (!prefabs[i].IsAddedToPool)
+                    {
+                        prefabs[i].AddMeToPool();
+                        //prefabs[i].OnRelease();
+                    }
                 }
 
-                _isFinished = true;
-                spawner.ReleaseAll();
+                spawner.DeleteObjs(prefabs);
             }
 
             if (GUILayout.Button("See Level"))
@@ -50,12 +51,18 @@ namespace RedPanda.ObjectPooling_Editor
                     return;
                 }
 
-                spawner.SpawnObjects();
+                spawner.SeeLevel();
                 _isSeen = true;
             }
+
+            if (GUILayout.Button("Reset List"))
+            {
+                spawner.ResetList(FindObjectsOfType<PrefabPooled2>(true));
+            }
+
             if (GUILayout.Button("Delete Level"))
             {
-                spawner.DeleteAll();
+                spawner.DeleteAndDestroyAll(FindObjectsOfType<PrefabPooled2>(true));
             }
         }
     }

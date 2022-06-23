@@ -5,6 +5,17 @@ namespace RedPanda.ObjectPooling
 {
     public class PrefabPooled2 : PrefabPooled
     {
+        private bool _isAddedToPool = false;
+        public bool IsAddedToPool { get => _isAddedToPool; set => _isAddedToPool = value; }
+
+        private void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.Alpha1))
+            {
+                OnRelease();
+            }
+        }
+
         public void AddMeToPool()
         {
             SpawnerOnce spawner = FindObjectOfType<SpawnerOnce>();
@@ -15,13 +26,13 @@ namespace RedPanda.ObjectPooling
                 return;
             }
 
-            bool exist = false;
+            bool isListIncludeThis = false;
 
-            foreach (ObjectAndLocation item in spawner.ObjAndLocList)
+            foreach (ObjectAndLocation item in spawner.Holder.ObjAndLocList)
             {
                 if (item.pooledObject == PooledObject)
                 {
-                    exist = true;
+                    isListIncludeThis = true;
                     break;
                 }
             }
@@ -33,9 +44,9 @@ namespace RedPanda.ObjectPooling
                 Scale = transform.localScale
             };
 
-            if (exist)
+            if (isListIncludeThis)
             {
-                foreach (ObjectAndLocation item in spawner.ObjAndLocList)
+                foreach (ObjectAndLocation item in spawner.Holder.ObjAndLocList)
                 {
                     if (item.pooledObject == PooledObject)
                     {
@@ -53,8 +64,10 @@ namespace RedPanda.ObjectPooling
 
                 obj.locations.Add(loc);
 
-                spawner.ObjAndLocList.Add(obj);
+                spawner.Holder.ObjAndLocList.Add(obj);
             }
+
+            IsAddedToPool = true;
         }
     }
 }

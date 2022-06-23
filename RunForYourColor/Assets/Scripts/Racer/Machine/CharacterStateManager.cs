@@ -4,6 +4,7 @@ using UnityEngine;
 namespace RedPanda.StateMachine
 {
     [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(CapsuleCollider))]
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(MeshRenderer))]
     public class CharacterStateManager : MonoBehaviour
