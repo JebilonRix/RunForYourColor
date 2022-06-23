@@ -7,7 +7,6 @@ namespace RedPanda.StateMachine
         public override void EnterState(CharacterStateManager manager)
         {
             manager.Rb.useGravity = false;
-            manager.Animator.SetBool("Climb", true);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
@@ -20,7 +19,6 @@ namespace RedPanda.StateMachine
         public override void ExitState(CharacterStateManager manager)
         {
             manager.Rb.useGravity = true;
-            manager.Animator.SetBool("Climb", false);
         }
     }
 }

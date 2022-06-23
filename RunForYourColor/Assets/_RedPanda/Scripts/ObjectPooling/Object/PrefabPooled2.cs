@@ -8,14 +8,6 @@ namespace RedPanda.ObjectPooling
         private bool _isAddedToPool = false;
         public bool IsAddedToPool { get => _isAddedToPool; set => _isAddedToPool = value; }
 
-        private void Update()
-        {
-            if (Input.GetKeyUp(KeyCode.Alpha1))
-            {
-                OnRelease();
-            }
-        }
-
         public void AddMeToPool()
         {
             SpawnerOnce spawner = FindObjectOfType<SpawnerOnce>();

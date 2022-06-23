@@ -9,8 +9,6 @@ namespace RedPanda.StateMachine
         public override void EnterState(CharacterStateManager manager)
         {
             manager.Rb.useGravity = true;
-            manager.Animator.SetBool("FallEnd", false);
-            manager.Animator.SetFloat("Run", manager.Rb.velocity.z);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
@@ -27,8 +25,6 @@ namespace RedPanda.StateMachine
                     manager.SwitchState(manager.JumpState);
                 }
             }
-
-            manager.Animator.SetFloat("Jump", manager.Rb.velocity.y);
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {

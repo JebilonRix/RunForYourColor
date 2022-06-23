@@ -9,11 +9,9 @@ namespace RedPanda.StateMachine
         public override void EnterState(CharacterStateManager manager)
         {
             _isJumping = true;
-            manager.Animator.SetBool("IsJump2", true);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
-            manager.Animator.SetFloat("Jump", manager.Rb.velocity.y);
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {
@@ -29,8 +27,6 @@ namespace RedPanda.StateMachine
         public override void ExitState(CharacterStateManager manager)
         {
             _isJumping = false;
-            manager.Animator.SetBool("FallEnd", false);
-            manager.Animator.SetBool("IsJump2", false);
         }
     }
 }

@@ -360,7 +360,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5972191728477514568, guid: 218f66f098a831046823d32244980224, type: 3}
+  - {fileID: 2100000, guid: 83d86cbc7d15a6d4db951f6e0f4a837e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -555,6 +555,8 @@ GameObject:
   - component: {fileID: 4825874170761302288}
   - component: {fileID: 4825874170761302289}
   - component: {fileID: 4825874170761302291}
+  - component: {fileID: 1891435668}
+  - component: {fileID: 1891435667}
   m_Layer: 0
   m_Name: Character Rig
   m_TagString: Untagged
@@ -683,14 +685,40 @@ MonoBehaviour:
   _isPlayer: 1
   _wallTag: Wall
   _wallOffset: 1
-  _speed: 10
-  _horizontalSpeed: 0.51
+  _speed: 15
+  _horizontalSpeed: 0.55
   _respawnTime: 1
-  _jumpForce: 5
+  _jumpForce: 10
   _groundTag: Ground
-  _groundOffSet: 1.55
+  _groundOffSet: 0.55
   _minDistanceForJumpInput: 225
-  _animator: {fileID: 0}
+--- !u!114 &1891435668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636707025650472544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4e92a45b04d5442a2559b98996e4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStateManager: {fileID: 4825874170761302291}
+  _animator: {fileID: 4825874170761302289}
+--- !u!114 &1891435667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636707025650472544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f24aedb02253494cb85bce0ed7e88da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _diamondCount: 0
 --- !u!1 &5795433133719821532
 GameObject:
   m_ObjectHideFlags: 0

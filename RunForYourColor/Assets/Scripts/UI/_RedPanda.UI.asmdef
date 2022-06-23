@@ -2,7 +2,8 @@
     "name": "_RedPanda.UI",
     "rootNamespace": "RedPanda",
     "references": [
-        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:c8a109bc16474ea498be36433e53d838"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
