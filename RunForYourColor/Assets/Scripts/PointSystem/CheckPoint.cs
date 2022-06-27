@@ -4,11 +4,6 @@ namespace RedPanda.PointSystem
 {
     public class CheckPoint : Point
     {
-        //private void Start()
-        //{
-        //    SetColor();
-        //}
-
         #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {

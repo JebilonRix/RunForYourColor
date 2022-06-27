@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3176964568607083586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 9}
-  m_LocalScale: {x: 7, y: 0.1, z: 7}
+  m_LocalScale: {x: 1.7, y: 0.1, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 12.36, z: 1}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!114 &7032017163066311276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,10 +112,8 @@ MonoBehaviour:
   _racerTag: Racer
   _colorType: blue
   _speedAddAmount: 1
-  blueMaterial: {fileID: 2100000, guid: a5485fb8a4ca23e4c8999758db270d0a, type: 2}
-  redMaterial: {fileID: 2100000, guid: 754bd9e3cefdddc4e89e3a71af2d4bc2, type: 2}
-  yellowMaterial: {fileID: 2100000, guid: 67fbd1a20b1b3a24a86ee3b37155bf89, type: 2}
   <PooledObject>k__BackingField: {fileID: 11400000, guid: edef2db809bd2404f84d891ac00f080f, type: 2}
+  _speedChange: 5
 --- !u!114 &144029469939194859
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ namespace RedPanda.StateMachine
         [SerializeField] private float _wallOffset = 1f;
 
         [Header("Horizontal Movement")]
-        [SerializeField] private float _speed = 7;
+        [SerializeField] private float _speed = 15f;
         [SerializeField] private float _horizontalSpeed = 0.3f;
         [SerializeField] private float _respawnTime = 0.5f;
 
@@ -40,10 +40,8 @@ namespace RedPanda.StateMachine
         [SerializeField] private string _groundTag = "Ground";
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
-        public AnimationClip falToRunClip;
 
         private Animator _animator;
-
         private float _lastFrameFingerPositionX = 0;
         private float _moveFactorX = 0;
         private bool _startRun = false;
@@ -133,6 +131,9 @@ namespace RedPanda.StateMachine
             //Enter new state
             CurrentState = state;
             CurrentState.EnterState(this);
+        }
+        public void SpeedChange()
+        {
         }
         public void SetMass(bool isDefault)
         {

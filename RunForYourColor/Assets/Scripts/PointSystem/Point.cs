@@ -46,27 +46,6 @@ namespace RedPanda.PointSystem
         #endregion Unity Methods
 
         #region Public Methods
-        //public void SetColor()
-        //{
-        //    var renderer = GetComponent<MeshRenderer>();
-
-        //    Material material = renderer.materials[0];
-
-        //    if (_colorType == "blue")
-        //    {
-        //        material = blueMaterial;
-        //    }
-        //    else if (_colorType == "red")
-        //    {
-        //        material = redMaterial;
-        //    }
-        //    else if (_colorType == "yellow")
-        //    {
-        //        material = yellowMaterial;
-        //    }
-
-        //    renderer.material = material;
-        //}
         public void OnStart()
         {
         }
