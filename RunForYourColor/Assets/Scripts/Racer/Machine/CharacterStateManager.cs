@@ -114,7 +114,10 @@ namespace RedPanda.StateMachine
             //    //ToDo: add ai here
             //}
 
-            transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
+            if (_moveFactorX != 0f)
+            {
+                transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
+            }
 
             Debug.Log(currentState);
         }
@@ -135,7 +138,7 @@ namespace RedPanda.StateMachine
         }
         public void SetMass(bool isDefault)
         {
-            Rb.mass = isDefault ? 5f : 30f;
+            Rb.mass = isDefault ? 1f : 15f;
         }
         public void JumpInput()
         {

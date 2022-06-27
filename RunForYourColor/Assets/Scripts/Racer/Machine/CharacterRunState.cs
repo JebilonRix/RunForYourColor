@@ -6,7 +6,7 @@ namespace RedPanda.StateMachine
         {
             manager.AnimHandler(this);
             manager.Rb.useGravity = true;
-            manager.SetMass(false);
+            manager.SetMass(true);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
@@ -17,7 +17,7 @@ namespace RedPanda.StateMachine
             manager.GoForward();
             manager.WallCheck();
 
-            if (manager.Rb.velocity.y < -0.1f)
+            if (manager.Rb.velocity.y <= -0.25f)
             {
                 manager.SwitchState(manager.FallState);
             }

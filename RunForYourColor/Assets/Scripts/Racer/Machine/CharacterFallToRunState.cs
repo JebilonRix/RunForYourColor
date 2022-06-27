@@ -23,6 +23,7 @@ namespace RedPanda.StateMachine
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {
+            manager.GoForward();
         }
         public override void ExitState(CharacterStateManager manager)
         {

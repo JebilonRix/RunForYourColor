@@ -20,8 +20,14 @@ public class CharacterFallState : CharacterBaseState
         {
             if (_groundHit.collider.CompareTag(manager.GroundTag) && _groundHit.distance <= manager.GroundOffSet)
             {
-                //Debug.Log("offset is enough");
-                manager.SwitchState(manager.FallToRunState);
+                if (manager.Rb.velocity.y <= -5f)
+                {
+                    manager.SwitchState(manager.FallToRunState);
+                }
+                else
+                {
+                    manager.SwitchState(manager.RunState);
+                }
             }
         }
     }

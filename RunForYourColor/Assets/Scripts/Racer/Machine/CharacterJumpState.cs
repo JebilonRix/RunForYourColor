@@ -11,6 +11,7 @@ namespace RedPanda.StateMachine
         {
             _isJumping = true;
             manager.AnimHandler(this);
+            manager.SetMass(true);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
