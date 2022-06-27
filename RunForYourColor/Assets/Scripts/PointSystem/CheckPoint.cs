@@ -1,4 +1,3 @@
-using RedPanda.StateMachine;
 using UnityEngine;
 
 namespace RedPanda.PointSystem
@@ -8,17 +7,18 @@ namespace RedPanda.PointSystem
         #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {
+            base.OnTriggerEnter(other);
+
             if (other.CompareTag(_racerTag))
             {
                 SortInTrigger();
 
-                CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
-                stateManager.SetCheckPoint(transform);
-                SpeedChange(stateManager, _speedAddAmount);
+                _stateManager.SetCheckPoint(transform);
+                SpeedChange(_stateManager, _speedAddAmount);
 
-                if (stateManager.IsPlayer)
+                if (_stateManager.IsPlayer)
                 {
-                    WriteRandomLine(PointType.Check); 
+                    WriteRandomLine(PointType.Check);
                 }
             }
         }

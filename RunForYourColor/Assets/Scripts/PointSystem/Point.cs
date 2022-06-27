@@ -16,6 +16,7 @@ namespace RedPanda.PointSystem
 
         protected SortingUI _sortingUI;
         protected RandomLine _randomLine;
+        protected CharacterStateManager _stateManager;
         #endregion Fields
 
         #region Properties
@@ -24,7 +25,13 @@ namespace RedPanda.PointSystem
 
         #region Unity Methods
         private void Awake() => GetComponent<BoxCollider>().isTrigger = true;
-        protected abstract void OnTriggerEnter(Collider other);
+        protected virtual void OnTriggerEnter(Collider other)
+        {
+            if (_stateManager == null)
+            {
+                _stateManager = other.GetComponent<CharacterStateManager>();
+            }
+        }
         #endregion Unity Methods
 
         #region Public Methods

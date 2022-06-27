@@ -139,9 +139,7 @@ namespace RedPanda.StateMachine
             }
             else if (Input.GetMouseButtonUp(0))
             {
-                float _moveFactorY = Input.mousePosition.y - _lastFrameFingerPositionY;
-
-                if (MinDistanceForJumpInput <= _moveFactorY)
+                if (MinDistanceForJumpInput <= Input.mousePosition.y - _lastFrameFingerPositionY)
                 {
                     SwitchState(JumpState);
                 }
