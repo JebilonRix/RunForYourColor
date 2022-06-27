@@ -39,6 +39,7 @@ namespace RedPanda.StateMachine
         [SerializeField] private string _groundTag = "Ground";
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
+        public AnimationClip falToRunClip;
 
         private Animator _animator;
         private string _colorType;

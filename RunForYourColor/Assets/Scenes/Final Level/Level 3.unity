@@ -2334,6 +2334,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
+      propertyPath: falToRunClip
+      value: 
+      objectReference: {fileID: -203655887218126122, guid: 2edab6da2accb944ca96d8018502ed44, type: 3}
     - target: {fileID: 4825874170761302294, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
