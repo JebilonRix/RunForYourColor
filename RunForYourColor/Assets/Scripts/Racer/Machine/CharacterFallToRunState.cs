@@ -9,6 +9,8 @@ namespace RedPanda.StateMachine
         public override void EnterState(CharacterStateManager manager)
         {
             manager.AnimHandler(this);
+
+            Debug.Log("CharacterFallToRunState enter");
         }
         public override void UpdateState(CharacterStateManager manager)
         {

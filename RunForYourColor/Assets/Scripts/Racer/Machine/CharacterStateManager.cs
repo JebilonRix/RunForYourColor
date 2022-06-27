@@ -43,12 +43,12 @@ namespace RedPanda.StateMachine
 
         private Animator _animator;
         private float _lastFrameFingerPositionX = 0;
+        private float _lastFrameFingerPositionY = 0;
         private float _moveFactorX = 0;
         private bool _startRun = false;
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
-        private float _lastFrameFingerPositionY = 0;
         #endregion Fields
 
         #region Properties
@@ -86,7 +86,6 @@ namespace RedPanda.StateMachine
         private void Start()
         {
             SwitchState(IdleState);
-            SetMass(true);
         }
         private void FixedUpdate() => CurrentState.FixedUpdateState(this);
         private void Update()
@@ -118,8 +117,6 @@ namespace RedPanda.StateMachine
             {
                 transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             }
-
-            Debug.Log(currentState);
         }
         #endregion Unity Methods
 
@@ -136,10 +133,6 @@ namespace RedPanda.StateMachine
             CurrentState = state;
             CurrentState.EnterState(this);
         }
-        public void SetMass(bool isDefault)
-        {
-            Rb.mass = isDefault ? 1f : 15f;
-        }
         public void JumpInput()
         {
             if (Input.GetMouseButtonDown(0))
@@ -150,8 +143,8 @@ namespace RedPanda.StateMachine
             {
                 if (MinDistanceForJumpInput <= Input.mousePosition.y - _lastFrameFingerPositionY)
                 {
-                    SwitchState(JumpState);
                     _lastFrameFingerPositionY = 0f;
+                    SwitchState(JumpState);
                 }
             }
         }
@@ -161,25 +154,16 @@ namespace RedPanda.StateMachine
             {
                 if (_wallHit.collider.CompareTag(_wallTag))
                 {
-                    if (_wallHit.distance <= _wallOffset)
+                    if (_wallHit.distance > _wallOffset)
                     {
-                        SwitchState(ClimbState);
+                        return;
                     }
+
+                    SwitchState(ClimbState);
                 }
                 else if (_wallHit.collider.CompareTag(_climbTag))
                 {
                     SwitchState(RunState);
-                }
-            }
-        }
-        public void GroundCheck()
-        {
-            if (Physics.Raycast(new Ray(transform.position, Vector3.down), out RaycastHit _groundHit))
-            {
-                if (_groundHit.collider.CompareTag(GroundTag) && _groundHit.distance <= GroundOffSet)
-                {
-                    Debug.Log("offset is enough");
-                    SwitchState(FallToRunState);
                 }
             }
         }
@@ -210,30 +194,12 @@ namespace RedPanda.StateMachine
                 Animator.Play("FallToRun", 0);
             }
         }
-        public void ChangeColor(string colorTypes)
-        {
-            switch (colorTypes.ToLower())
-            {
-                case "blue":
-                    _meshRenderer.material.color = Color.blue;
-                    break;
-
-                case "red":
-                    _meshRenderer.material.color = Color.red;
-                    break;
-
-                case "yellow":
-                    _meshRenderer.material.color = Color.yellow;
-                    break;
-            }
-
-            ColorType = colorTypes;
-        }
         public void StartRace() => StartRun = true;
         public void SetCheckPoint(Transform checkPoint) => _lastCheckPoint = checkPoint;
         public void UpdateSpeed(float amount) => _speed += amount;
         public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);
         public void ToRespawn() => StartCoroutine(Respawn());
+        public void SetMass(bool isDefault) => Rb.mass = isDefault ? 1f : 15f;
 
         #endregion Public Methods
 
@@ -249,5 +215,25 @@ namespace RedPanda.StateMachine
             SwitchState(RunState);
         }
         #endregion Private Methods
+
+        //public void ChangeColor(string colorTypes)
+        //{
+        //    switch (colorTypes.ToLower())
+        //    {
+        //        case "blue":
+        //            _meshRenderer.material.color = Color.blue;
+        //            break;
+
+        //        case "red":
+        //            _meshRenderer.material.color = Color.red;
+        //            break;
+
+        //        case "yellow":
+        //            _meshRenderer.material.color = Color.yellow;
+        //            break;
+        //    }
+
+        //    ColorType = colorTypes;
+        //}
     }
 }

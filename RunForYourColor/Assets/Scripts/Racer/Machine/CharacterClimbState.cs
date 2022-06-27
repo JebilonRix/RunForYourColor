@@ -9,6 +9,8 @@ namespace RedPanda.StateMachine
             manager.Rb.useGravity = false;
             manager.AnimHandler(this);
             manager.SetMass(true);
+
+            Debug.Log("CharacterClimbState enter");
         }
         public override void UpdateState(CharacterStateManager manager)
         {

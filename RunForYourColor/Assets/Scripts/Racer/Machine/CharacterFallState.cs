@@ -7,6 +7,8 @@ public class CharacterFallState : CharacterBaseState
     {
         manager.AnimHandler(this);
         manager.SetMass(false);
+
+        Debug.Log("CharacterFallState enter");
     }
     public override void UpdateState(CharacterStateManager manager)
     {
@@ -18,17 +20,16 @@ public class CharacterFallState : CharacterBaseState
 
         if (Physics.Raycast(new Ray(manager.transform.position, Vector3.down), out RaycastHit _groundHit))
         {
-            if (_groundHit.collider.CompareTag(manager.GroundTag) && _groundHit.distance <= manager.GroundOffSet)
+            if (!_groundHit.collider.CompareTag(manager.GroundTag))
             {
-                if (manager.Rb.velocity.y <= -5f)
-                {
-                    manager.SwitchState(manager.FallToRunState);
-                }
-                else
-                {
-                    manager.SwitchState(manager.RunState);
-                }
+                return;
             }
+            if (_groundHit.distance >= manager.GroundOffSet)
+            {
+                return;
+            }
+
+            manager.SwitchState(manager.FallToRunState);
         }
     }
     public override void ExitState(CharacterStateManager manager)

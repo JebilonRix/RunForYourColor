@@ -9,20 +9,11 @@ namespace RedPanda.PointSystem
     [RequireComponent(typeof(MeshRenderer))]
     public abstract class Point : MonoBehaviour, IPooled
     {
-        protected enum PointType
-        {
-            Check, Finish, Dead
-        }
-
         #region Fields
+        [SerializeField] private PointType _type;
         [SerializeField] protected string _racerTag = "Racer";
         [SerializeField] protected string _colorType = "blue";
         [SerializeField] protected float _speedAddAmount = 1f;
-
-        //[Header("Colors")]
-        //[SerializeField] private Material blueMaterial;
-        //[SerializeField] private Material redMaterial;
-        //[SerializeField] private Material yellowMaterial;
 
         protected SortingUI _sortingUI;
         protected RandomLine _randomLine;
@@ -30,6 +21,7 @@ namespace RedPanda.PointSystem
 
         #region Properties
         [field: SerializeField] public SO_PooledObject PooledObject { get; set; }
+        public PointType pointType { get => _type; private set => _type = value; }
         #endregion Properties
 
         #endregion Fields

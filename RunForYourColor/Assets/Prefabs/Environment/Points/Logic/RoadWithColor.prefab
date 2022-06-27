@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3176964568607083588}
   - component: {fileID: 7032017163066311276}
   - component: {fileID: 144029469939194859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RoadWithColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dff2ec693deca54ba3af465ce3bca7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _type: 3
   _racerTag: Racer
   _colorType: blue
   _speedAddAmount: 1

@@ -1,4 +1,5 @@
 using RedPanda.StateMachine;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,27 +24,68 @@ namespace RedPanda.UI
             var racers = FindObjectsOfType<CharacterStateManager>();
             var rac = new GameObject[] { _racer1, _racer2 };
 
-            if (_player == null || _racer1 == null || _racer2 == null)
+            foreach (var item in racers)
             {
-                for (int i = 0; i < racers.Length; i++)
+                if (item.IsPlayer)
                 {
-                    if (racers[i].IsPlayer)
+                    _player = item.gameObject;
+                }
+                else
+                {
+                    if (_racer1 == null)
                     {
-                        _player = racers[i].gameObject;
+                        _racer1 = item.gameObject;
                     }
-
-                    for (int j = 0; j < rac.Length; j++)
+                    else if (_racer2 == null)
                     {
-                        if (!racers[i].IsPlayer)
-                        {
-                            rac[j] = racers[i].gameObject;
-                        }
+                        _racer2 = item.gameObject;
                     }
                 }
             }
+
+            //if (_player == null || _racer1 == null || _racer2 == null)
+            //{
+            //    for (int i = 0; i < racers.Length; i++)
+            //    {
+            //        if (racers[i].IsPlayer)
+            //        {
+            //            _player = racers[i].gameObject;
+            //        }
+
+            //        for (int j = 0; j < rac.Length; j++)
+            //        {
+            //            if (!racers[i].IsPlayer)
+            //            {
+            //                rac[j] = racers[i].gameObject;
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         #region Public Methods
+        public void StartRacers()
+        {
+            var racer = new List<GameObject>();
+
+            if (_player != null)
+            {
+                racer.Add(_player);
+            }
+            if (_racer1 != null)
+            {
+                racer.Add(_racer1);
+            }
+            if (_racer2 != null)
+            {
+                racer.Add(_racer2);
+            }
+
+            foreach (var item in racer)
+            {
+                item.GetComponent<CharacterStateManager>().StartRace();
+            }
+        }
         public void Sort()
         {
             if (_finishPoint == null)

@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 1545476806527532376}
   - component: {fileID: 1913434820228746865}
   - component: {fileID: 3731909421891931346}
-  - component: {fileID: 4836828505990939844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FinishLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,20 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c586c85db961c840ba051b66d892629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _type: 1
   _racerTag: Racer
   _colorType: 
   _speedAddAmount: 1
-  <PooledObject>k__BackingField: {fileID: 11400000, guid: 1c7bc9d428e7f5840a91b7f0376a6ae7, type: 2}
---- !u!114 &4836828505990939844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040998400658644109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d067c8df4177e94bae8752df94ed56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   <PooledObject>k__BackingField: {fileID: 11400000, guid: 1c7bc9d428e7f5840a91b7f0376a6ae7, type: 2}

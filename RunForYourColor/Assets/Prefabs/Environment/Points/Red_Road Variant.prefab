@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red_Road Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3176964568607083586, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3176964568607083591, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
       propertyPath: m_CastShadows
       value: 0

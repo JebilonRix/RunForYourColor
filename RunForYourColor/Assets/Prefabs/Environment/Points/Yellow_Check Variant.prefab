@@ -71,5 +71,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow_Check Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4234231838479721366, guid: 711113c86c9847748a28082ea8ce3941, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711113c86c9847748a28082ea8ce3941, type: 3}

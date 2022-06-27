@@ -14,6 +14,7 @@ namespace RedPanda.PointSystem
                 SortInTrigger();
 
                 _stateManager.SetCheckPoint(transform);
+
                 SpeedChange(_stateManager, _speedAddAmount);
 
                 if (_stateManager.IsPlayer)

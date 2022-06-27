@@ -12,12 +12,14 @@ namespace RedPanda.StateMachine
             _isJumping = true;
             manager.AnimHandler(this);
             manager.SetMass(true);
+
+            Debug.Log("CharacterJumpState enter");
         }
         public override void UpdateState(CharacterStateManager manager)
         {
             _time += Time.deltaTime;
 
-            if (_time >= manager.Animator.GetCurrentAnimatorClipInfo(0).Length / (30f / 25f))
+            if (_time >= manager.Animator.GetCurrentAnimatorClipInfo(0).Length / 1.2f)
             {
                 manager.SwitchState(manager.FallState);
             }
@@ -32,11 +34,6 @@ namespace RedPanda.StateMachine
 
             manager.GoForward();
             manager.WallCheck();
-
-            if (manager.Rb.velocity.y > 2f)
-            {
-                manager.GroundCheck();
-            }
         }
         public override void ExitState(CharacterStateManager manager)
         {
