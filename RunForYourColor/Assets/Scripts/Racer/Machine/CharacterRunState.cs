@@ -6,7 +6,7 @@ namespace RedPanda.StateMachine
         {
             manager.AnimHandler(this);
             manager.Rb.useGravity = true;
-            manager.SetMass(true);
+            manager.SetMass(false);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
