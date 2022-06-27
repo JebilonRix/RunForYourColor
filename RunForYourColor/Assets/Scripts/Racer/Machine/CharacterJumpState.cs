@@ -16,7 +16,7 @@ namespace RedPanda.StateMachine
         {
             _time += Time.deltaTime;
 
-            if (_time >= manager.Animator.GetCurrentAnimatorClipInfo(0).Length)
+            if (_time >= manager.Animator.GetCurrentAnimatorClipInfo(0).Length / (30f / 25f))
             {
                 manager.SwitchState(manager.FallState);
             }

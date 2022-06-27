@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4234231838479721366}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_Children: []
@@ -114,6 +114,9 @@ MonoBehaviour:
   _colorType: blue
   _speedAddAmount: 1
   <PooledObject>k__BackingField: {fileID: 11400000, guid: 2a0de45ddf6ea654ba5412864c40cb97, type: 2}
+  blueMaterial: {fileID: 2100000, guid: a5485fb8a4ca23e4c8999758db270d0a, type: 2}
+  redMaterial: {fileID: 2100000, guid: 754bd9e3cefdddc4e89e3a71af2d4bc2, type: 2}
+  yellowMaterial: {fileID: 2100000, guid: 67fbd1a20b1b3a24a86ee3b37155bf89, type: 2}
 --- !u!114 &-2090764001898982024
 MonoBehaviour:
   m_ObjectHideFlags: 0

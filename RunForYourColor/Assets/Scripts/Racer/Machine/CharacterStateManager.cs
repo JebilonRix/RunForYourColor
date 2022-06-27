@@ -23,6 +23,7 @@ namespace RedPanda.StateMachine
 
         [Header("Basic")]
         [SerializeField] private bool _isPlayer;
+        [SerializeField] private string _colorType = "blue";
 
         [Header("Climbing")]
         [SerializeField] private string _climbTag = "ClimbPoint";
@@ -42,7 +43,7 @@ namespace RedPanda.StateMachine
         public AnimationClip falToRunClip;
 
         private Animator _animator;
-        private string _colorType;
+
         private float _lastFrameFingerPositionX = 0;
         private float _moveFactorX = 0;
         private bool _startRun = false;
@@ -113,8 +114,6 @@ namespace RedPanda.StateMachine
 
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             transform.rotation = Quaternion.Euler(0, 0, 0);
-
-            // Debug.Log(currentState);
         }
         #endregion Unity Methods
 
@@ -139,16 +138,11 @@ namespace RedPanda.StateMachine
             }
             else if (Input.GetMouseButtonUp(0))
             {
-                Debug.Log(Input.mousePosition.y);
-
                 if (MinDistanceForJumpInput <= Input.mousePosition.y - _lastFrameFingerPositionY)
                 {
                     SwitchState(JumpState);
+                    _lastFrameFingerPositionY = 0f;
                 }
-            }
-            else
-            {
-                _lastFrameFingerPositionY = 0f;
             }
         }
         public void WallCheck()

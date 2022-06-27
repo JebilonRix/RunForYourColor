@@ -9,6 +9,11 @@ namespace RedPanda.PointSystem
     [RequireComponent(typeof(MeshRenderer))]
     public abstract class Point : MonoBehaviour, IPooled
     {
+        protected enum PointType
+        {
+            Check, Finish, Dead
+        }
+
         #region Fields
         [SerializeField] protected string _racerTag = "Racer";
         [SerializeField] protected string _colorType = "blue";
@@ -37,20 +42,6 @@ namespace RedPanda.PointSystem
         #region Public Methods
         public void OnStart()
         {
-            Material material = GetComponent<MeshRenderer>().materials[0];
-
-            if (_colorType == "blue")
-            {
-                material.color = Color.blue;
-            }
-            else if (_colorType == "red")
-            {
-                material.color = Color.red;
-            }
-            else if (_colorType == "yellow")
-            {
-                material.color = Color.yellow;
-            }
         }
         public void OnRelease() => PooledObject.RelaseObjectToPool();
         #endregion Public Methods
@@ -103,14 +94,6 @@ namespace RedPanda.PointSystem
 
             _randomLine.TextAnimation(lines[Random.Range(0, lines.Length)]);
         }
-
         #endregion Private Methods
-
-        protected enum PointType
-        {
-            Check,
-            Finish,
-            Dead
-        }
     }
 }
