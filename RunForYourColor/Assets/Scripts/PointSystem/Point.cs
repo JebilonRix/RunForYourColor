@@ -22,11 +22,12 @@ namespace RedPanda.PointSystem
         protected SortingUI _sortingUI;
         protected RandomLine _randomLine;
         protected CharacterStateManager _stateManager;
-        #endregion Fields
 
         #region Properties
         [field: SerializeField] public SO_PooledObject PooledObject { get; set; }
         #endregion Properties
+
+        #endregion Fields
 
         #region Unity Methods
         private void Awake() => GetComponent<BoxCollider>().isTrigger = true;

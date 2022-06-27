@@ -53,7 +53,7 @@ namespace RedPanda.ObjectPooling
             }
 
             //This checks if the object has the interface I_PooledObject.
-            //prefab.GetComponent<IPooled>().OnStart();
+            prefab.GetComponent<IPooled>().OnStart();
 
             //This line activates object.
             prefab.SetActive(true);
