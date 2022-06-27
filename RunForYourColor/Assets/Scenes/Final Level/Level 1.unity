@@ -6787,6 +6787,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building4
       objectReference: {fileID: 0}
+    - target: {fileID: 1561558281665002915, guid: 7b28f47b7433fe34d9097db9f3e979a6, type: 3}
+      propertyPath: m_Size.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561558281665002915, guid: 7b28f47b7433fe34d9097db9f3e979a6, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561558281665002915, guid: 7b28f47b7433fe34d9097db9f3e979a6, type: 3}
+      propertyPath: m_Center.y
+      value: 7.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561558281665002915, guid: 7b28f47b7433fe34d9097db9f3e979a6, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b28f47b7433fe34d9097db9f3e979a6, type: 3}
 --- !u!4 &1764306184 stripped
@@ -7007,6 +7023,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
+      propertyPath: _speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: _colorType
       value: red

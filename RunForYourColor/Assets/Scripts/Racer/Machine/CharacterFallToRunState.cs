@@ -10,13 +10,6 @@ namespace RedPanda.StateMachine
         {
             manager.AnimHandler(this);
         }
-        public override void ExitState(CharacterStateManager manager)
-        {
-            _time = 0;
-        }
-        public override void FixedUpdateState(CharacterStateManager manager)
-        {
-        }
         public override void UpdateState(CharacterStateManager manager)
         {
             manager.JumpInput();
@@ -27,6 +20,13 @@ namespace RedPanda.StateMachine
             {
                 manager.SwitchState(manager.RunState);
             }
+        }
+        public override void FixedUpdateState(CharacterStateManager manager)
+        {
+        }
+        public override void ExitState(CharacterStateManager manager)
+        {
+            _time = 0;
         }
     }
 }

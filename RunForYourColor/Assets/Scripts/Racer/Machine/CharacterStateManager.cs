@@ -115,7 +115,8 @@ namespace RedPanda.StateMachine
             //}
 
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            Debug.Log(currentState);
         }
         #endregion Unity Methods
 
@@ -132,12 +133,9 @@ namespace RedPanda.StateMachine
             CurrentState = state;
             CurrentState.EnterState(this);
         }
-        public void SpeedChange()
-        {
-        }
         public void SetMass(bool isDefault)
         {
-            Rb.mass = isDefault ? 2f : 30f;
+            Rb.mass = isDefault ? 5f : 30f;
         }
         public void JumpInput()
         {
