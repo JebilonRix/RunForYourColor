@@ -555,11 +555,10 @@ GameObject:
   - component: {fileID: 4825874170761302288}
   - component: {fileID: 4825874170761302289}
   - component: {fileID: 4825874170761302291}
-  - component: {fileID: 1891435668}
   - component: {fileID: 1891435667}
   m_Layer: 0
   m_Name: Character Rig
-  m_TagString: Untagged
+  m_TagString: Racer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -682,30 +681,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4193f128eddc54fa395e6813e81d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 4825874170761302289}
   _isPlayer: 1
+  _climbTag: ClimbPoint
   _wallTag: Wall
   _wallOffset: 1
-  _speed: 15
+  _speed: 30
   _horizontalSpeed: 0.55
   _respawnTime: 1
   _jumpForce: 10
   _groundTag: Ground
   _groundOffSet: 0.55
   _minDistanceForJumpInput: 225
---- !u!114 &1891435668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5636707025650472544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb4e92a45b04d5442a2559b98996e4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterStateManager: {fileID: 4825874170761302291}
-  _animator: {fileID: 4825874170761302289}
 --- !u!114 &1891435667
 MonoBehaviour:
   m_ObjectHideFlags: 0

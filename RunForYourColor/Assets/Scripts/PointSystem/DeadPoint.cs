@@ -16,7 +16,7 @@ namespace RedPanda.PointSystem
             if (other.CompareTag(_racerTag))
             {
                 //CharacterStateManager stateManager = other.GetComponent<CharacterStateManager>();
-                stateManager.StartCoroutine(stateManager.Respawn());
+                stateManager.ToRespawn();
 
                 if (stateManager.IsPlayer)
                 {

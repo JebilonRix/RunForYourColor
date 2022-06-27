@@ -9,6 +9,7 @@ namespace RedPanda.StateMachine
         public override void EnterState(CharacterStateManager manager)
         {
             _isJumping = true;
+            manager.AnimHandler(this);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
@@ -21,6 +22,7 @@ namespace RedPanda.StateMachine
                 _isJumping = false;
             }
 
+            manager.GoForward();
             manager.WallCheck();
             manager.GroundCheck();
         }

@@ -4,11 +4,12 @@ namespace RedPanda.StateMachine
 {
     public class CharacterRunState : CharacterBaseState
     {
-        private float _lastFrameFingerPositionY;
+        private float _lastFrameFingerPositionY = 0;
 
         public override void EnterState(CharacterStateManager manager)
         {
             manager.Rb.useGravity = true;
+            manager.AnimHandler(this);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
@@ -25,10 +26,14 @@ namespace RedPanda.StateMachine
                     manager.SwitchState(manager.JumpState);
                 }
             }
+            else
+            {
+                _lastFrameFingerPositionY = 0f;
+            }
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {
-            manager.Rb.velocity = new Vector3(manager.Rb.velocity.x, manager.Rb.velocity.y, manager.Speed);
+            manager.GoForward();
             manager.WallCheck();
             manager.GroundCheck();
         }

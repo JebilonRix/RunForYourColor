@@ -6,6 +6,7 @@ namespace RedPanda.StateMachine
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
     [RequireComponent(typeof(MeshRenderer))]
+    [RequireComponent(typeof(Animator))]
     public class CharacterStateManager : MonoBehaviour
     {
         #region Fields
@@ -38,6 +39,7 @@ namespace RedPanda.StateMachine
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
 
+        private Animator _animator;
         private string _colorType;
         private float _lastFrameFingerPositionX = 0;
         private float _moveFactorX = 0;
@@ -45,7 +47,6 @@ namespace RedPanda.StateMachine
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
-        private RaycastHit _wallHit;
         #endregion Fields
 
         #region Properties
@@ -68,10 +69,13 @@ namespace RedPanda.StateMachine
             {
                 Rb = GetComponent<Rigidbody>();
             }
-
             if (_meshRenderer == null)
             {
                 _meshRenderer = GetComponent<MeshRenderer>();
+            }
+            if (_animator == null)
+            {
+                _animator = GetComponent<Animator>();
             }
 
             gameObject.tag = "Racer";
@@ -98,13 +102,16 @@ namespace RedPanda.StateMachine
                     _moveFactorX = 0f;
                 }
             }
-            else
-            {
-                //ToDo: add ai here
-            }
+            //else
+            //{
+            //    //ToDo: add ai here
+            //}
 
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            Debug.Log(currentState);
+            Debug.Log(Rb.velocity.y);
         }
         #endregion Unity Methods
 
@@ -123,7 +130,7 @@ namespace RedPanda.StateMachine
         }
         public void WallCheck()
         {
-            if (Physics.Raycast(new Ray(transform.position, Vector3.forward), out _wallHit))
+            if (Physics.Raycast(new Ray(transform.position, Vector3.forward), out RaycastHit _wallHit))
             {
                 if (_wallHit.collider.CompareTag(_wallTag))
                 {
@@ -144,29 +151,38 @@ namespace RedPanda.StateMachine
             {
                 if (_hit.collider.CompareTag(GroundTag) || _hit.collider.CompareTag(_wallTag))
                 {
-                    if (_hit.distance < GroundOffSet)
-                    {
-                        SwitchState(RunState);
-                    }
-                    else if (_hit.distance >= GroundOffSet)
+                    if (Rb.velocity.y < -0.1f)
                     {
                         SwitchState(FallState);
                     }
-                }
-            }
-            else
-            {
-                if (_wallHit.collider.CompareTag(_wallTag))
-                {
-                    if (_wallHit.distance <= _wallOffset)
+                    else if (Rb.velocity.y > 0.1f)
                     {
-                        SwitchState(ClimbState);
+                        SwitchState(JumpState);
                     }
                 }
-                else
-                {
-                    SwitchState(FallState);
-                }
+            }
+        }
+        public void AnimHandler(CharacterBaseState currentState)
+        {
+            if (currentState == IdleState)
+            {
+                _animator.Play("Idle", 0);
+            }
+            else if (currentState == RunState)
+            {
+                _animator.Play("Run", 0);
+            }
+            else if (currentState == JumpState)
+            {
+                _animator.Play("Jump", 0);
+            }
+            else if (currentState == FallState)
+            {
+                _animator.Play("Fall", 0);
+            }
+            else if (currentState == ClimbState)
+            {
+                _animator.Play("Climb", 0);
             }
         }
         public void ChangeColor(string colorTypes)
@@ -188,7 +204,16 @@ namespace RedPanda.StateMachine
 
             ColorType = colorTypes;
         }
-        public IEnumerator Respawn()
+        public void StartRace() => StartRun = true;
+        public void SetCheckPoint(Transform checkPoint) => _lastCheckPoint = checkPoint;
+        public void UpdateSpeed(float amount) => _speed += amount;
+        public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);
+        public void ToRespawn() => StartCoroutine(Respawn());
+
+        #endregion Public Methods
+
+        #region Private Methods
+        private IEnumerator Respawn()
         {
             transform.position = _lastCheckPoint.transform.position;
 
@@ -198,9 +223,6 @@ namespace RedPanda.StateMachine
 
             SwitchState(RunState);
         }
-        public void StartRace() => StartRun = true;
-        public void SetCheckPoint(Transform checkPoint) => _lastCheckPoint = checkPoint;
-        public void UpdateSpeed(float amount) => _speed += amount;
-        #endregion Public Methods
+        #endregion Private Methods
     }
 }

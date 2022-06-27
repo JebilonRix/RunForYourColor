@@ -12,4 +12,155 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65292ce6b22b6847aae31c2cbec178e, type: 3}
   m_Name: Holder1
   m_EditorClassIdentifier: 
-  _objAndLocList: []
+  _objAndLocList:
+  - pooledObject: {fileID: 11400000, guid: c375547a290911e4b8f2d2f88706b2a2, type: 2}
+    locations:
+    - _position: {x: 10, y: 15.17, z: 67.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 8, y: 15.17, z: 67.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -10, y: 15.17, z: 67.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -6, y: 15, z: 69.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -4, y: 15, z: 69.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -2, y: 15, z: 69.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 0, y: 15, z: 69.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 2, y: 15, z: 69.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 4, y: 15, z: 69.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -8, y: 15.17, z: 67.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 6, y: 15, z: 69.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 10, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 8, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 6, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 2, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 1, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 0, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -6, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -8, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -10, y: 10, z: 50}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -1.94, y: 10.65, z: 25.33}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -1.94, y: 10.65, z: 23.73}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -0.55, y: 10.65, z: 23.73}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -0.55, y: 10.65, z: 25.3}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 1.02, y: 10.65, z: 25.3}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 1.02, y: 10.65, z: 23.57}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: 1.02, y: 10.65, z: 21.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -0.5, y: 10.65, z: 21.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -1.9654291, y: 10.65, z: 21.99}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+  - pooledObject: {fileID: 11400000, guid: 2a0de45ddf6ea654ba5412864c40cb97, type: 2}
+    locations:
+    - _position: {x: 6, y: 8.95, z: 37.54}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 3, y: 1, z: 3}
+    - _position: {x: 0, y: 8.95, z: 37.54}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 3, y: 1, z: 3}
+    - _position: {x: -6, y: 8.95, z: 37.54}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 3, y: 1, z: 3}
+    - _position: {x: -6, y: 8.95, z: 0}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 3, y: 1, z: 3}
+    - _position: {x: 0, y: 8.95, z: 0}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 3, y: 1, z: 3}
+    - _position: {x: 6, y: 8.95, z: 0}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 3, y: 1, z: 3}
+  - pooledObject: {fileID: 11400000, guid: 4bc997e9972ecd24db0bfb63446fd2d4, type: 2}
+    locations:
+    - _position: {x: 0, y: -50, z: 130.7}
+      _rotation: {x: -0, y: 0, z: 0}
+      _scale: {x: 5000, y: 0.1, z: 5000}
+  - pooledObject: {fileID: 11400000, guid: 1c7bc9d428e7f5840a91b7f0376a6ae7, type: 2}
+    locations:
+    - _position: {x: 3.22, y: 7.03, z: 110.77826}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+  - pooledObject: {fileID: 11400000, guid: b6e5e5c4f7b971141a639dfea5b1907b, type: 2}
+    locations:
+    - _position: {x: -7.06, y: 10.05, z: 27.98}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+    - _position: {x: -7.181348, y: 10.05, z: 26.05}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+  - pooledObject: {fileID: 11400000, guid: bad95e5290e1aee4a8a89864ef2e1f26, type: 2}
+    locations:
+    - _position: {x: 10.61, y: 11.6, z: 34.45513}
+      _rotation: {x: -0, y: -0, z: -0}
+      _scale: {x: 1, y: 1, z: 1}
+  - pooledObject: {fileID: 11400000, guid: 3340d7b409e1ef0408fac3e127bbe3ad, type: 2}
+    locations:
+    - _position: {x: 0, y: -5.3, z: 102.7}
+      _rotation: {x: -0, y: 0, z: 0}
+      _scale: {x: 5, y: 1, z: 5}
+    - _position: {x: 0, y: 0, z: 30.5}
+      _rotation: {x: -0, y: 0, z: 0}
+      _scale: {x: 5, y: 1, z: 5}
+    - _position: {x: 0, y: 0, z: 0}
+      _rotation: {x: -0, y: 0, z: 0}
+      _scale: {x: 5, y: 1, z: 5}
+  - pooledObject: {fileID: 11400000, guid: 4418390cee7ea3c4c83bb47bff6d2370, type: 2}
+    locations:
+    - _position: {x: -0, y: 0, z: 72.88}
+      _rotation: {x: -0, y: 90, z: 0}
+      _scale: {x: 1, y: 1.3379, z: 6.5767665}
+    - _position: {x: 0, y: 0, z: 64.07}
+      _rotation: {x: 0, y: 270, z: 0}
+      _scale: {x: 1, y: 1.3379, z: 6.5767665}
