@@ -360,7 +360,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 83d86cbc7d15a6d4db951f6e0f4a837e, type: 2}
+  - {fileID: 2100000, guid: 8fe042326b3c7884dae2f0a016a57333, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -681,7 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4193f128eddc54fa395e6813e81d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 4825874170761302289}
   _isPlayer: 1
   _climbTag: ClimbPoint
   _wallTag: Wall

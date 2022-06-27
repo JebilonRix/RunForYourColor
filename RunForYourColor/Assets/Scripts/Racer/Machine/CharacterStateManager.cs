@@ -18,6 +18,7 @@ namespace RedPanda.StateMachine
         public CharacterJumpState JumpState = new CharacterJumpState();
         public CharacterClimbState ClimbState = new CharacterClimbState();
         public CharacterFallState FallState = new CharacterFallState();
+        public CharacterFallToRunState FallToRunState = new CharacterFallToRunState();
         #endregion State
 
         [Header("Basic")]
@@ -47,6 +48,7 @@ namespace RedPanda.StateMachine
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
+        private float _lastFrameFingerPositionY = 0;
         #endregion Fields
 
         #region Properties
@@ -60,6 +62,7 @@ namespace RedPanda.StateMachine
         public float GroundOffSet { get => _groundOffSet; }
         public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
         public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
+        public Animator Animator { get => _animator; private set => _animator = value; }
         #endregion Properties
 
         #region Unity Methods
@@ -73,9 +76,9 @@ namespace RedPanda.StateMachine
             {
                 _meshRenderer = GetComponent<MeshRenderer>();
             }
-            if (_animator == null)
+            if (Animator == null)
             {
-                _animator = GetComponent<Animator>();
+                Animator = GetComponent<Animator>();
             }
 
             gameObject.tag = "Racer";
@@ -110,8 +113,7 @@ namespace RedPanda.StateMachine
             transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
-            Debug.Log(currentState);
-            Debug.Log(Rb.velocity.y);
+            // Debug.Log(currentState);
         }
         #endregion Unity Methods
 
@@ -127,6 +129,26 @@ namespace RedPanda.StateMachine
             //Enter new state
             CurrentState = state;
             CurrentState.EnterState(this);
+        }
+        public void JumpInput()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _lastFrameFingerPositionY = Input.mousePosition.y;
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                float _moveFactorY = Input.mousePosition.y - _lastFrameFingerPositionY;
+
+                if (MinDistanceForJumpInput <= _moveFactorY)
+                {
+                    SwitchState(JumpState);
+                }
+            }
+            else
+            {
+                _lastFrameFingerPositionY = 0f;
+            }
         }
         public void WallCheck()
         {
@@ -147,18 +169,12 @@ namespace RedPanda.StateMachine
         }
         public void GroundCheck()
         {
-            if (Physics.Raycast(new Ray(transform.position, Vector3.down), out RaycastHit _hit))
+            if (Physics.Raycast(new Ray(transform.position, Vector3.down), out RaycastHit _groundHit))
             {
-                if (_hit.collider.CompareTag(GroundTag) || _hit.collider.CompareTag(_wallTag))
+                if (_groundHit.collider.CompareTag(GroundTag) && _groundHit.distance <= GroundOffSet)
                 {
-                    if (Rb.velocity.y < -0.1f)
-                    {
-                        SwitchState(FallState);
-                    }
-                    else if (Rb.velocity.y > 0.1f)
-                    {
-                        SwitchState(JumpState);
-                    }
+                    Debug.Log("offset is enough");
+                    SwitchState(FallToRunState);
                 }
             }
         }
@@ -166,23 +182,27 @@ namespace RedPanda.StateMachine
         {
             if (currentState == IdleState)
             {
-                _animator.Play("Idle", 0);
+                Animator.Play("Idle", 0);
             }
             else if (currentState == RunState)
             {
-                _animator.Play("Run", 0);
+                Animator.Play("Run", 0);
             }
             else if (currentState == JumpState)
             {
-                _animator.Play("Jump", 0);
+                Animator.Play("Jump", 0);
             }
             else if (currentState == FallState)
             {
-                _animator.Play("Fall", 0);
+                Animator.Play("Fall", 0);
             }
             else if (currentState == ClimbState)
             {
-                _animator.Play("Climb", 0);
+                Animator.Play("Climb", 0);
+            }
+            else if (currentState == FallToRunState)
+            {
+                Animator.Play("FallToRun", 0);
             }
         }
         public void ChangeColor(string colorTypes)

@@ -1,4 +1,5 @@
 using RedPanda.StateMachine;
+using UnityEngine;
 
 public class CharacterFallState : CharacterBaseState
 {
@@ -13,7 +14,15 @@ public class CharacterFallState : CharacterBaseState
     {
         manager.GoForward();
         manager.WallCheck();
-        manager.GroundCheck();
+
+        if (Physics.Raycast(new Ray(manager.transform.position, Vector3.down), out RaycastHit _groundHit))
+        {
+            if (_groundHit.collider.CompareTag(manager.GroundTag) && _groundHit.distance <= manager.GroundOffSet)
+            {
+                Debug.Log("offset is enough");
+                manager.SwitchState(manager.FallToRunState);
+            }
+        }
     }
     public override void ExitState(CharacterStateManager manager)
     {

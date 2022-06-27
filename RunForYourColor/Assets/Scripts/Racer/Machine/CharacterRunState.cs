@@ -1,11 +1,7 @@
-using UnityEngine;
-
 namespace RedPanda.StateMachine
 {
     public class CharacterRunState : CharacterBaseState
     {
-        private float _lastFrameFingerPositionY = 0;
-
         public override void EnterState(CharacterStateManager manager)
         {
             manager.Rb.useGravity = true;
@@ -13,33 +9,20 @@ namespace RedPanda.StateMachine
         }
         public override void UpdateState(CharacterStateManager manager)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                _lastFrameFingerPositionY = Input.mousePosition.y;
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                float _moveFactorY = Input.mousePosition.y - _lastFrameFingerPositionY;
-
-                if (manager.MinDistanceForJumpInput <= _moveFactorY)
-                {
-                    manager.SwitchState(manager.JumpState);
-                }
-            }
-            else
-            {
-                _lastFrameFingerPositionY = 0f;
-            }
+            manager.JumpInput();
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {
             manager.GoForward();
             manager.WallCheck();
-            manager.GroundCheck();
+
+            if (manager.Rb.velocity.y < -0.1f)
+            {
+                manager.SwitchState(manager.FallState);
+            }
         }
         public override void ExitState(CharacterStateManager manager)
         {
-            _lastFrameFingerPositionY = 0f;
         }
     }
 }
