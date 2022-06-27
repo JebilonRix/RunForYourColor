@@ -85,7 +85,11 @@ namespace RedPanda.StateMachine
 
             gameObject.tag = "Racer";
         }
-        private void Start() => SwitchState(IdleState);
+        private void Start()
+        {
+            SwitchState(IdleState);
+            SetMass(true);
+        }
         private void FixedUpdate() => CurrentState.FixedUpdateState(this);
         private void Update()
         {
@@ -129,6 +133,10 @@ namespace RedPanda.StateMachine
             //Enter new state
             CurrentState = state;
             CurrentState.EnterState(this);
+        }
+        public void SetMass(bool isDefault)
+        {
+            Rb.mass = isDefault ? 2f : 30f;
         }
         public void JumpInput()
         {

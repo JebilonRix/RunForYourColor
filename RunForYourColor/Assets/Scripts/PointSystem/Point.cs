@@ -19,6 +19,11 @@ namespace RedPanda.PointSystem
         [SerializeField] protected string _colorType = "blue";
         [SerializeField] protected float _speedAddAmount = 1f;
 
+        [Header("Colors")]
+        [SerializeField] private Material blueMaterial;
+        [SerializeField] private Material redMaterial;
+        [SerializeField] private Material yellowMaterial;
+
         protected SortingUI _sortingUI;
         protected RandomLine _randomLine;
         protected CharacterStateManager _stateManager;
@@ -41,6 +46,27 @@ namespace RedPanda.PointSystem
         #endregion Unity Methods
 
         #region Public Methods
+        public void SetColor()
+        {
+            var renderer = GetComponent<MeshRenderer>();
+
+            Material material = renderer.materials[0];
+
+            if (_colorType == "blue")
+            {
+                material = blueMaterial;
+            }
+            else if (_colorType == "red")
+            {
+                material = redMaterial;
+            }
+            else if (_colorType == "yellow")
+            {
+                material = yellowMaterial;
+            }
+
+            renderer.material = material;
+        }
         public void OnStart()
         {
         }

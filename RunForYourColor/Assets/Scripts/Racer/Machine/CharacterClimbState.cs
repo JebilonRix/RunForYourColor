@@ -8,6 +8,7 @@ namespace RedPanda.StateMachine
         {
             manager.Rb.useGravity = false;
             manager.AnimHandler(this);
+            manager.SetMass(true);
         }
         public override void UpdateState(CharacterStateManager manager)
         {
@@ -20,6 +21,7 @@ namespace RedPanda.StateMachine
         public override void ExitState(CharacterStateManager manager)
         {
             manager.Rb.useGravity = true;
+            manager.SetMass(false);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace RedPanda.StateMachine
 
             _time += Time.deltaTime;
 
-            if (_time >= manager.falToRunClip.length / 2)
+            if (_time >= manager.Animator.GetCurrentAnimatorClipInfo(0).Length / 2f)
             {
                 manager.SwitchState(manager.RunState);
             }
