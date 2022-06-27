@@ -25,11 +25,13 @@ namespace RedPanda.PointSystem
 
                 if (_colorType == racer.ColorType)
                 {
-                    SpeedChange(racer, 1);
+                    racer.Speed += 5;
+                    // SpeedChange(racer, 1);
                 }
                 else
                 {
-                    SpeedChange(racer, -1);
+                    racer.Speed -= 5;
+                    //SpeedChange(racer, -1);
                 }
             }
         }

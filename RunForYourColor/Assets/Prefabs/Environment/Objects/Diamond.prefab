@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 1cf063e17f1134141b8d5949b5e893e4, type: 3}
+  - {fileID: 2100000, guid: 63319072d883abe4a84d090294d68083, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c32e0efe82bd4479eb43e654229d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tag: Racer
   _collectableValue: 1
-  <PooledObject>k__BackingField: {fileID: 11400000, guid: c375547a290911e4b8f2d2f88706b2a2, type: 2}
 --- !u!114 &-2066177890940221711
 MonoBehaviour:
   m_ObjectHideFlags: 0
