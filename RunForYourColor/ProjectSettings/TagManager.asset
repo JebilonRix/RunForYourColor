@@ -7,7 +7,6 @@ TagManager:
   - Racer
   - Ground
   - Wall
-  - ClimbPoint
   - DeadPoint
   layers:
   - Default
@@ -17,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Points
-  - 
-  - 
+  - Wall
+  - DeadPoint
   - 
   - 
   - 

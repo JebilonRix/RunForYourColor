@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7144535587077603677}
   - component: {fileID: 7144535587077603675}
   - component: {fileID: 7144535587077603674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeadPoint
   m_TagString: DeadPoint
   m_Icon: {fileID: 0}

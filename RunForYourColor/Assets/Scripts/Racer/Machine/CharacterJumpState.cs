@@ -27,7 +27,18 @@ namespace RedPanda.StateMachine
         public override void FixedUpdateState(CharacterStateManager manager)
         {
             manager.GoForward(); //Makes it go forward.
-            manager.WallCheck(); //Checks is there a wall.
+
+            //Karþýda duvar var mý?
+            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.forward), out RaycastHit _wallHit, 2f, manager._whatIsWall))
+            {
+                if (_wallHit.transform)
+                {
+                    if (_wallHit.distance < manager._wallOffset)
+                    {
+                        manager.SwitchState(manager.ClimbState);
+                    }
+                }
+            }
 
             //Apply jump force once to object.
             if (_isJumping)

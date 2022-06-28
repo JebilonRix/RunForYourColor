@@ -6,7 +6,7 @@ namespace RedPanda.StateMachine
     {
         public override void EnterState(CharacterStateManager manager)
         {
-            Debug.Log("run state");
+            // Debug.Log("run state");
             manager.AnimHandler(this); //Sets anim.
         }
         public override void UpdateState(CharacterStateManager manager)
@@ -28,18 +28,40 @@ namespace RedPanda.StateMachine
                     manager.FallTime += 0.1f;
                 }
             }
-
-            if (manager.FallTime > 0.5f)
-            {
-                manager.SwitchState(manager.FallState);
-            }
-
-            //Debug.Log(manager.FallTime);
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {
             manager.GoForward(); //Makes it go forward.
-            manager.WallCheck(); //Checks is there a wall.
+
+            //Karþýda duvar var mý?
+            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.forward), out RaycastHit _wallHit, 2f, manager._whatIsWall))
+            {
+                if (!_wallHit.transform)
+                {
+                    return;
+                }
+
+                if (_wallHit.distance < manager._wallOffset)
+                {
+                    manager.SwitchState(manager.ClimbState);
+                    return;
+                }
+            }
+
+            //Altýnda bir þey var mý?
+            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.down), out RaycastHit _groundHit, Mathf.Infinity, manager._whatIsWall))
+            {
+                if (!_groundHit.transform)
+                {
+                    return;
+                }
+
+                if (_groundHit.distance > manager.GroundOffSet)
+                {
+                    manager.SwitchState(manager.FallState);
+                    return;
+                }
+            }
         }
         public override void ExitState(CharacterStateManager manager)
         {

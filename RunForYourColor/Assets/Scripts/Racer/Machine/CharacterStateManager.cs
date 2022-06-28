@@ -28,7 +28,7 @@ namespace RedPanda.StateMachine
         [Header("Climbing")]
         [SerializeField] private string _climbTag = "ClimbPoint";
         [SerializeField] private string _wallTag = "Wall";
-        [SerializeField] private float _wallOffset = 1f;
+        public float _wallOffset = 1f;
 
         [Header("Horizontal Movement")]
         [SerializeField] private float _speed = 15f;
@@ -51,6 +51,8 @@ namespace RedPanda.StateMachine
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
+
+        public LayerMask _whatIsWall;
         #endregion Fields
 
         #region Properties
@@ -114,6 +116,8 @@ namespace RedPanda.StateMachine
             {
                 transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             }
+
+            // Debug.Log(currentState);
         }
         #endregion Unity Methods
 
@@ -132,6 +136,11 @@ namespace RedPanda.StateMachine
         }
         public void JumpInput()
         {
+            if (!IsPlayer)
+            {
+                return;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 _lastFrameFingerPositionY = Input.mousePosition.y;
@@ -142,25 +151,6 @@ namespace RedPanda.StateMachine
                 {
                     _lastFrameFingerPositionY = 0f;
                     SwitchState(JumpState);
-                }
-            }
-        }
-        public void WallCheck()
-        {
-            if (Physics.Raycast(new Ray(transform.position, Vector3.forward), out RaycastHit _wallHit))
-            {
-                if (_wallHit.distance > _wallOffset)
-                {
-                    return;
-                }
-
-                if (_wallHit.collider.CompareTag(_wallTag))
-                {
-                    SwitchState(ClimbState);
-                }
-                else if (_wallHit.collider.CompareTag(_climbTag))
-                {
-                    SwitchState(RunState);
                 }
             }
         }

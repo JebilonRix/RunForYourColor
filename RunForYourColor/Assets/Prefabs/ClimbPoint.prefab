@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7105012362937552453}
   - component: {fileID: 516345774293204867}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClimbPoint
   m_TagString: ClimbPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7105012362937552453
 Transform:
@@ -42,5 +42,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.879558, y: 2.0167627, z: 1}
-  m_Center: {x: 0, y: -1.1474257, z: 0}
+  m_Size: {x: 4.879558, y: 2.0167627, z: 0.30784526}
+  m_Center: {x: 0, y: -1.1474257, z: -0.120448284}
