@@ -8,28 +8,30 @@ namespace RedPanda.StateMachine
 
         public override void EnterState(CharacterStateManager manager)
         {
-            manager.AnimHandler(this);
-
-            Debug.Log("CharacterFallToRunState enter");
+            manager.AnimHandler(this); //Sets anim.
         }
         public override void UpdateState(CharacterStateManager manager)
         {
-            manager.JumpInput();
+            manager.JumpInput(); //This line checks if there is jump input.
 
-            _time += Time.deltaTime;
-
+            //Checks end of animation for to enter run state
             if (_time >= manager.Animator.GetCurrentAnimatorClipInfo(0).Length / 2f)
             {
+                _time = 0;
                 manager.SwitchState(manager.RunState);
+            }
+            else
+            {
+                _time += Time.deltaTime;
             }
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {
-            manager.GoForward();
+            manager.GoForward(); //Makes it go forward.
         }
         public override void ExitState(CharacterStateManager manager)
         {
-            _time = 0;
+            _time = 0; //Resets value
         }
     }
 }

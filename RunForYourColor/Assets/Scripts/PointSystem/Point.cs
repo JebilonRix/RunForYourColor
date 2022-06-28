@@ -47,6 +47,11 @@ namespace RedPanda.PointSystem
         #region Private Methods
         protected void SortInTrigger()
         {
+            if (!_stateManager.IsPlayer)
+            {
+                return;
+            }
+
             if (_sortingUI == null)
             {
                 _sortingUI = FindObjectOfType<SortingUI>();

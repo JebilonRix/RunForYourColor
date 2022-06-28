@@ -40,29 +40,33 @@ namespace RedPanda.StateMachine
         [SerializeField] private string _groundTag = "Ground";
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
+        [SerializeField] private float _speedLimit = 7.5f;
 
-        private Animator _animator;
         private float _lastFrameFingerPositionX = 0;
         private float _lastFrameFingerPositionY = 0;
+        private float fallTime;
         private float _moveFactorX = 0;
         private bool _startRun = false;
+        private Animator _animator;
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
         #endregion Fields
 
         #region Properties
-        public Rigidbody Rb { get => _rb; private set => _rb = value; }
         public bool StartRun { get => _startRun; set => _startRun = value; }
         public bool IsPlayer { get => _isPlayer; }
-        public string ColorType { get => _colorType; set => _colorType = value; }
-        public string GroundTag { get => _groundTag; }
         public float Speed { get => _speed; set => _speed = value; }
         public float JumpForce { get => _jumpForce; }
         public float GroundOffSet { get => _groundOffSet; }
         public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
-        public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
+        public string ColorType { get => _colorType; set => _colorType = value; }
+        public string GroundTag { get => _groundTag; }
         public Animator Animator { get => _animator; private set => _animator = value; }
+        public Rigidbody Rb { get => _rb; private set => _rb = value; }
+        public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
+        public float SpeedLimit { get => _speedLimit; }
+        public float FallTime { get => fallTime; set => fallTime = value; }
         #endregion Properties
 
         #region Unity Methods
@@ -83,10 +87,7 @@ namespace RedPanda.StateMachine
 
             gameObject.tag = "Racer";
         }
-        private void Start()
-        {
-            SwitchState(IdleState);
-        }
+        private void Start() => SwitchState(IdleState);
         private void FixedUpdate() => CurrentState.FixedUpdateState(this);
         private void Update()
         {
@@ -108,10 +109,6 @@ namespace RedPanda.StateMachine
                     _moveFactorX = 0f;
                 }
             }
-            //else
-            //{
-            //    //ToDo: add ai here
-            //}
 
             if (_moveFactorX != 0f)
             {
@@ -152,13 +149,13 @@ namespace RedPanda.StateMachine
         {
             if (Physics.Raycast(new Ray(transform.position, Vector3.forward), out RaycastHit _wallHit))
             {
+                if (_wallHit.distance > _wallOffset)
+                {
+                    return;
+                }
+
                 if (_wallHit.collider.CompareTag(_wallTag))
                 {
-                    if (_wallHit.distance > _wallOffset)
-                    {
-                        return;
-                    }
-
                     SwitchState(ClimbState);
                 }
                 else if (_wallHit.collider.CompareTag(_climbTag))
@@ -195,12 +192,10 @@ namespace RedPanda.StateMachine
             }
         }
         public void StartRace() => StartRun = true;
-        public void SetCheckPoint(Transform checkPoint) => _lastCheckPoint = checkPoint;
         public void UpdateSpeed(float amount) => _speed += amount;
-        public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);
+        public void GoForward() => Rb.velocity = new Vector3(0, Rb.velocity.y, Speed);
+        public void SetCheckPoint(Transform checkPoint) => _lastCheckPoint = checkPoint;
         public void ToRespawn() => StartCoroutine(Respawn());
-        public void SetMass(bool isDefault) => Rb.mass = isDefault ? 1f : 15f;
-
         #endregion Public Methods
 
         #region Private Methods
@@ -208,32 +203,10 @@ namespace RedPanda.StateMachine
         {
             transform.position = _lastCheckPoint.transform.position;
 
-            SwitchState(IdleState);
-
             yield return new WaitForSeconds(_respawnTime);
 
             SwitchState(RunState);
         }
         #endregion Private Methods
-
-        //public void ChangeColor(string colorTypes)
-        //{
-        //    switch (colorTypes.ToLower())
-        //    {
-        //        case "blue":
-        //            _meshRenderer.material.color = Color.blue;
-        //            break;
-
-        //        case "red":
-        //            _meshRenderer.material.color = Color.red;
-        //            break;
-
-        //        case "yellow":
-        //            _meshRenderer.material.color = Color.yellow;
-        //            break;
-        //    }
-
-        //    ColorType = colorTypes;
-        //}
     }
 }

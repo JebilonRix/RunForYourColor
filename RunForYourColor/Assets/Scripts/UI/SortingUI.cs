@@ -22,7 +22,6 @@ namespace RedPanda.UI
         private void Start()
         {
             var racers = FindObjectsOfType<CharacterStateManager>();
-            var rac = new GameObject[] { _racer1, _racer2 };
 
             foreach (var item in racers)
             {
@@ -43,24 +42,10 @@ namespace RedPanda.UI
                 }
             }
 
-            //if (_player == null || _racer1 == null || _racer2 == null)
-            //{
-            //    for (int i = 0; i < racers.Length; i++)
-            //    {
-            //        if (racers[i].IsPlayer)
-            //        {
-            //            _player = racers[i].gameObject;
-            //        }
-
-            //        for (int j = 0; j < rac.Length; j++)
-            //        {
-            //            if (!racers[i].IsPlayer)
-            //            {
-            //                rac[j] = racers[i].gameObject;
-            //            }
-            //        }
-            //    }
-            //}
+            if (_playerSort != null)
+            {
+                _playerSort.gameObject.SetActive(true);
+            }
         }
 
         #region Public Methods

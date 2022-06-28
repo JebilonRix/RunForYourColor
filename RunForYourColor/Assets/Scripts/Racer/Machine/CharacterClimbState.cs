@@ -6,24 +6,20 @@ namespace RedPanda.StateMachine
     {
         public override void EnterState(CharacterStateManager manager)
         {
-            manager.Rb.useGravity = false;
-            manager.AnimHandler(this);
-            manager.SetMass(true);
-
-            Debug.Log("CharacterClimbState enter");
+            manager.Rb.useGravity = false; //deactivates gravity to climbing easily.
+            manager.AnimHandler(this); //Sets anim.
         }
         public override void UpdateState(CharacterStateManager manager)
         {
         }
         public override void FixedUpdateState(CharacterStateManager manager)
         {
-            manager.Rb.velocity = new Vector3(0, manager.Speed, 0);
-            manager.WallCheck();
+            manager.WallCheck(); //Checks is there a wall.
+            manager.Rb.velocity = new Vector3(0, manager.Speed, 0); //climbing logic.
         }
         public override void ExitState(CharacterStateManager manager)
         {
-            manager.Rb.useGravity = true;
-            manager.SetMass(false);
+            manager.Rb.useGravity = true; //activates gravity to climbing easily.
         }
     }
 }
