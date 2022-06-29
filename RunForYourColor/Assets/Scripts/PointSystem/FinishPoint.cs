@@ -24,24 +24,28 @@ namespace RedPanda.PointSystem
 
             if (other.CompareTag(_racerTag))
             {
-                StartCoroutine(ToZero(other));
-                _sortingUI.Sort();
+                var character = other.GetComponent<CharacterStateManager>();
 
-                if (other.GetComponent<CharacterStateManager>().IsPlayer)
+                character.AnimHandler("Victory");
+                StartCoroutine(ToZero(character));
+
+                if (character.IsPlayer)
                 {
                     WriteRandomLine(PointType.Finish);
                 }
+
+                _sortingUI.Sort();
+                _sortingUI.FinishUi.SetActive(true);
             }
         }
         #endregion Unity Methods
 
         #region Private Methods
-        private IEnumerator ToZero(Collider other)
+        private IEnumerator ToZero(CharacterStateManager chr)
         {
             yield return new WaitForSeconds(0.2f);
-            var character = other.GetComponent<CharacterStateManager>();
-            character.Speed = 0;
-            character.SwitchState(character.IdleState);
+
+            chr.Speed = 0;
         }
         #endregion Private Methods
     }

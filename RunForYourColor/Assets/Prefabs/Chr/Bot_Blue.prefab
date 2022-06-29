@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1776863983264201579
+--- !u!1001 &1887440363724702996
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: _colorType
-      value: yellow
+      value: blue
       objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: _groundOffSet
@@ -35,13 +35,17 @@ PrefabInstance:
       propertyPath: _horizontalSpeed
       value: 0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
+      propertyPath: _whatIsWall.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302292, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Height
-      value: 3.4812422
+      value: 3.0375395
       objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302292, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Center.y
-      value: 1.2406211
+      value: 1.4624724
       objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302294, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Constraints
@@ -105,26 +109,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5636707025650472544, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Name
-      value: Bot_1 Variant
+      value: Bot
       objectReference: {fileID: 0}
     - target: {fileID: 7394091123896775163, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d03567a98c9729c49998c7534c36b817, type: 2}
+      objectReference: {fileID: 2100000, guid: 8fe042326b3c7884dae2f0a016a57333, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
---- !u!1 &6237814565216562443 stripped
+--- !u!1 &6055109689393533812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5636707025650472544, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
-  m_PrefabInstance: {fileID: 1776863983264201579}
+  m_PrefabInstance: {fileID: 1887440363724702996}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1846123048
+--- !u!114 &1388329054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6237814565216562443}
+  m_GameObject: {fileID: 6055109689393533812}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 224ad61308ac910488534a67a565169a, type: 3}

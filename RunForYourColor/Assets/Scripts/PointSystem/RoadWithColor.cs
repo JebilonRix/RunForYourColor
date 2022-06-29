@@ -1,3 +1,4 @@
+using RedPanda.StateMachine;
 using UnityEngine;
 
 namespace RedPanda.PointSystem
@@ -11,14 +12,14 @@ namespace RedPanda.PointSystem
         {
             if (other.CompareTag(_racerTag))
             {
-                SpeedChange(_stateManager, _speedChange);
+                SpeedChange(other.GetComponent<CharacterStateManager>(), _speedChange);
             }
         }
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag(_racerTag))
             {
-                SpeedChange(_stateManager, -_speedChange);
+                SpeedChange(other.GetComponent<CharacterStateManager>(), -_speedChange);
             }
         }
         #endregion Unity Methods

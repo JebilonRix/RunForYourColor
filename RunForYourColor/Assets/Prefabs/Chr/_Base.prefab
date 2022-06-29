@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 4825874170761302291}
   - component: {fileID: 1891435667}
   m_Layer: 0
-  m_Name: Character Rig
+  m_Name: _Base
   m_TagString: Racer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,4 +1,3 @@
-using RedPanda.ObjectPooling;
 using RedPanda.StateMachine;
 using RedPanda.UI;
 using UnityEngine;
@@ -7,7 +6,7 @@ namespace RedPanda.PointSystem
 {
     [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(MeshRenderer))]
-    public abstract class Point : MonoBehaviour, IPooled
+    public abstract class Point : MonoBehaviour
     {
         #region Fields
         [SerializeField] private PointType _type;
@@ -19,11 +18,7 @@ namespace RedPanda.PointSystem
         protected RandomLine _randomLine;
         protected CharacterStateManager _stateManager;
 
-        #region Properties
-        [field: SerializeField] public SO_PooledObject PooledObject { get; set; }
         public PointType pointType { get => _type; private set => _type = value; }
-        #endregion Properties
-
         #endregion Fields
 
         #region Unity Methods
@@ -36,13 +31,6 @@ namespace RedPanda.PointSystem
             }
         }
         #endregion Unity Methods
-
-        #region Public Methods
-        public void OnStart()
-        {
-        }
-        public void OnRelease() => PooledObject.RelaseObjectToPool();
-        #endregion Public Methods
 
         #region Private Methods
         protected void SortInTrigger()
@@ -61,7 +49,7 @@ namespace RedPanda.PointSystem
         }
         protected void SpeedChange(CharacterStateManager character, float speedAmount)
         {
-            if (character.ColorType == _colorType)
+            if (character.ColorType.ToLower() == _colorType.ToLower())
             {
                 character.UpdateSpeed(speedAmount);
             }

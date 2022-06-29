@@ -26,7 +26,6 @@ namespace RedPanda.StateMachine
         [SerializeField] private string _colorType = "blue";
 
         [Header("Climbing")]
-        [SerializeField] private string _climbTag = "ClimbPoint";
         [SerializeField] private string _wallTag = "Wall";
         public float _wallOffset = 1f;
 
@@ -37,7 +36,6 @@ namespace RedPanda.StateMachine
 
         [Header("Vertical Movement")]
         [SerializeField] private float _jumpForce = 10;
-        [SerializeField] private string _groundTag = "Ground";
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
         [SerializeField] private float _speedLimit = 7.5f;
@@ -62,8 +60,7 @@ namespace RedPanda.StateMachine
         public float JumpForce { get => _jumpForce; }
         public float GroundOffSet { get => _groundOffSet; }
         public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
-        public string ColorType { get => _colorType; set => _colorType = value; }
-        public string GroundTag { get => _groundTag; }
+        public string ColorType { get => _colorType; }
         public Animator Animator { get => _animator; private set => _animator = value; }
         public Rigidbody Rb { get => _rb; private set => _rb = value; }
         public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
@@ -116,8 +113,6 @@ namespace RedPanda.StateMachine
             {
                 transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             }
-
-            // Debug.Log(currentState);
         }
         #endregion Unity Methods
 
@@ -180,6 +175,11 @@ namespace RedPanda.StateMachine
             {
                 Animator.Play("FallToRun", 0);
             }
+        }
+        public void AnimHandler(string animName)
+        {
+            AnimHandler(IdleState);
+            Animator.Play(animName, 0);
         }
         public void StartRace() => StartRun = true;
         public void UpdateSpeed(float amount) => _speed += amount;

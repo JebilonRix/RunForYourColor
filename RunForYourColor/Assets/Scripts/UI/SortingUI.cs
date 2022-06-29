@@ -13,10 +13,13 @@ namespace RedPanda.UI
         [SerializeField] private GameObject _racer1;
         [SerializeField] private GameObject _racer2;
         [SerializeField] private Text _playerSort;
+        [SerializeField] private GameObject _finishUi;
 
         private float _playerScore;
         private float _racer1Score;
         private float _racer2Score;
+
+        public GameObject FinishUi { get => _finishUi; }
         #endregion Fields
 
         private void Start()
