@@ -15,7 +15,7 @@ public class CharacterFallState : CharacterBaseState
         _timer += Time.deltaTime;
         _animDelay += Time.deltaTime;
 
-        if (_animDelay >= 0.5f && !_isAnimPlayed)
+        if (_animDelay >= 0.1f && !_isAnimPlayed)
         {
             manager.AnimHandler(this); //Sets anim.
             _isAnimPlayed = true;
