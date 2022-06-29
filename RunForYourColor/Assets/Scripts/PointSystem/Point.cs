@@ -58,33 +58,6 @@ namespace RedPanda.PointSystem
                 character.UpdateSpeed(-speedAmount);
             }
         }
-        protected void WriteRandomLine(PointType pointType)
-        {
-            if (_randomLine == null)
-            {
-                _randomLine = FindObjectOfType<RandomLine>();
-            }
-
-            string[] lines = new string[0];
-
-            switch (pointType)
-            {
-                case PointType.Check:
-
-                    lines = new string[] { "Awesome", "Perfect", "Great" };
-                    break;
-
-                case PointType.Finish:
-                    lines = new string[] { "Expert Parkourer", "Master Of Parkour", "Master Of Sky" };
-                    break;
-
-                case PointType.Dead:
-                    lines = new string[] { "Oops" };
-                    break;
-            }
-
-            _randomLine.TextAnimation(lines[Random.Range(0, lines.Length)]);
-        }
         #endregion Private Methods
     }
 }

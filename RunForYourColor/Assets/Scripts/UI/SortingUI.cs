@@ -93,19 +93,19 @@ namespace RedPanda.UI
 
             if (_playerScore < _racer1Score && _playerScore < _racer2Score)
             {
-                _sortImage.overrideSprite = _sortingHolder._sprites[0];
+                _sortImage.overrideSprite = _sortingHolder.sprites[0];
             }
             else if (_playerScore < _racer1Score && _playerScore > _racer2Score)
             {
-                _sortImage.overrideSprite = _sortingHolder._sprites[1];
+                _sortImage.overrideSprite = _sortingHolder.sprites[1];
             }
             else if (_playerScore > _racer1Score && _playerScore < _racer2Score)
             {
-                _sortImage.overrideSprite = _sortingHolder._sprites[1];
+                _sortImage.overrideSprite = _sortingHolder.sprites[1];
             }
             else if (_playerScore > _racer1Score && _playerScore > _racer2Score)
             {
-                _sortImage.overrideSprite = _sortingHolder._sprites[2];
+                _sortImage.overrideSprite = _sortingHolder.sprites[2];
             }
         }
         public void FindFinishPoint(GameObject finishPoint)

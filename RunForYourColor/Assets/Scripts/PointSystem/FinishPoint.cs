@@ -7,6 +7,8 @@ namespace RedPanda.PointSystem
 {
     public class FinishPoint : Point
     {
+        [SerializeField] private RandomLine randomLine;
+
         #region Unity Methods
         private void OnEnable()
         {
@@ -24,6 +26,20 @@ namespace RedPanda.PointSystem
 
             if (other.CompareTag(_racerTag))
             {
+                if (randomLine == null)
+                {
+                    var x = FindObjectsOfType<RandomLine>(true);
+
+                    foreach (var item in x)
+                    {
+                        if (!item.isRandomLine)
+                        {
+                            randomLine = item;
+                            break;
+                        }
+                    }
+                }
+
                 var character = other.GetComponent<CharacterStateManager>();
 
                 character.AnimHandler("Victory");
@@ -31,7 +47,7 @@ namespace RedPanda.PointSystem
 
                 if (character.IsPlayer)
                 {
-                    WriteRandomLine(PointType.Finish);
+                    _randomLine.GetRandomText();
                 }
 
                 _sortingUI.Sort();

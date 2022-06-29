@@ -1,9 +1,12 @@
+using RedPanda.UI;
 using UnityEngine;
 
 namespace RedPanda.PointSystem
 {
     public class CheckPoint : Point
     {
+        [SerializeField] private RandomLine randomLine;
+
         #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {
@@ -11,6 +14,20 @@ namespace RedPanda.PointSystem
 
             if (other.CompareTag(_racerTag))
             {
+                if (randomLine == null)
+                {
+                    var x = FindObjectsOfType<RandomLine>(true);
+
+                    foreach (var item in x)
+                    {
+                        if (item.isRandomLine)
+                        {
+                            randomLine = item;
+                            break;
+                        }
+                    }
+                }
+
                 SortInTrigger();
 
                 _stateManager.SetCheckPoint(transform);
@@ -19,7 +36,7 @@ namespace RedPanda.PointSystem
 
                 if (_stateManager.IsPlayer)
                 {
-                    WriteRandomLine(PointType.Check);
+                    randomLine.GetRandomText();
                 }
             }
         }

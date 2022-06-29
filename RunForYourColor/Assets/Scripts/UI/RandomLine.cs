@@ -7,8 +7,12 @@ namespace RedPanda.UI
     public class RandomLine : MonoBehaviour
     {
         #region Fields
-        [SerializeField] private Text _randomLineText;
+        [SerializeField] private GameObject _randomLine;
+        [SerializeField] private Holder _randomholder;
+        [SerializeField] private Image _image;
         [SerializeField] private float _activeTime = 1f;
+
+        public bool isRandomLine;
         #endregion Fields
 
         #region Unity Methods
@@ -19,18 +23,18 @@ namespace RedPanda.UI
         #endregion Unity Methods
 
         #region Public Methods
-        public void TextAnimation(string text)
+        public void GetRandomText()
         {
-            StartCoroutine(TextAnim(text));
+            StartCoroutine(TextAnim());
         }
         #endregion Public Methods
 
         #region Private Methods
-        private IEnumerator TextAnim(string text)
+        private IEnumerator TextAnim()
         {
             TextActivate(true);
 
-            _randomLineText.text = text;
+            _image.overrideSprite = _randomholder.sprites[Random.Range(0, _randomholder.sprites.Length)];
 
             yield return new WaitForSeconds(_activeTime);
 
@@ -38,7 +42,7 @@ namespace RedPanda.UI
         }
         private void TextActivate(bool active)
         {
-            _randomLineText.gameObject.SetActive(active);
+            _randomLine.SetActive(active);
         }
         #endregion Private Methods
     }

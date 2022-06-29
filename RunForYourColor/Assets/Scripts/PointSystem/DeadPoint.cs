@@ -12,10 +12,9 @@ namespace RedPanda.PointSystem
             {
                 _stateManager.ToRespawn();
 
-                if (_stateManager.IsPlayer)
-                {
-                    WriteRandomLine(PointType.Dead);
-                }
+                //if (_stateManager.IsPlayer)
+                //{
+                //}
             }
         }
     }
