@@ -640,11 +640,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3610761196288386411, guid: fa9cfa203f0fa3944945d4d9515d3be7, type: 3}
       propertyPath: m_Name
-      value: Character Rig Variant
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4132000439685677009, guid: fa9cfa203f0fa3944945d4d9515d3be7, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4132000439685677009, guid: fa9cfa203f0fa3944945d4d9515d3be7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1055,11 +1055,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634524609}
   m_LocalRotation: {x: -0.4707141, y: -0.23512805, z: 0.562313, w: -0.63792413}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 12.5984, y: -0.015339851, z: 11.68544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1714970098}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 120.118, y: -207.203, z: 81.342}
 --- !u!1001 &659197408
 PrefabInstance:
@@ -2789,8 +2789,9 @@ Transform:
   - {fileID: 659197409}
   - {fileID: 1764306184}
   - {fileID: 1304192675}
+  - {fileID: 634524611}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1715535598
 PrefabInstance:
@@ -2870,11 +2871,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6055109689393533812, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
       propertyPath: m_Name
-      value: Bot Variant
+      value: Bot Blue
       objectReference: {fileID: 0}
     - target: {fileID: 6864544124853520846, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6864544124853520846, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3070,11 +3071,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6237814565216562443, guid: b64a929740827984ebf06ce0875e5ba4, type: 3}
       propertyPath: m_Name
-      value: Bot_1 Variant
+      value: Bot Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 6762994732840646577, guid: b64a929740827984ebf06ce0875e5ba4, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6762994732840646577, guid: b64a929740827984ebf06ce0875e5ba4, type: 3}
       propertyPath: m_LocalPosition.x
