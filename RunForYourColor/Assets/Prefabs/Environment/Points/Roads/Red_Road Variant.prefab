@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3176964568607083586, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
       propertyPath: m_Name
-      value: Red_Road
+      value: Red_Road Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3176964568607083586, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
       propertyPath: m_Layer
@@ -41,15 +41,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176964568607083593, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3176964568607083593, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3176964568607083593, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 78.5865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3176964568607083593, guid: 2864aad56d22dfa4baf870a5db8e2270, type: 3}
       propertyPath: m_LocalRotation.w

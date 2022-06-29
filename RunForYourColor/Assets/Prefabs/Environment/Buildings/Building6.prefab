@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2574309660310141391}
   - component: {fileID: 2574309660310141384}
   - component: {fileID: -6610552474898212478}
-  - component: {fileID: -6506651334371454917}
   m_Layer: 7
   m_Name: Building6
   m_TagString: Wall
@@ -98,19 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14.861649, y: 22.366451, z: 15.476411}
   m_Center: {x: 0, y: -1.5362668, z: 0}
---- !u!114 &-6506651334371454917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2574309660310141385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d067c8df4177e94bae8752df94ed56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <PooledObject>k__BackingField: {fileID: 11400000, guid: 0eb1aeee225f8c94880c079ca48f118f, type: 2}
 --- !u!1 &7664647551586443209
 GameObject:
   m_ObjectHideFlags: 0

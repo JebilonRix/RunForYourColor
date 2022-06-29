@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 1913655629074185871}
   - component: {fileID: 3559005485377960954}
   - component: {fileID: 2790668252156640681}
-  - component: {fileID: -575825102924627514}
   m_Layer: 7
   m_Name: Building3
   m_TagString: Wall
@@ -72,7 +71,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4711962864275720594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.172063, y: 14.890448, z: 27.431437}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 125595699485579695}
@@ -142,16 +141,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.3451457, y: 17.239773, z: 7.6489844}
   m_Center: {x: 0, y: -0.9847393, z: 0}
---- !u!114 &-575825102924627514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711962864275720594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d067c8df4177e94bae8752df94ed56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <PooledObject>k__BackingField: {fileID: 11400000, guid: 00ff363916f42ae43aeae69a59b7ec17, type: 2}

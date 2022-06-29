@@ -12,8 +12,10 @@ namespace RedPanda.UI
         [SerializeField] private GameObject _player;
         [SerializeField] private GameObject _racer1;
         [SerializeField] private GameObject _racer2;
-        [SerializeField] private Text _playerSort;
         [SerializeField] private GameObject _finishUi;
+
+        [SerializeField] private Holder _sortingHolder;
+        [SerializeField] private Image _sortImage;
 
         private float _playerScore;
         private float _racer1Score;
@@ -43,11 +45,6 @@ namespace RedPanda.UI
                         _racer2 = item.gameObject;
                     }
                 }
-            }
-
-            if (_playerSort != null)
-            {
-                _playerSort.gameObject.SetActive(true);
             }
         }
 
@@ -81,8 +78,6 @@ namespace RedPanda.UI
                 return;
             }
 
-            int _sort = 0;
-
             if (_player != null)
             {
                 _playerScore = _finishPoint.transform.position.z - _player.transform.position.z;
@@ -98,22 +93,20 @@ namespace RedPanda.UI
 
             if (_playerScore < _racer1Score && _playerScore < _racer2Score)
             {
-                _sort = 1;
+                _sortImage.overrideSprite = _sortingHolder._sprites[0];
             }
             else if (_playerScore < _racer1Score && _playerScore > _racer2Score)
             {
-                _sort = 2;
+                _sortImage.overrideSprite = _sortingHolder._sprites[1];
             }
             else if (_playerScore > _racer1Score && _playerScore < _racer2Score)
             {
-                _sort = 2;
+                _sortImage.overrideSprite = _sortingHolder._sprites[1];
             }
             else if (_playerScore > _racer1Score && _playerScore > _racer2Score)
             {
-                _sort = 3;
+                _sortImage.overrideSprite = _sortingHolder._sprites[2];
             }
-
-            _playerSort.text = _sort.ToString();
         }
         public void FindFinishPoint(GameObject finishPoint)
         {
