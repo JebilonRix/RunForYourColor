@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2091241476098705226}
   - component: {fileID: 4242780363870286720}
   - component: {fileID: 9031163666714115100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
