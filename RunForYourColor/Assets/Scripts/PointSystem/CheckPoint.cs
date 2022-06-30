@@ -1,13 +1,31 @@
 using RedPanda.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RedPanda.PointSystem
 {
     public class CheckPoint : Point
     {
         [SerializeField] private RandomLine randomLine;
+        [SerializeField] private Image _fillImage;
+        [SerializeField] private float _fillTime = 1f;
+        private bool _passed;
 
         #region Unity Methods
+        private void Start()
+        {
+            _passed = false;
+            _fillImage.fillAmount = 0f;
+        }
+        private void Update()
+        {
+            if (!_passed)
+            {
+                return;
+            }
+
+            _fillImage.fillAmount += Mathf.Lerp(0.0f, 1.0f, _fillTime * Time.deltaTime);
+        }
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
@@ -16,9 +34,9 @@ namespace RedPanda.PointSystem
             {
                 if (randomLine == null)
                 {
-                    var x = FindObjectsOfType<RandomLine>(true);
+                    RandomLine[] x = FindObjectsOfType<RandomLine>(true);
 
-                    foreach (var item in x)
+                    foreach (RandomLine item in x)
                     {
                         if (item.isRandomLine)
                         {
@@ -27,6 +45,8 @@ namespace RedPanda.PointSystem
                         }
                     }
                 }
+
+                _passed = true;
 
                 SortInTrigger();
 
