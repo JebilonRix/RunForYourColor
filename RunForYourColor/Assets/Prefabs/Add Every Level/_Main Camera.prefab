@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _followDistance: {x: 0, y: 5.82, z: -7.02}
-  _followRotation: {x: 25, y: 0, z: 0}
+  _followDistance: {x: 0, y: 17, z: -10}
+  _followRotation: {x: 40, y: 0, z: 0}
