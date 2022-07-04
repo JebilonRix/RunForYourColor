@@ -40,6 +40,8 @@ namespace RedPanda.StateMachine
         [SerializeField] private float _minDistanceForJumpInput = 30f;
         [SerializeField] private float _speedLimit = 7.5f;
 
+        public LayerMask _whatIsWall;
+
         private float _lastFrameFingerPositionX = 0;
         private float _lastFrameFingerPositionY = 0;
         private float fallTime;
@@ -49,8 +51,7 @@ namespace RedPanda.StateMachine
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
-
-        public LayerMask _whatIsWall;
+        private Transform _finishPoint;
         #endregion Fields
 
         #region Properties
@@ -66,6 +67,8 @@ namespace RedPanda.StateMachine
         public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
         public float SpeedLimit { get => _speedLimit; }
         public float FallTime { get => fallTime; set => fallTime = value; }
+        public Transform LastCheckPoint { get => _lastCheckPoint; set => _lastCheckPoint = value; }
+        public Transform FinishPoint { get => _finishPoint; set => _finishPoint = value; }
         #endregion Properties
 
         #region Unity Methods
@@ -183,15 +186,15 @@ namespace RedPanda.StateMachine
         }
         public void StartRace() => StartRun = true;
         public void UpdateSpeed(float amount) => _speed += amount;
-        public void GoForward() => Rb.velocity = new Vector3(0, Rb.velocity.y, Speed);
-        public void SetCheckPoint(Transform checkPoint) => _lastCheckPoint = checkPoint;
+        public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);
+        public void SetCheckPoint(Transform checkPoint) => LastCheckPoint = checkPoint;
         public void ToRespawn() => StartCoroutine(Respawn());
         #endregion Public Methods
 
         #region Private Methods
         private IEnumerator Respawn()
         {
-            transform.position = _lastCheckPoint.transform.position;
+            transform.position = LastCheckPoint.transform.position;
 
             yield return new WaitForSeconds(_respawnTime);
 

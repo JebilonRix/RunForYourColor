@@ -1,3 +1,4 @@
+using RedPanda.StateMachine;
 using RedPanda.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,8 @@ namespace RedPanda.PointSystem
                 {
                     randomLine.GetRandomText();
                 }
+
+                other.gameObject.GetComponent<BotInput>().NextPoint();
             }
         }
         private void OnTriggerExit(Collider other)

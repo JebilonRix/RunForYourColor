@@ -33,6 +33,8 @@ namespace RedPanda.PointSystem
                 character.AnimHandler("Victory");
                 StartCoroutine(ToZero(character));
 
+                character.FinishPoint = transform;
+
                 if (character.IsPlayer)
                 {
                     _unityEvent?.Invoke();
