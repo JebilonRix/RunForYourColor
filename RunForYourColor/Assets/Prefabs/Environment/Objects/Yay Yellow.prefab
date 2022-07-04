@@ -142,8 +142,10 @@ GameObject:
   - component: {fileID: 3845803302420689361}
   - component: {fileID: 8146957568242674776}
   - component: {fileID: 9125013831863220953}
+  - component: {fileID: 9023517625067343663}
+  - component: {fileID: 7365194463505770223}
   m_Layer: 0
-  m_Name: "Z\u0131plama"
+  m_Name: jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,6 +214,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9023517625067343663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6870021872301421301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3199893, y: 0.07284332, z: 1.3199894}
+  m_Center: {x: 0, y: -0.000000033527613, z: 0.000000029802322}
+--- !u!114 &7365194463505770223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6870021872301421301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1125d38685ab1164c9a6e2880067ed7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 4
+  _racerTag: Racer
+  _colorType: yellow
+  _speedAddAmount: 1
+  jumpForce: 500
 --- !u!1 &8789776526477429344
 GameObject:
   m_ObjectHideFlags: 0

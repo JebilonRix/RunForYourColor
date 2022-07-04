@@ -5,7 +5,7 @@ using UnityEngine;
 namespace RedPanda.PointSystem
 {
     [RequireComponent(typeof(BoxCollider))]
-    [RequireComponent(typeof(MeshRenderer))]
+    // [RequireComponent(typeof(MeshRenderer))]
     public abstract class Point : MonoBehaviour
     {
         #region Fields
