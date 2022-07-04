@@ -5193,6 +5193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 932886445, guid: b64a929740827984ebf06ce0875e5ba4, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6237814565216562443, guid: b64a929740827984ebf06ce0875e5ba4, type: 3}
       propertyPath: m_Name
       value: Bot Yellow
@@ -5255,6 +5259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1788961330, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6055109689393533812, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
       propertyPath: m_Name
       value: Bot Blue
@@ -5386,6 +5394,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1992206701, guid: fa9cfa203f0fa3944945d4d9515d3be7, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3610761196288386411, guid: fa9cfa203f0fa3944945d4d9515d3be7, type: 3}
       propertyPath: m_Name
       value: Player

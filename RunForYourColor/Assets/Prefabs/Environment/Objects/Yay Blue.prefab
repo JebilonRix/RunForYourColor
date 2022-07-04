@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 673369607333944310}
   - component: {fileID: 1155463398592171832}
+  - component: {fileID: -632551282765418111}
+  - component: {fileID: 697908035980499990}
   m_Layer: 0
   m_Name: Yay Blue
   m_TagString: Untagged
@@ -50,6 +52,37 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!95 &-632551282765418111
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149633342950555980}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e53b562f86d5d949a441b742cafd4ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &697908035980499990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149633342950555980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb32bb4aa3cf04fa935def357d0436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4232143678771741488
 GameObject:
   m_ObjectHideFlags: 0
