@@ -2,6 +2,6 @@
 {
     public enum PointType
     {
-        Check, Finish, Dead, Road
+        Check, Finish, Dead, Road, Jump
     }
 }
