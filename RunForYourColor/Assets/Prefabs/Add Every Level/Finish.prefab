@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 681578171721881191}
   - component: {fileID: 681578171721881190}
   - component: {fileID: 681578171721881193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Finish
-  m_TagString: Untagged
+  m_TagString: FinishPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -179,8 +179,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2035987, y: 2.523052, z: 0.33715823}
-  m_Center: {x: 0, y: 1.250856, z: 0.0000019059096}
+  m_Size: {x: 1.2035987, y: 40, z: 0.33715823}
+  m_Center: {x: 0, y: 17.944126, z: 0.0000019059096}
 --- !u!114 &681578171721881193
 MonoBehaviour:
   m_ObjectHideFlags: 0

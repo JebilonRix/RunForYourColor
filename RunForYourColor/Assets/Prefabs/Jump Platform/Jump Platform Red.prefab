@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jump Platform Red
       objectReference: {fileID: 0}
+    - target: {fileID: 2745048279433700568, guid: 09718f1fe6345114c9a96f3d5eb012e5, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745048279433700568, guid: 09718f1fe6345114c9a96f3d5eb012e5, type: 3}
+      propertyPath: m_TagString
+      value: Red
+      objectReference: {fileID: 0}
     - target: {fileID: 2745048279433700570, guid: 09718f1fe6345114c9a96f3d5eb012e5, type: 3}
       propertyPath: colorType
       value: red

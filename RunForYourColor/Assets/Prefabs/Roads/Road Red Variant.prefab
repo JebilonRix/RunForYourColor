@@ -75,5 +75,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Red Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4375520460139258195, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375520460139258195, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: m_TagString
+      value: Red
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}

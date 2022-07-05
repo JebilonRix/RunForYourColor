@@ -9,6 +9,10 @@ TagManager:
   - Wall
   - DeadPoint
   - CheckPoint
+  - Blue
+  - Red
+  - Yellow
+  - FinishPoint
   layers:
   - Default
   - TransparentFX
@@ -20,9 +24,9 @@ TagManager:
   - Wall
   - DeadPoint
   - CheckPoint
-  - 
-  - 
-  - 
+  - Blue
+  - Red
+  - Yellow
   - 
   - 
   - 

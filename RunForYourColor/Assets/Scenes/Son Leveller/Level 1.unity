@@ -3544,6 +3544,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1776863982488240949, guid: b64a929740827984ebf06ce0875e5ba4, type: 3}
+      propertyPath: _whatPointIs.m_Bits
+      value: 4160
+      objectReference: {fileID: 0}
     - target: {fileID: 6237814565216562443, guid: b64a929740827984ebf06ce0875e5ba4, type: 3}
       propertyPath: m_Name
       value: Bot Yellow
@@ -3608,6 +3612,10 @@ PrefabInstance:
     - target: {fileID: 1788961330, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887440364492275018, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
+      propertyPath: _whatPointIs.m_Bits
+      value: 1088
       objectReference: {fileID: 0}
     - target: {fileID: 6055109689393533812, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
       propertyPath: m_Name

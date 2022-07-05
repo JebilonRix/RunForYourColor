@@ -24,25 +24,21 @@ namespace RedPanda.StateMachine
         }
         private void Update()
         {
-            if (_nextPoint != null)
+            if (_nextPoint != null || _characterStateManager.CurrentState != _characterStateManager.IdleState)
             {
-                //Vector3.MoveTowards(transform.position, _nextPoint.position, Vector3.Distance(transform.position, _nextPoint.position));
-
-                transform.LookAt(_nextPoint);
                 transform.rotation.eulerAngles.Set(0, transform.rotation.y, 0);
 
-                if (transform.rotation.y > 0)
+                if (transform.rotation.x - _nextPoint.position.x > 0f)
                 {
                     _characterStateManager.Rb.velocity = new Vector3(_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
                 }
-                else if (transform.rotation.y < 0)
+                else if (transform.rotation.x - _nextPoint.position.x < 0f)
                 {
                     _characterStateManager.Rb.velocity = new Vector3(-_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
                 }
-
-                if (Vector3.Distance(transform.position, _nextPoint.position) == 0)
+                else
                 {
-                    NextPoint();
+                    _characterStateManager.Rb.velocity = new Vector3(0f, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
                 }
             }
         }
@@ -50,16 +46,29 @@ namespace RedPanda.StateMachine
         {
             _points.Clear();
 
+            string tag;
+
+            if (_characterStateManager.ColorType == "blue")
+            {
+                tag = "Blue";
+            }
+            else if (_characterStateManager.ColorType == "yellow")
+            {
+                tag = "Yellow";
+            }
+            else
+            {
+                tag = "Red";
+            }
+
             List<RaycastHit> _rayList = Physics.SphereCastAll(transform.position, 1000f, Vector3.forward, _whatPointIs).ToList();
 
             for (int i = 0; i < _rayList.Count; i++)
             {
-                if (!_rayList[i].collider.CompareTag("CheckPoint"))
+                if (_rayList[i].collider.CompareTag(tag) || _rayList[i].collider.CompareTag("FinishPoint"))
                 {
-                    continue;
+                    _points.Add(_rayList[i].transform);
                 }
-
-                _points.Add(_rayList[i].transform);
             }
 
             _points = _points.OrderBy(p => p.transform.position.z).ToList();
@@ -69,11 +78,8 @@ namespace RedPanda.StateMachine
             if (_points.Count != 0)
             {
                 _nextPoint = _points[0];
+                _characterStateManager.LastCheckPoint = _nextPoint;
                 _points.RemoveAt(0);
-            }
-            else
-            {
-                _nextPoint = _characterStateManager.FinishPoint;
             }
         }
     }

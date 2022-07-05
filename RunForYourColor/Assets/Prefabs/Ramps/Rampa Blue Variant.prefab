@@ -7,9 +7,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 836911599702854274, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1887440364492275018, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
+    - target: {fileID: 836911599702854274, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 836911599702854274, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RedPanda.StateMachine.BotInput, _RedPanda.Racer
+      objectReference: {fileID: 0}
+    - target: {fileID: 836911599702854274, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_Name
       value: Rampa Blue Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: m_TagString
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_RootOrder
