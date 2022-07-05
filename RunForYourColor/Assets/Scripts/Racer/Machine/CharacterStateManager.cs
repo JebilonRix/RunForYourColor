@@ -63,11 +63,11 @@ namespace RedPanda.StateMachine
         public float GroundOffSet { get => _groundOffSet; }
         public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
         public string ColorType { get => _colorType; }
+        public float SpeedLimit { get => _speedLimit; }
+        public float FallTime { get => fallTime; set => fallTime = value; }
         public Animator Animator { get => _animator; private set => _animator = value; }
         public Rigidbody Rb { get => _rb; private set => _rb = value; }
         public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
-        public float SpeedLimit { get => _speedLimit; }
-        public float FallTime { get => fallTime; set => fallTime = value; }
         public Transform LastCheckPoint { get => _lastCheckPoint; set => _lastCheckPoint = value; }
         public Transform FinishPoint { get => _finishPoint; set => _finishPoint = value; }
         #endregion Properties

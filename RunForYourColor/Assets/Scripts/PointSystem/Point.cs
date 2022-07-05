@@ -11,15 +11,12 @@ namespace RedPanda.PointSystem
         #region Fields
         [SerializeField] private PointType _type;
         [SerializeField] protected string _racerTag = "Racer";
-        [SerializeField] private string colorType = "blue";
+        [SerializeField] protected string _colorType = "blue";
         [SerializeField] protected float _speedAddAmount = 1f;
 
         protected SortingUI _sortingUI;
         protected RandomLine _randomLine;
         protected CharacterStateManager _stateManager;
-
-        public PointType pointType { get => _type; private set => _type = value; }
-        public string ColorType { get => colorType; }
         #endregion Fields
 
         #region Unity Methods
@@ -50,7 +47,7 @@ namespace RedPanda.PointSystem
         }
         protected void SpeedChange(CharacterStateManager character, float speedAmount)
         {
-            if (character.ColorType.ToLower() == ColorType.ToLower())
+            if (character.ColorType.ToLower() == _colorType.ToLower())
             {
                 character.UpdateSpeed(speedAmount);
             }

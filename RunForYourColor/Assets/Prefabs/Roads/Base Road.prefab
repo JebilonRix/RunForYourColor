@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 5842373511904577150}
   - component: {fileID: 1447856949450342896}
   m_Layer: 0
-  m_Name: Road Base
+  m_Name: Base Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,5 +693,4 @@ MonoBehaviour:
   _type: 3
   _racerTag: Racer
   colorType: 
-  _speedAddAmount: 1
-  _speedChange: 5
+  _speedAddAmount: 10

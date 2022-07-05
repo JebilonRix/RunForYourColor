@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8610953759941374180}
   - component: {fileID: 619150881788204253}
   m_Layer: 6
-  m_Name: _BaseCheckLine
+  m_Name: Base CheckLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

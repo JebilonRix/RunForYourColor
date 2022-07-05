@@ -91,10 +91,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3266110772236861026}
   - component: {fileID: 2745048279433700571}
-  - component: {fileID: 1019558414863416353}
-  - component: {fileID: 876813977346649007}
+  - component: {fileID: -6712886986652612516}
+  - component: {fileID: 7056712306022035072}
   m_Layer: 0
-  m_Name: Jump Platform Base
+  m_Name: Base Jump Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,9 +128,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.8008188, z: 1.3088536}
-  m_Center: {x: 0, y: 0.40040913, z: -0.003107816}
---- !u!95 &1019558414863416353
+  m_Size: {x: 1.3, y: 1, z: 1.3}
+  m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!95 &-6712886986652612516
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ Animator:
   m_GameObject: {fileID: 2745048279433700568}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e53b562f86d5d949a441b742cafd4ba, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -149,7 +149,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &876813977346649007
+--- !u!114 &7056712306022035072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

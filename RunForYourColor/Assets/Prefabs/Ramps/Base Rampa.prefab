@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2091580638939434468}
   - component: {fileID: 4243022842700052782}
   m_Layer: 0
-  m_Name: Rampa Base
+  m_Name: Base Rampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2363577595861495721}
   - component: {fileID: 718187469597251270}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Collider
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
