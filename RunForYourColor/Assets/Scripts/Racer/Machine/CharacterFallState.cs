@@ -28,7 +28,7 @@ public class CharacterFallState : CharacterBaseState
         manager.Rb.velocity += new Vector3(0, 0, 0.5f); //Make falling faster.
 
         //Altýnda bir þey var mý?
-        if (Physics.Raycast(new Ray(manager.transform.position + manager.transform.forward * 1.5f, Vector3.down), out RaycastHit _groundHit, Mathf.Infinity, manager._whatIsWall))
+        if (Physics.Raycast(new Ray(manager.transform.position + manager.transform.forward * 1.5f, Vector3.down), out RaycastHit _groundHit, Mathf.Infinity, manager.WhatIsWall))
         {
             if (!_groundHit.transform)
             {
@@ -51,7 +51,7 @@ public class CharacterFallState : CharacterBaseState
         }
 
         //Karþýda duvar var mý?
-        if (Physics.Raycast(new Ray(manager.transform.position, Vector3.forward), out RaycastHit _wallHit, 2f, manager._whatIsWall))
+        if (Physics.Raycast(new Ray(manager.transform.position, Vector3.forward), out RaycastHit _wallHit, 2f, manager.WhatIsWall))
         {
             if (!_wallHit.transform)
             {

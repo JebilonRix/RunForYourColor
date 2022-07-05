@@ -9,7 +9,7 @@ namespace RedPanda.StateMachine
     [RequireComponent(typeof(Animator))]
     public class CharacterStateManager : MonoBehaviour
     {
-        #region Fields
+        #region Fields And Properties
 
         #region State
         private CharacterBaseState currentState;
@@ -40,8 +40,7 @@ namespace RedPanda.StateMachine
         [SerializeField] private float _minDistanceForJumpInput = 30f;
         [SerializeField] private float _speedLimit = 7.5f;
         [SerializeField] private float jumpForce = 500f;
-
-        public LayerMask _whatIsWall;
+        [SerializeField] private LayerMask _whatIsWall;
 
         private float _lastFrameFingerPositionX = 0;
         private float _lastFrameFingerPositionY = 0;
@@ -53,9 +52,7 @@ namespace RedPanda.StateMachine
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
         private Transform _finishPoint;
-        #endregion Fields
 
-        #region Properties
         public bool StartRun { get => _startRun; set => _startRun = value; }
         public bool IsPlayer { get => _isPlayer; }
         public float Speed { get => _speed; set => _speed = value; }
@@ -70,7 +67,8 @@ namespace RedPanda.StateMachine
         public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
         public Transform LastCheckPoint { get => _lastCheckPoint; set => _lastCheckPoint = value; }
         public Transform FinishPoint { get => _finishPoint; set => _finishPoint = value; }
-        #endregion Properties
+        public LayerMask WhatIsWall { get => _whatIsWall; }
+        #endregion Fields And Properties
 
         #region Unity Methods
         private void Awake()

@@ -794,7 +794,7 @@ MonoBehaviour:
   _groundOffSet: 1
   _minDistanceForJumpInput: 225
   _speedLimit: 7.5
-  jumpForce: 15
+  jumpForce: 10
   _whatIsWall:
     serializedVersion: 2
     m_Bits: 384

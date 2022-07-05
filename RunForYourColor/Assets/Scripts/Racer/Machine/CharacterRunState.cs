@@ -33,7 +33,7 @@ namespace RedPanda.StateMachine
             manager.GoForward(); //Makes it go forward.
 
             //Karþýda duvar var mý?
-            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.forward), out RaycastHit _wallHit, 2f, manager._whatIsWall))
+            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.forward), out RaycastHit _wallHit, 2f, manager.WhatIsWall))
             {
                 if (!_wallHit.transform)
                 {
@@ -48,7 +48,7 @@ namespace RedPanda.StateMachine
             }
 
             //Altýnda bir þey var mý?
-            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.down), out RaycastHit _groundHit, Mathf.Infinity, manager._whatIsWall))
+            if (Physics.Raycast(new Ray(manager.transform.position, Vector3.down), out RaycastHit _groundHit, Mathf.Infinity, manager.WhatIsWall))
             {
                 if (!_groundHit.transform)
                 {

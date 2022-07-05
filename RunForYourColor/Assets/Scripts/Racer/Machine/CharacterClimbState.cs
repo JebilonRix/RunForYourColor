@@ -17,7 +17,7 @@ namespace RedPanda.StateMachine
             manager.Rb.velocity = new Vector3(0, manager.Speed, 0); //climbing logic.
 
             //Karþýnda climb point var mý?
-            if (!Physics.Raycast(new Ray(manager.transform.position - manager.transform.up * 0.5f, Vector3.forward), out RaycastHit climHit, 2f, manager._whatIsWall))
+            if (!Physics.Raycast(new Ray(manager.transform.position - manager.transform.up * 0.5f, Vector3.forward), out RaycastHit climHit, 2f, manager.WhatIsWall))
             {
                 manager.SwitchState(manager.RunState);
             }
