@@ -1,7 +1,9 @@
+using RedPanda.StateMachine;
 using UnityEngine;
 
 namespace RedPanda
 {
+    [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(Animator))]
     public class YayAnimHandler : MonoBehaviour
     {
@@ -10,13 +12,24 @@ namespace RedPanda
 
         private void Awake()
         {
+            GetComponent<BoxCollider>().isTrigger = true;
             animator = GetComponent<Animator>();
         }
+
+        //private void Update()
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        animator.Play("YayAnim", 0);
+        //    }
+        //}
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(_racerTag))
             {
-                animator.SetTrigger("Jump");
+                other.GetComponent<CharacterStateManager>().Jump();
+
+                animator.Play("YayAnim", 0);
             }
         }
     }

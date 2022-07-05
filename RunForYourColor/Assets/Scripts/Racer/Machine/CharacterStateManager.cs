@@ -39,6 +39,7 @@ namespace RedPanda.StateMachine
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
         [SerializeField] private float _speedLimit = 7.5f;
+        [SerializeField] private float jumpForce = 500f;
 
         public LayerMask _whatIsWall;
 
@@ -184,11 +185,13 @@ namespace RedPanda.StateMachine
             AnimHandler(IdleState);
             Animator.Play(animName, 0);
         }
+        public void Jump() => Rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         public void StartRace() => StartRun = true;
         public void UpdateSpeed(float amount) => _speed += amount;
         public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);
         public void SetCheckPoint(Transform checkPoint) => LastCheckPoint = checkPoint;
         public void ToRespawn() => StartCoroutine(Respawn());
+
         #endregion Public Methods
 
         #region Private Methods
