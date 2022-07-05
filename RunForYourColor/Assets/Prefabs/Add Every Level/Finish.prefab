@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681578171449396856}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.11, z: -0.27158}
+  m_LocalPosition: {x: 0, y: 0, z: -0.27158}
   m_LocalScale: {x: 0.06450882, y: 0.03439695, z: 0.1}
   m_Children: []
   m_Father: {fileID: 681578169927023490}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   _racerTag: Racer
-  colorType: 
+  _colorType: blue
   _speedAddAmount: 0
   _unityEvent:
     m_PersistentCalls:
