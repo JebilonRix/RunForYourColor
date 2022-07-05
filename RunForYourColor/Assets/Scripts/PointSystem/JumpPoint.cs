@@ -10,7 +10,7 @@ namespace RedPanda.PointSystem
         {
             base.OnTriggerEnter(other);
 
-            if (other.CompareTag(_racerTag) && other.GetComponent<CharacterStateManager>().ColorType == _colorType)
+            if (other.CompareTag(_racerTag) && other.GetComponent<CharacterStateManager>().ColorType == ColorType)
             {
                 other.GetComponent<CharacterStateManager>().Rb.AddForce(new Vector3(0, jumpForce, 0));
             }
