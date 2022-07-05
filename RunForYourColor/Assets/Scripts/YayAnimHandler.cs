@@ -16,13 +16,6 @@ namespace RedPanda
             animator = GetComponent<Animator>();
         }
 
-        //private void Update()
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Space))
-        //    {
-        //        animator.Play("YayAnim", 0);
-        //    }
-        //}
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(_racerTag))

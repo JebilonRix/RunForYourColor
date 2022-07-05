@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_Name
-      value: Rampa Red
+      value: Rampa Red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_RootOrder
@@ -58,6 +58,6 @@ PrefabInstance:
     - target: {fileID: 4243022842700052782, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 33a6eb0897b569d4aa1585bc5da220f7, type: 2}
+      objectReference: {fileID: 2100000, guid: 230283e90b0ac8b43a850a4e1d35ce6a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}

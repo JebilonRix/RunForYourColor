@@ -18,7 +18,7 @@ GameObject:
   m_TagString: DeadPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7144535587077603679
 Transform:
@@ -110,6 +110,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _racerTag: Racer
-  _colorType: 
-  _speedAddAmount: 1
-  <PooledObject>k__BackingField: {fileID: 11400000, guid: 4bc997e9972ecd24db0bfb63446fd2d4, type: 2}
+  colorType: 
+  _speedAddAmount: 0
