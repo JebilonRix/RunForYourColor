@@ -676,7 +676,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.405403, y: 28.450008, z: 0.200022}
+  m_Size: {x: 13.405403, y: 28.450008, z: 5.2015896}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1447856949450342896
 MonoBehaviour:
@@ -692,5 +692,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _racerTag: Racer
-  colorType: 
+  _colorType: 
   _speedAddAmount: 10

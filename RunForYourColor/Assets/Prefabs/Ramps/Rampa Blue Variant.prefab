@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_Name
-      value: Rampa Blue
+      value: Rampa Blue Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_RootOrder
@@ -17,15 +17,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 264.55597
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalRotation.w
