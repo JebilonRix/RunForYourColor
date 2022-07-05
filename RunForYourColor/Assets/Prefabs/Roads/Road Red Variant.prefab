@@ -1,27 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5077305172477913128
+--- !u!1001 &587993295147051605
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1447856949450342896, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: colorType
+      value: red
+      objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258193, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258193, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258193, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.075256
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258193, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258193, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53,19 +57,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258194, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_Color.b
-      value: 0.972549
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258194, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_Color.g
-      value: 0.627451
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258194, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_Color.r
-      value: 0.25882354
+      value: 0.9529412
       objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258195, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_Name
-      value: Road Blue
+      value: Road Red Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}

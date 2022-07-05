@@ -90,7 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3266110772236861026}
-  - component: {fileID: 2745048279433700570}
   - component: {fileID: 2745048279433700571}
   - component: {fileID: 1019558414863416353}
   - component: {fileID: 876813977346649007}
@@ -118,23 +117,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2745048279433700570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2745048279433700568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1125d38685ab1164c9a6e2880067ed7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 4
-  _racerTag: Racer
-  colorType: 
-  _speedAddAmount: 0
-  jumpForce: 15
 --- !u!65 &2745048279433700571
 BoxCollider:
   m_ObjectHideFlags: 0
