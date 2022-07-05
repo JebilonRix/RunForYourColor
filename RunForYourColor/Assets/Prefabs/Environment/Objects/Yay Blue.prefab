@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cb32bb4aa3cf04fa935def357d0436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _racerTag: Racer
 --- !u!1 &4232143678771741488
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ GameObject:
   - component: {fileID: 8938105524190476316}
   - component: {fileID: 3182916902180400673}
   m_Layer: 0
-  m_Name: jump
+  m_Name: "Z\u0131plama"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 4
   _racerTag: Racer
-  _colorType: blue
+  colorType: blue
   _speedAddAmount: 1
   jumpForce: 500
 --- !u!1 &7199986742323559949
