@@ -14,8 +14,6 @@ namespace RedPanda.PointSystem
         [SerializeField] protected string _colorType = "blue";
         [SerializeField] protected float _speedAddAmount = 1f;
 
-        //protected SortingUI _sortingUI;
-        //protected RandomLine _randomLine;
         protected CharacterStateManager _stateManager;
         #endregion Fields
 
@@ -31,20 +29,6 @@ namespace RedPanda.PointSystem
         #endregion Unity Methods
 
         #region Private Methods
-        protected void SortInTrigger()
-        {
-            if (!_stateManager.IsPlayer)
-            {
-                return;
-            }
-
-            //if (_sortingUI == null)
-            //{
-            //    _sortingUI = FindObjectOfType<SortingUI>();
-            //}
-
-            //_sortingUI.Sort();
-        }
         protected void SpeedChange(CharacterStateManager character, float speedAmount)
         {
             if (character.ColorType.ToLower() == _colorType.ToLower())

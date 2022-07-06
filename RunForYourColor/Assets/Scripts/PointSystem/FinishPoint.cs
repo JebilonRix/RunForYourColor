@@ -11,16 +11,6 @@ namespace RedPanda.PointSystem
 
         #region Unity Methods
 
-        private void OnEnable()
-        {
-            //if (_sortingUI == null)
-            //{
-            //    _sortingUI = FindObjectOfType<SortingUI>();
-            //}
-
-            //_sortingUI.FindFinishPoint(gameObject);
-        }
-
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
@@ -38,9 +28,6 @@ namespace RedPanda.PointSystem
                 {
                     _unityEvent?.Invoke();
                 }
-
-                //_sortingUI.Sort();
-                //_sortingUI.FinishUi.SetActive(true);
             }
         }
         #endregion Unity Methods

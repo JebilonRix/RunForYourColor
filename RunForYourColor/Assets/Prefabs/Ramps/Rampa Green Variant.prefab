@@ -9,7 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_Name
-      value: Rampa Green
+      value: Rampa Green Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: m_TagString
+      value: Green
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_RootOrder
@@ -17,15 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.496469
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 239.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074008111407612481, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_LocalRotation.w

@@ -1,3 +1,16 @@
 {
-	"name": "_RedPanda.Racer"
+    "name": "_RedPanda.Racer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3930de48ee98a25429a99e0947a8a139"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

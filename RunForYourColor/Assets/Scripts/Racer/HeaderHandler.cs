@@ -1,3 +1,4 @@
+using RedPanda.SpriteHandler;
 using UnityEngine;
 
 namespace RedPanda.StateMachine
@@ -5,19 +6,14 @@ namespace RedPanda.StateMachine
     [RequireComponent(typeof(SpriteRenderer))]
     public class HeaderHandler : MonoBehaviour
     {
-        [SerializeField] private Sprite[] _sprites;
+        #region Fields And Properties
+        [SerializeField] private SO_SpriteHandler racerInfo;
         private SpriteRenderer _spriteRenderer;
+        #endregion Fields And Properties
 
-        private void Awake()
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-        private void Start()
-        {
-            if (!GetComponentInParent<CharacterStateManager>().IsPlayer)
-            {
-                _spriteRenderer.sprite = _sprites[Random.Range(0, _sprites.Length)];
-            }
-        }
+        #region Unity Methods
+        private void Awake() => _spriteRenderer = GetComponent<SpriteRenderer>();
+        private void Start() => _spriteRenderer.sprite = racerInfo.GetRandomName(GetComponentInParent<CharacterStateManager>().IsPlayer);
+        #endregion Unity Methods
     }
 }

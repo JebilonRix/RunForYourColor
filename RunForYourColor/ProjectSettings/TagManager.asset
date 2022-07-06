@@ -13,6 +13,10 @@ TagManager:
   - Red
   - Yellow
   - FinishPoint
+  - RacerSprite
+  - Green
+  - Purple
+  - Pink
   layers:
   - Default
   - TransparentFX
@@ -27,9 +31,9 @@ TagManager:
   - Blue
   - Red
   - Yellow
-  - 
-  - 
-  - 
+  - Green
+  - Purple
+  - Pink
   - 
   - 
   - 

@@ -13,7 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7348e4cd8e4ec6b44ad8027c6ef418bd, type: 2}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
-      value: Trambolin Purple
+      value: Trambolin Purple Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_TagString
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_RootOrder
@@ -21,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.692982
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.242645
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 147.19621
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_LocalRotation.w

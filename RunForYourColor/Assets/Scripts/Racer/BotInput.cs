@@ -8,11 +8,12 @@ namespace RedPanda.StateMachine
     public class BotInput : MonoBehaviour
     {
         [SerializeField] private LayerMask _whatPointIs;
-        [SerializeField] private List<Transform> _points = new List<Transform>();
-        [SerializeField] private Transform _nextPoint;
 
         private const float _horizontalSpeed = 5f;
+        private List<Transform> _points = new List<Transform>();
+        private Queue<Transform> _queue = new Queue<Transform>();
         private CharacterStateManager _characterStateManager;
+        private Transform _nextPoint;
 
         private void Awake()
         {
@@ -34,12 +35,10 @@ namespace RedPanda.StateMachine
         {
             if (_characterStateManager.CurrentState == _characterStateManager.IdleState)
             {
-                //Debug.Log("idle state");
                 return;
             }
             if (_nextPoint == null)
             {
-                //Debug.Log("next point is null");
                 return;
             }
 
@@ -88,17 +87,21 @@ namespace RedPanda.StateMachine
             }
 
             _points = _points.OrderBy(p => p.transform.position.z).ToList();
+
+            foreach (var item in _points)
+            {
+                _queue.Enqueue(item);
+            }
         }
         public void NextPoint()
         {
-            if (_points.Count == 0)
+            if (_queue.Count == 0)
             {
                 return;
             }
 
-            _nextPoint = _points[0];
+            _nextPoint = _queue.Dequeue();
             _characterStateManager.LastCheckPoint = _nextPoint;
-            _points.RemoveAt(0);
         }
     }
 }

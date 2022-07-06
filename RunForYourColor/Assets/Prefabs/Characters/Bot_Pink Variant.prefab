@@ -13,15 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.128466
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5636707025650472544, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Name
-      value: Bot_Pink
+      value: Bot_Pink Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7394091123896775163, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Materials.Array.data[0]
