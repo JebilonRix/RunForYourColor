@@ -10,7 +10,8 @@ namespace RedPanda.StateMachine
         [SerializeField] private LayerMask _whatPointIs;
         [SerializeField] private List<Transform> _points = new List<Transform>();
         [SerializeField] private Transform _nextPoint;
-        [SerializeField] private float _horizontalSpeed = 5f;
+
+        private const float _horizontalSpeed = 5f;
         private CharacterStateManager _characterStateManager;
 
         private void Awake()
@@ -24,23 +25,31 @@ namespace RedPanda.StateMachine
         }
         private void Update()
         {
-            //if (_nextPoint != null || _characterStateManager.CurrentState != _characterStateManager.IdleState)
-            //{
-            //    transform.rotation.eulerAngles.Set(0, transform.rotation.y, 0);
+            if (_characterStateManager.CurrentState == _characterStateManager.IdleState)
+            {
+                //Debug.Log("idle state");
+                return;
+            }
+            if (_nextPoint == null)
+            {
+                //Debug.Log("next point is null");
+                return;
+            }
 
-            //    if (transform.rotation.x - _nextPoint.position.x > 0f)
-            //    {
-            //        _characterStateManager.Rb.velocity = new Vector3(_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
-            //    }
-            //    else if (transform.rotation.x - _nextPoint.position.x < 0f)
-            //    {
-            //        _characterStateManager.Rb.velocity = new Vector3(-_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
-            //    }
-            //    else
-            //    {
-            //        _characterStateManager.Rb.velocity = new Vector3(0f, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
-            //    }
-            //}
+            if (transform.position.x - _nextPoint.position.x > 0.25f)
+            {
+                _characterStateManager.Rb.velocity =
+                    new Vector3(-1 * _horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
+            }
+            else if (transform.position.x - _nextPoint.position.x < -0.25f)
+            {
+                _characterStateManager.Rb.velocity =
+                    new Vector3(1 * _horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
+            }
+            else
+            {
+                _characterStateManager.Rb.velocity = new Vector3(0f, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
+            }
         }
         public void FindPoints()
         {
@@ -75,12 +84,14 @@ namespace RedPanda.StateMachine
         }
         public void NextPoint()
         {
-            if (_points.Count != 0)
+            if (_points.Count == 0)
             {
-                _nextPoint = _points[0];
-                _characterStateManager.LastCheckPoint = _nextPoint;
-                _points.RemoveAt(0);
+                return;
             }
+
+            _nextPoint = _points[0];
+            _characterStateManager.LastCheckPoint = _nextPoint;
+            _points.RemoveAt(0);
         }
     }
 }

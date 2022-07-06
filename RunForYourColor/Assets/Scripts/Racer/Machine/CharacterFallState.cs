@@ -25,7 +25,7 @@ public class CharacterFallState : CharacterBaseState
     {
         manager.GoForward(); //Makes it go forward.
 
-        manager.Rb.velocity += new Vector3(0, 0, 0.5f); //Make falling faster.
+        manager.Rb.velocity += new Vector3(0, -0.25f, 0f); //Make falling faster.
 
         //Altýnda bir þey var mý?
         if (Physics.Raycast(new Ray(manager.transform.position + manager.transform.forward * 1.5f, Vector3.down), out RaycastHit _groundHit, Mathf.Infinity, manager.WhatIsWall))

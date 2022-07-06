@@ -1,5 +1,4 @@
 using RedPanda.StateMachine;
-using RedPanda.UI;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,12 +13,12 @@ namespace RedPanda.PointSystem
 
         private void OnEnable()
         {
-            if (_sortingUI == null)
-            {
-                _sortingUI = FindObjectOfType<SortingUI>();
-            }
+            //if (_sortingUI == null)
+            //{
+            //    _sortingUI = FindObjectOfType<SortingUI>();
+            //}
 
-            _sortingUI.FindFinishPoint(gameObject);
+            //_sortingUI.FindFinishPoint(gameObject);
         }
 
         protected override void OnTriggerEnter(Collider other)
@@ -40,8 +39,8 @@ namespace RedPanda.PointSystem
                     _unityEvent?.Invoke();
                 }
 
-                _sortingUI.Sort();
-                _sortingUI.FinishUi.SetActive(true);
+                //_sortingUI.Sort();
+                //_sortingUI.FinishUi.SetActive(true);
             }
         }
         #endregion Unity Methods

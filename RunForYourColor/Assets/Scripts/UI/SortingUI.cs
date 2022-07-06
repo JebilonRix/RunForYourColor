@@ -1,6 +1,7 @@
 using RedPanda.StateMachine;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace RedPanda.UI
@@ -14,6 +15,8 @@ namespace RedPanda.UI
         [SerializeField] private GameObject _racer2;
         [SerializeField] private GameObject _finishUi;
 
+        [SerializeField] private UnityEvent _event;
+
         [SerializeField] private Holder _sortingHolder;
         [SerializeField] private Image _sortImage;
 
@@ -26,9 +29,9 @@ namespace RedPanda.UI
 
         private void Start()
         {
-            var racers = FindObjectsOfType<CharacterStateManager>();
+            CharacterStateManager[] racers = FindObjectsOfType<CharacterStateManager>();
 
-            foreach (var item in racers)
+            foreach (CharacterStateManager item in racers)
             {
                 if (item.IsPlayer)
                 {
@@ -51,7 +54,7 @@ namespace RedPanda.UI
         #region Public Methods
         public void StartRacers()
         {
-            var racer = new List<GameObject>();
+            List<GameObject> racer = new List<GameObject>();
 
             if (_player != null)
             {
@@ -66,47 +69,47 @@ namespace RedPanda.UI
                 racer.Add(_racer2);
             }
 
-            foreach (var item in racer)
+            foreach (GameObject item in racer)
             {
                 item.GetComponent<CharacterStateManager>().StartRace();
             }
         }
         public void Sort()
         {
-            if (_finishPoint == null)
-            {
-                return;
-            }
+            //if (_finishPoint == null)
+            //{
+            //    return;
+            //}
 
-            if (_player != null)
-            {
-                _playerScore = _finishPoint.transform.position.z - _player.transform.position.z;
-            }
-            if (_racer1 != null)
-            {
-                _racer1Score = _finishPoint.transform.position.z - _racer1.transform.position.z;
-            }
-            if (_racer2 != null)
-            {
-                _racer2Score = _finishPoint.transform.position.z - _racer2.transform.position.z;
-            }
+            //if (_player != null)
+            //{
+            //    _playerScore = _finishPoint.transform.position.z - _player.transform.position.z;
+            //}
+            //if (_racer1 != null)
+            //{
+            //    _racer1Score = _finishPoint.transform.position.z - _racer1.transform.position.z;
+            //}
+            //if (_racer2 != null)
+            //{
+            //    _racer2Score = _finishPoint.transform.position.z - _racer2.transform.position.z;
+            //}
 
-            if (_playerScore < _racer1Score && _playerScore < _racer2Score)
-            {
-                _sortImage.overrideSprite = _sortingHolder.sprites[0];
-            }
-            else if (_playerScore < _racer1Score && _playerScore > _racer2Score)
-            {
-                _sortImage.overrideSprite = _sortingHolder.sprites[1];
-            }
-            else if (_playerScore > _racer1Score && _playerScore < _racer2Score)
-            {
-                _sortImage.overrideSprite = _sortingHolder.sprites[1];
-            }
-            else if (_playerScore > _racer1Score && _playerScore > _racer2Score)
-            {
-                _sortImage.overrideSprite = _sortingHolder.sprites[2];
-            }
+            //if (_playerScore < _racer1Score && _playerScore < _racer2Score)
+            //{
+            //    _sortImage.overrideSprite = _sortingHolder.sprites[0];
+            //}
+            //else if (_playerScore < _racer1Score && _playerScore > _racer2Score)
+            //{
+            //    _sortImage.overrideSprite = _sortingHolder.sprites[1];
+            //}
+            //else if (_playerScore > _racer1Score && _playerScore < _racer2Score)
+            //{
+            //    _sortImage.overrideSprite = _sortingHolder.sprites[1];
+            //}
+            //else if (_playerScore > _racer1Score && _playerScore > _racer2Score)
+            //{
+            //    _sortImage.overrideSprite = _sortingHolder.sprites[2];
+            //}
         }
         public void FindFinishPoint(GameObject finishPoint)
         {

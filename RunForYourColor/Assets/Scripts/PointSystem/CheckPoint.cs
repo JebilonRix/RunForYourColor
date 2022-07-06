@@ -1,13 +1,13 @@
 using RedPanda.StateMachine;
-using RedPanda.UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace RedPanda.PointSystem
 {
     public class CheckPoint : Point
     {
-        [SerializeField] private RandomLine randomLine;
+        [SerializeField] private UnityEvent _event;
         [SerializeField] private Image _fillImage;
         [SerializeField] private float _fillTime = 1f;
         private bool _passed;
@@ -33,19 +33,21 @@ namespace RedPanda.PointSystem
 
             if (other.CompareTag(_racerTag))
             {
-                if (randomLine == null)
-                {
-                    RandomLine[] x = FindObjectsOfType<RandomLine>(true);
+                _event?.Invoke();
 
-                    foreach (RandomLine item in x)
-                    {
-                        if (item.isRandomLine)
-                        {
-                            randomLine = item;
-                            break;
-                        }
-                    }
-                }
+                //if (randomLine == null)
+                //{
+                //    RandomLine[] x = FindObjectsOfType<RandomLine>(true);
+
+                //    foreach (RandomLine item in x)
+                //    {
+                //        if (item.isRandomLine)
+                //        {
+                //            randomLine = item;
+                //            break;
+                //        }
+                //    }
+                //}
 
                 _passed = true;
 
@@ -55,10 +57,10 @@ namespace RedPanda.PointSystem
 
                 SpeedChange(_stateManager, _speedAddAmount);
 
-                if (_stateManager.IsPlayer)
-                {
-                    randomLine.GetRandomText();
-                }
+                //if (_stateManager.IsPlayer)
+                //{
+                //    randomLine.GetRandomText();
+                //}
 
                 other.gameObject.GetComponent<BotInput>().NextPoint();
             }

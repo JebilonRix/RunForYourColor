@@ -1,5 +1,5 @@
 using RedPanda.StateMachine;
-using RedPanda.UI;
+//using RedPanda.UI;
 using UnityEngine;
 
 namespace RedPanda.PointSystem
@@ -14,8 +14,8 @@ namespace RedPanda.PointSystem
         [SerializeField] protected string _colorType = "blue";
         [SerializeField] protected float _speedAddAmount = 1f;
 
-        protected SortingUI _sortingUI;
-        protected RandomLine _randomLine;
+        //protected SortingUI _sortingUI;
+        //protected RandomLine _randomLine;
         protected CharacterStateManager _stateManager;
         #endregion Fields
 
@@ -38,12 +38,12 @@ namespace RedPanda.PointSystem
                 return;
             }
 
-            if (_sortingUI == null)
-            {
-                _sortingUI = FindObjectOfType<SortingUI>();
-            }
+            //if (_sortingUI == null)
+            //{
+            //    _sortingUI = FindObjectOfType<SortingUI>();
+            //}
 
-            _sortingUI.Sort();
+            //_sortingUI.Sort();
         }
         protected void SpeedChange(CharacterStateManager character, float speedAmount)
         {
