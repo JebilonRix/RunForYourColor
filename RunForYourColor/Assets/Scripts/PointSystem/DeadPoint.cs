@@ -11,10 +11,6 @@ namespace RedPanda.PointSystem
             if (other.CompareTag(_racerTag))
             {
                 _stateManager.ToRespawn();
-
-                //if (_stateManager.IsPlayer)
-                //{
-                //}
             }
         }
     }
