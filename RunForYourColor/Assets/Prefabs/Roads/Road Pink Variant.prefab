@@ -75,5 +75,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pink
       objectReference: {fileID: 0}
+    - target: {fileID: 7139005761721400094, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139005761721400094, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139005761721400094, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}

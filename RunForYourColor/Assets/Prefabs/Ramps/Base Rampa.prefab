@@ -100,9 +100,9 @@ MonoBehaviour:
   _unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1887440364492275018, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RedPanda.StateMachine.BotInput, _RedPanda.Racer
-        m_MethodName: NextPoint
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
