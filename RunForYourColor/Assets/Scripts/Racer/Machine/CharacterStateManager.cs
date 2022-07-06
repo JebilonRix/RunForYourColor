@@ -30,8 +30,8 @@ namespace RedPanda.StateMachine
         public float _wallOffset = 1f;
 
         [Header("Horizontal Movement")]
-        [SerializeField] private float _speed = 15f;
-        [SerializeField] private float _horizontalSpeed = 0.3f;
+        [SerializeField] private float _speed = 15f; //forwardSpeed
+        [SerializeField] private float _horizontalSpeed = 0.3f; //left-right speed
         [SerializeField] private float _respawnTime = 0.5f;
 
         [Header("Vertical Movement")]
@@ -39,7 +39,7 @@ namespace RedPanda.StateMachine
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
         [SerializeField] private float _speedLimit = 7.5f;
-        [SerializeField] private float jumpForce = 500f;
+        //[SerializeField] private float jumpForce = 500f;
         [SerializeField] private LayerMask _whatIsWall;
 
         private float _lastFrameFingerPositionX = 0;

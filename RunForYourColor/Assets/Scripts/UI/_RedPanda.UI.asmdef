@@ -3,7 +3,8 @@
     "rootNamespace": "RedPanda",
     "references": [
         "GUID:2bafac87e7f4b9b418d9448d219b01ab",
-        "GUID:c8a109bc16474ea498be36433e53d838"
+        "GUID:c8a109bc16474ea498be36433e53d838",
+        "GUID:f961a07cc605fbc4ea567fc7f4c551b6"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
