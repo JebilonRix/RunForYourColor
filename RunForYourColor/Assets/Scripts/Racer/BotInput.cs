@@ -24,23 +24,23 @@ namespace RedPanda.StateMachine
         }
         private void Update()
         {
-            if (_nextPoint != null || _characterStateManager.CurrentState != _characterStateManager.IdleState)
-            {
-                transform.rotation.eulerAngles.Set(0, transform.rotation.y, 0);
+            //if (_nextPoint != null || _characterStateManager.CurrentState != _characterStateManager.IdleState)
+            //{
+            //    transform.rotation.eulerAngles.Set(0, transform.rotation.y, 0);
 
-                if (transform.rotation.x - _nextPoint.position.x > 0f)
-                {
-                    _characterStateManager.Rb.velocity = new Vector3(_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
-                }
-                else if (transform.rotation.x - _nextPoint.position.x < 0f)
-                {
-                    _characterStateManager.Rb.velocity = new Vector3(-_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
-                }
-                else
-                {
-                    _characterStateManager.Rb.velocity = new Vector3(0f, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
-                }
-            }
+            //    if (transform.rotation.x - _nextPoint.position.x > 0f)
+            //    {
+            //        _characterStateManager.Rb.velocity = new Vector3(_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
+            //    }
+            //    else if (transform.rotation.x - _nextPoint.position.x < 0f)
+            //    {
+            //        _characterStateManager.Rb.velocity = new Vector3(-_horizontalSpeed, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
+            //    }
+            //    else
+            //    {
+            //        _characterStateManager.Rb.velocity = new Vector3(0f, _characterStateManager.Rb.velocity.y, _characterStateManager.Rb.velocity.z);
+            //    }
+            //}
         }
         public void FindPoints()
         {

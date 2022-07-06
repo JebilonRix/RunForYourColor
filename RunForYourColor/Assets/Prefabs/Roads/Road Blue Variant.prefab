@@ -31,6 +31,18 @@ PrefabInstance:
       propertyPath: _colorType
       value: blue
       objectReference: {fileID: 0}
+    - target: {fileID: 1447856949450342896, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: speedUpMulti
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447856949450342896, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: speedDownMulti
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447856949450342896, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
+      propertyPath: _speedAddAmount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4375520460139258193, guid: 57b7f03ce3662f149af6fdfd9c1be941, type: 3}
       propertyPath: m_RootOrder
       value: 0

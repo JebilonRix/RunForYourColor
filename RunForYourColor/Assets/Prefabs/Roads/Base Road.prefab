@@ -694,7 +694,9 @@ MonoBehaviour:
   _type: 3
   _racerTag: Racer
   _colorType: 
-  _speedAddAmount: 10
+  _speedAddAmount: 5
+  speedUpMulti: 2
+  speedDownMulti: 1
 --- !u!114 &-621330893646153623
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -91,9 +91,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3266110772236861026}
   - component: {fileID: 2745048279433700571}
-  - component: {fileID: -6712886986652612516}
-  - component: {fileID: 7056712306022035072}
   - component: {fileID: -799715270976596449}
+  - component: {fileID: 4237924736284324434}
   m_Layer: 0
   m_Name: Base Jump Platform
   m_TagString: Untagged
@@ -131,38 +130,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 1, z: 1.3}
   m_Center: {x: 0, y: 0.4, z: 0}
---- !u!95 &-6712886986652612516
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2745048279433700568}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7056712306022035072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2745048279433700568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34cb32bb4aa3cf04fa935def357d0436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _racerTag: Racer
 --- !u!114 &-799715270976596449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +157,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4237924736284324434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2745048279433700568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32e8a962d849144aac6bde33c2ffe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5179343727584975769
 GameObject:
   m_ObjectHideFlags: 0

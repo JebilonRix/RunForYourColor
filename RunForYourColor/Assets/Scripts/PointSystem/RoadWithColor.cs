@@ -5,6 +5,9 @@ namespace RedPanda.PointSystem
 {
     public class RoadWithColor : Point
     {
+        [SerializeField] private float speedUpMulti;
+        [SerializeField] private float speedDownMulti;
+
         #region Unity Methods
         protected override void OnTriggerEnter(Collider other)
         {
@@ -17,11 +20,11 @@ namespace RedPanda.PointSystem
 
             if (character.ColorType == _colorType)
             {
-                character.UpdateSpeed(_speedAddAmount);
+                character.UpdateSpeed(_speedAddAmount * speedUpMulti);
             }
             else
             {
-                character.UpdateSpeed(-_speedAddAmount);
+                character.UpdateSpeed(-_speedAddAmount * speedDownMulti);
             }
         }
         private void OnTriggerExit(Collider other)
@@ -35,11 +38,11 @@ namespace RedPanda.PointSystem
 
             if (character.ColorType == _colorType)
             {
-                character.UpdateSpeed(-_speedAddAmount);
+                character.UpdateSpeed(-_speedAddAmount * speedDownMulti);
             }
             else
             {
-                character.UpdateSpeed(_speedAddAmount);
+                character.UpdateSpeed(_speedAddAmount * speedUpMulti);
             }
         }
         #endregion Unity Methods
