@@ -2278,18 +2278,6 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 891976568}
-    - target: {fileID: 5360465114605787000, guid: 50dcec7407c438741982f8f2811bac62, type: 3}
-      propertyPath: _followDistance.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360465114605787000, guid: 50dcec7407c438741982f8f2811bac62, type: 3}
-      propertyPath: _followDistance.z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360465114605787000, guid: 50dcec7407c438741982f8f2811bac62, type: 3}
-      propertyPath: _followRotation.x
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5360465114605787001, guid: 50dcec7407c438741982f8f2811bac62, type: 3}
       propertyPath: m_RootOrder
       value: 0
