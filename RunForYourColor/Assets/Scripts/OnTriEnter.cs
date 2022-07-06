@@ -11,7 +11,6 @@ namespace RedPanda
         {
             if (other.CompareTag("Racer"))
             {
-                Debug.Log("trigger");
                 _unityEvent?.Invoke();
             }
         }

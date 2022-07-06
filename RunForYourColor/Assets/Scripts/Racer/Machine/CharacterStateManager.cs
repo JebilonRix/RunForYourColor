@@ -183,7 +183,11 @@ namespace RedPanda.StateMachine
             AnimHandler(IdleState);
             Animator.Play(animName, 0);
         }
-        public void Jump() => Rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        public void Jump(float force)
+        {
+            Rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            SwitchState(JumpState);
+        }
         public void StartRace() => StartRun = true;
         public void UpdateSpeed(float amount) => _speed += amount;
         public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);

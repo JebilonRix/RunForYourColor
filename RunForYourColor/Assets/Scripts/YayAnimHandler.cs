@@ -20,7 +20,7 @@ namespace RedPanda
         {
             if (other.CompareTag(_racerTag))
             {
-                other.GetComponent<CharacterStateManager>().Jump();
+                other.GetComponent<CharacterStateManager>().Jump(5f);
 
                 animator.Play("YayAnim", 0);
             }
