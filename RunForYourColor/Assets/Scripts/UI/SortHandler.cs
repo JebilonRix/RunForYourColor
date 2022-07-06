@@ -34,8 +34,20 @@ namespace RedPanda.UI
             _bot2Sprite = _bot2.GetComponent<SpriteRenderer>().sprite;
 
             InvokeRepeating(nameof(Sort), 0f, 1f);
-        }
 
+            SetPosition(false);
+        }
+        public void SetPosition(bool sort)
+        {
+            if (sort)
+            {
+                transform.position = new Vector3(350, 1500, 0);
+            }
+            else
+            {
+                transform.position = new Vector3(0, 1920, 0);
+            }
+        }
         private void Sort()
         {
             Dictionary<float, Sprite> sort = new Dictionary<float, Sprite>();

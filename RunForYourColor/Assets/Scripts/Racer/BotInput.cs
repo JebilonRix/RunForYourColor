@@ -18,6 +18,13 @@ namespace RedPanda.StateMachine
         {
             _characterStateManager = GetComponent<CharacterStateManager>();
         }
+        private void OnEnable()
+        {
+            if (_characterStateManager.IsPlayer)
+            {
+                enabled = false;
+            }
+        }
         private void Start()
         {
             FindPoints();
