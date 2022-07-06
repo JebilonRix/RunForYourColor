@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7454171239839323155}
   - component: {fileID: 8838408065105862272}
   m_Layer: 0
-  m_Name: Trambolin
+  m_Name: Base Trambolin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

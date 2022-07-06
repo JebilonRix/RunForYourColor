@@ -33,7 +33,7 @@ namespace RedPanda.UI
             _bot1Sprite = _bot1.GetComponent<SpriteRenderer>().sprite;
             _bot2Sprite = _bot2.GetComponent<SpriteRenderer>().sprite;
 
-            InvokeRepeating(nameof(Sort), 0, 2f);
+            InvokeRepeating(nameof(Sort), 0f, 1f);
         }
 
         private void Sort()
@@ -44,10 +44,8 @@ namespace RedPanda.UI
             float bot1 = Vector3.Distance(transform.position, _bot1.transform.position);
             float bot2 = Vector3.Distance(transform.position, _bot2.transform.position);
 
-            // Debug.Log("player distance to finish is " + player.ToString());
-
-            sort.Add(player, _playerSprite);
             sort.Add(bot1, _bot1Sprite);
+            sort.Add(player, _playerSprite);
             sort.Add(bot2, _bot2Sprite);
 
             sort = sort.OrderByDescending(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
