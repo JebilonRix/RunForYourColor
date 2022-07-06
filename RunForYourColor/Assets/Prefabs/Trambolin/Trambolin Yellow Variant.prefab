@@ -10,7 +10,11 @@ PrefabInstance:
     - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 67fbd1a20b1b3a24a86ee3b37155bf89, type: 2}
+      objectReference: {fileID: 2100000, guid: 0e13591b3aee3ab40951e373380ba5c1, type: 2}
+    - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2b2e5d274f0d7249b215b5376db8362, type: 2}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
       value: Trambolin Yellow Variant

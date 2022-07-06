@@ -10,7 +10,11 @@ PrefabInstance:
     - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 754bd9e3cefdddc4e89e3a71af2d4bc2, type: 2}
+      objectReference: {fileID: 2100000, guid: 33a6eb0897b569d4aa1585bc5da220f7, type: 2}
+    - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2b2e5d274f0d7249b215b5376db8362, type: 2}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
       value: Trambolin Red Variant
