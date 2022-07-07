@@ -1,5 +1,4 @@
 using RedPanda.PointSystem;
-using RedPanda.SpriteHandler;
 using RedPanda.StateMachine;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +29,7 @@ namespace RedPanda.Sorting
         public void StartSorting()
         {
             IsStart = true;
-            InvokeRepeating(nameof(Sorting), 0f, 1f);
+            InvokeRepeating(nameof(Sorting), 0f, 0.5f);
         }
         public void StopSorting()
         {
@@ -51,8 +50,15 @@ namespace RedPanda.Sorting
                 }
             }
 
+            if (index > distances.Length - 1)
+            {
+                index = distances.Length - 1;
+            }
+            else if (index < 0)
+            {
+                index = 0;
+            }
 
-            Debug.Log(index);
             return index;
         }
 

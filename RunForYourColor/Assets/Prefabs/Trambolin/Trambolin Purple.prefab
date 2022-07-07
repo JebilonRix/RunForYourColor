@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5289430578701558586
+--- !u!1001 &353409217300274591
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,18 +10,18 @@ PrefabInstance:
     - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: e1af96bee56acd9498dcc63c7bed5bb8, type: 2}
+      objectReference: {fileID: 2100000, guid: 7348e4cd8e4ec6b44ad8027c6ef418bd, type: 2}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
-      value: Trambolin Green Variant
+      value: Trambolin Purple Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_TagString
-      value: Green
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_RootOrder
@@ -68,6 +68,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _colorType
+      value: purple
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -76,8 +80,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6371896860996308552, guid: 1aed9a876d0ada444a75d17ff06df8e0, type: 3}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RedPanda.StateMachine.BotInput, _RedPanda.Racer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}

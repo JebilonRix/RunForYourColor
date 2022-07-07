@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1733076423538550881}
   - component: {fileID: 3432521672942528452}
   - component: {fileID: 596220142833193742}
-  - component: {fileID: 1273496754219163015}
   - component: {fileID: 7454171239839323155}
+  - component: {fileID: 1273496754219163015}
   - component: {fileID: 8270405074811534551}
   m_Layer: 0
   m_Name: Base Trambolin
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1273496754219163015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389025682330153691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32e8a962d849144aac6bde33c2ffe8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpForce: 7
 --- !u!65 &7454171239839323155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,6 +99,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.47, y: 1, z: 1.47}
   m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &1273496754219163015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389025682330153691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32e8a962d849144aac6bde33c2ffe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 7
 --- !u!114 &8270405074811534551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +127,4 @@ MonoBehaviour:
   _unityEvent:
     m_PersistentCalls:
       m_Calls: []
+  _colorType: 

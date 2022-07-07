@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &353409217300274591
+--- !u!1001 &1352291430195912738
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,22 +10,30 @@ PrefabInstance:
     - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 7348e4cd8e4ec6b44ad8027c6ef418bd, type: 2}
+      objectReference: {fileID: 2100000, guid: 33a6eb0897b569d4aa1585bc5da220f7, type: 2}
+    - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2b2e5d274f0d7249b215b5376db8362, type: 2}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
-      value: Trambolin Purple Variant
+      value: Trambolin Red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_TagString
-      value: Purple
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _colorType
+      value: red
       objectReference: {fileID: 0}
     - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.size

@@ -1,3 +1,4 @@
+using RedPanda.StateMachine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,11 +6,12 @@ namespace RedPanda
 {
     public class OnTriExit : MonoBehaviour
     {
-        public UnityEvent _unityEvent;
+        [SerializeField] private UnityEvent _unityEvent;
+        [SerializeField] private string _colorType;
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Racer"))
+            if (other.CompareTag("Racer") && other.GetComponent<CharacterStateManager>().ColorType == _colorType)
             {
                 _unityEvent?.Invoke();
             }

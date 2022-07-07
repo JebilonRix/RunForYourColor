@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4415297498818483397
+--- !u!1001 &9105392472656955010
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,18 +10,22 @@ PrefabInstance:
     - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: d5791bc7d94840a41982d9222324e3cd, type: 2}
+      objectReference: {fileID: 2100000, guid: 41b6f48cb56647a4198e6aece02a6d9a, type: 2}
+    - target: {fileID: 596220142833193742, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2b2e5d274f0d7249b215b5376db8362, type: 2}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
-      value: Trambolin Pink Variant
+      value: Trambolin Blue Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_TagString
-      value: Pink
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 1733076423538550881, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_RootOrder
@@ -71,6 +75,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7454171239839323155, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4700001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454171239839323155, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.53476703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454171239839323155, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6498193
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454171239839323155, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Center.y
+      value: -0.03261649
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454171239839323155, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: m_Center.z
+      value: -0.08990937
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _colorType
+      value: blue
+      objectReference: {fileID: 0}
     - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -80,8 +108,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1887440364492275018, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RedPanda.StateMachine.BotInput, _RedPanda.Racer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270405074811534551, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838408065105862272, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1887440364492275018, guid: 132dbe54b6f3ecb40a36f68c86364f85, type: 3}
+    - target: {fileID: 8838408065105862272, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838408065105862272, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RedPanda.StateMachine.BotInput, _RedPanda.Racer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838408065105862272, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
