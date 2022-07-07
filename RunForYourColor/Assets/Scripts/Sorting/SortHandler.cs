@@ -12,7 +12,6 @@ namespace RedPanda.Sorting
         private SortingManager _sortingManager;
         private CharacterStateManager _characterStateManager;
         private SpriteRenderer _spriteRenderer;
-        private float _counter = 0;
 
         private void Awake()
         {
@@ -24,17 +23,10 @@ namespace RedPanda.Sorting
         {
             if (!_sortingManager.IsStart)
             {
-                Debug.Log("not start");
                 return;
             }
 
-            _counter += Time.deltaTime;
-
-            if (_counter >= 1f)
-            {
-                _spriteRenderer.sprite = _handler.GetSortNumberSprite(_sortingManager.WhatIsMyPositionNumber(_characterStateManager));
-                _counter = 0;
-            }
+            _spriteRenderer.sprite = _handler.GetSortNumberSprite(_sortingManager.WhatIsMyPositionNumber(_characterStateManager));
         }
     }
 }
