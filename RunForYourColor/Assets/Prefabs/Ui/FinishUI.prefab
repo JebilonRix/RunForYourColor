@@ -1189,26 +1189,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 2953a8e2d204e0e43bd8c08cee1b12ff, type: 2}
         m_TargetAssemblyTypeName: RedPanda.SO_LevelLoader, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level 2
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6340046541741572241, guid: 9d4588d94a397e141a11198f6fd7140b, type: 3}
-        m_TargetAssemblyTypeName: RedPanda.Sorting.SortingManager, Assembly-CSharp
-        m_MethodName: StopSorting
+        m_MethodName: LevelLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4677166367188184684
