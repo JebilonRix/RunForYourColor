@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 681578171721881191}
   - component: {fileID: 681578171721881190}
   - component: {fileID: 681578171721881193}
+  - component: {fileID: 1609090515056037563}
   m_Layer: 6
   m_Name: Finish
   m_TagString: FinishPoint
@@ -224,3 +225,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &1609090515056037563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681578171721881192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18ab823658cc1948ab32fd29367ee8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sort: {fileID: 11400000, guid: 1ff76cc0b85f19d498a63fc5edf8176d, type: 2}

@@ -7,25 +7,29 @@ namespace RedPanda.Sorting
 {
     public class SortingManager : MonoBehaviour
     {
+        #region Fields And Properties
         private List<CharacterStateManager> _characterList = new List<CharacterStateManager>();
         private float[] distances;
         private Transform _finishPoint;
-
         public bool IsStart { get; private set; }
+        #endregion Fields And Properties
 
+        #region Unity Methods
         private void Start()
         {
-            var racers = FindObjectsOfType<CharacterStateManager>();
+            CharacterStateManager[] racers = FindObjectsOfType<CharacterStateManager>();
             _finishPoint = FindObjectOfType<FinishPoint>().transform;
 
-            foreach (var rac in racers)
+            foreach (CharacterStateManager rac in racers)
             {
                 _characterList.Add(rac);
             }
 
             distances = new float[_characterList.Count];
         }
+        #endregion Unity Methods
 
+        #region Public Methods
         public void StartSorting()
         {
             IsStart = true;
@@ -61,7 +65,9 @@ namespace RedPanda.Sorting
 
             return index;
         }
+        #endregion Public Methods
 
+        #region Private Methods
         private void Sorting()
         {
             for (int i = 0; i < distances.Length; i++)
@@ -69,5 +75,6 @@ namespace RedPanda.Sorting
                 distances[i] = Vector3.Distance(_finishPoint.position, _characterList[i].transform.position);
             }
         }
+        #endregion Private Methods
     }
 }

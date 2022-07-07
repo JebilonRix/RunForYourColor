@@ -19,6 +19,22 @@ PrefabInstance:
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextPoint
       objectReference: {fileID: 0}
+    - target: {fileID: -4960126283989718909, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: _colorType
+      value: red
+      objectReference: {fileID: 0}
+    - target: {fileID: -4960126283989718909, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: speedUpMulti
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4960126283989718909, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: speedDownMulti
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4960126283989718909, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
+      propertyPath: _speedAddAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2441728059484575995, guid: 753c51d3faa4b294186bb07a9d89cfa6, type: 3}
       propertyPath: m_Name
       value: Rampa Red Variant
