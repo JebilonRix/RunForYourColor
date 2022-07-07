@@ -17,8 +17,13 @@ namespace RedPanda.SpriteHandler
         {
             return isPlayer ? _youSprite : _names[Random.Range(0, _names.Length)];
         }
-        public Sprite GetRandomFlag()
+        public Sprite GetRandomFlag(bool isPlayer)
         {
+            if (isPlayer)
+            {
+                return null;
+            }
+
             return _flags[Random.Range(0, _flags.Length)];
         }
         public Sprite GetRandomLine()
