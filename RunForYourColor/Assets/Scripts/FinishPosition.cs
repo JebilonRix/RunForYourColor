@@ -9,40 +9,37 @@ namespace RedPanda
     public class FinishPosition : MonoBehaviour
     {
         [SerializeField] private SO_SpriteHandler sort;
+        [SerializeField] private Image[] _posImages;
         private List<HeaderHandler> _positioning = new List<HeaderHandler>();
-        private Image[] _posImages;
 
-        private void Start()
-        {
-            HeaderHandler[] x = FindObjectsOfType<HeaderHandler>();
-            _posImages = new Image[x.Length];
-        }
+        //private GameObject[] test;
+
+        //private void Start()
+        //{
+        //    test = GameObject.FindGameObjectsWithTag("NameLine");
+        //}
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Racer") && other.gameObject.name == "NameSprite")
+            if (other.CompareTag("Racer") == false)
             {
-                HeaderHandler racer = other.GetComponent<HeaderHandler>();
+                return;
+            }
 
-                _positioning.Add(racer);
+            HeaderHandler racer = other.GetComponent<HeaderHandler>();
 
-                if (racer.IsPlayer)
-                {
-                    Finish();
-                }
+            _positioning.Add(racer);
+
+            if (other.GetComponent<CharacterStateManager>().IsPlayer)
+            {
+                Finish(_positioning.LastIndexOf(racer));
             }
         }
-        private void Finish()
+        private void Finish(int playerIndex)
         {
             for (int i = 0; i < _posImages.Length; i++)
             {
-                if (_positioning.Count < i)
-                {
-                    _posImages[i].sprite = _positioning[i].RacerSpriteRenderer.sprite;
-                }
-                else
-                {
-                    _posImages[i].sprite = sort.GetRandomName(false);
-                }
+                _posImages[i].sprite = sort.GetRandomName(playerIndex == i);
             }
         }
     }

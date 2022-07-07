@@ -17,6 +17,7 @@ TagManager:
   - Green
   - Purple
   - Pink
+  - NameLine
   layers:
   - Default
   - TransparentFX
