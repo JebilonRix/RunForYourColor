@@ -145,7 +145,7 @@ MonoBehaviour:
   _colorType: 
   _speedAddAmount: 1
   speedUpMulti: 5
-  speedDownMulti: 5
+  speedDownMulti: 9
 --- !u!1 &2766283645444317162
 GameObject:
   m_ObjectHideFlags: 0

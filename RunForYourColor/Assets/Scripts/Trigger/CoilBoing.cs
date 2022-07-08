@@ -24,7 +24,7 @@ namespace RedPanda
             }
             else
             {
-                character.Jump(_jumpForce * 0.5f);
+                character.Jump(_jumpForce * 0.05f);
             }
         }
     }
