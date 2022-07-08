@@ -13,8 +13,6 @@ namespace RedPanda
             if (other.CompareTag("Racer"))
             {
                 _unityEvent?.Invoke();
-
-                other.GetComponent<CharacterStateManager>().LastCheckPoint = transform;
             }
         }
     }

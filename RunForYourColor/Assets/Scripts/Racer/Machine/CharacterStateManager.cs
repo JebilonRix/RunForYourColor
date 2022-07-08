@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace RedPanda.StateMachine
@@ -30,7 +29,8 @@ namespace RedPanda.StateMachine
         public float _wallOffset = 1f;
 
         [Header("Horizontal Movement")]
-        [SerializeField] private float _speed = 15f; //forwardSpeed
+        [SerializeField] private float _maxSpeed = 15f;//forwardSpeed
+        private float _speed = 15f;
         [SerializeField] private float _horizontalSpeed = 0.3f; //left-right speed
         [SerializeField] private float _respawnTime = 0.5f;
 
@@ -39,7 +39,6 @@ namespace RedPanda.StateMachine
         [SerializeField] private float _groundOffSet = 1.1f;
         [SerializeField] private float _minDistanceForJumpInput = 30f;
         [SerializeField] private float _speedLimit = 7.5f;
-        //[SerializeField] private float jumpForce = 500f;
         [SerializeField] private LayerMask _whatIsWall;
 
         private float _lastFrameFingerPositionX = 0;
@@ -51,11 +50,23 @@ namespace RedPanda.StateMachine
         private Rigidbody _rb;
         private MeshRenderer _meshRenderer;
         private Transform _lastCheckPoint;
-        private Transform _finishPoint;
 
         public bool StartRun { get => _startRun; set => _startRun = value; }
         public bool IsPlayer { get => _isPlayer; }
-        public float Speed { get => _speed; set => _speed = value; }
+        public float Speed
+        {
+            get => _speed;
+            set
+            {
+                if (_speed > _maxSpeed)
+                {
+                    _speed = _maxSpeed;
+                }
+
+                _speed = value;
+            }
+        }
+
         public float JumpForce { get => _jumpForce; }
         public float GroundOffSet { get => _groundOffSet; }
         public float MinDistanceForJumpInput { get => _minDistanceForJumpInput; }
@@ -66,7 +77,6 @@ namespace RedPanda.StateMachine
         public Rigidbody Rb { get => _rb; private set => _rb = value; }
         public CharacterBaseState CurrentState { get => currentState; private set => currentState = value; }
         public Transform LastCheckPoint { get => _lastCheckPoint; set => _lastCheckPoint = value; }
-        public Transform FinishPoint { get => _finishPoint; set => _finishPoint = value; }
         public LayerMask WhatIsWall { get => _whatIsWall; }
         #endregion Fields And Properties
 
@@ -87,9 +97,9 @@ namespace RedPanda.StateMachine
             }
 
             gameObject.tag = "Racer";
+
+            Speed = _maxSpeed;
         }
-        private void Start() => SwitchState(IdleState);
-        private void FixedUpdate() => CurrentState.FixedUpdateState(this);
         private void Update()
         {
             CurrentState.UpdateState(this);
@@ -116,6 +126,8 @@ namespace RedPanda.StateMachine
                 transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             }
         }
+        private void Start() => SwitchState(IdleState);
+        private void FixedUpdate() => CurrentState.FixedUpdateState(this);
         #endregion Unity Methods
 
         #region Public Methods
@@ -188,23 +200,17 @@ namespace RedPanda.StateMachine
             Rb.AddForce(Vector3.up * force, ForceMode.Impulse);
             SwitchState(JumpState);
         }
-        public void StartRace() => StartRun = true;
-        public void UpdateSpeed(float amount) => _speed += amount;
-        public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);
-        public void SetCheckPoint(Transform checkPoint) => LastCheckPoint = checkPoint;
-        public void ToRespawn() => StartCoroutine(Respawn());
-
-        #endregion Public Methods
-
-        #region Private Methods
-        private IEnumerator Respawn()
+        public void ToRespawn()
         {
-            transform.position = LastCheckPoint.transform.position;
-
-            yield return new WaitForSeconds(_respawnTime);
-
+            Debug.Log("respawn" + " " + gameObject.name);
+            transform.position = LastCheckPoint.position;
             SwitchState(RunState);
         }
-        #endregion Private Methods
+        public void ResetSpeed() => Speed = _maxSpeed;
+        public void UpdateSpeed(float amount) => Speed += amount;
+        public void StartRace() => StartRun = true;
+        public void GoForward() => Rb.velocity = new Vector3(Rb.velocity.x, Rb.velocity.y, Speed);
+        public void SetCheckPoint(Transform checkPoint) => LastCheckPoint = checkPoint;
+        #endregion Public Methods
     }
 }

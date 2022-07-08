@@ -110,5 +110,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _racerTag: Racer
-  colorType: 
+  _colorType: 
   _speedAddAmount: 0

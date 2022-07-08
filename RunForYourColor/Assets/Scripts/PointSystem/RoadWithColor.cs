@@ -35,15 +35,7 @@ namespace RedPanda.PointSystem
             }
 
             CharacterStateManager character = other.GetComponent<CharacterStateManager>();
-
-            if (character.ColorType == _colorType)
-            {
-                character.UpdateSpeed(-_speedAddAmount * speedDownMulti);
-            }
-            else
-            {
-                character.UpdateSpeed(_speedAddAmount * speedUpMulti);
-            }
+            character.ResetSpeed();
         }
         #endregion Unity Methods
     }

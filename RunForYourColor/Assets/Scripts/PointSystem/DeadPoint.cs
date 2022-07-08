@@ -8,10 +8,12 @@ namespace RedPanda.PointSystem
         {
             base.OnTriggerEnter(other);
 
-            if (other.CompareTag(_racerTag))
+            if (!other.CompareTag(_racerTag))
             {
-                _stateManager.ToRespawn();
+                return;
             }
+
+            _stateManager.ToRespawn();
         }
     }
 }
