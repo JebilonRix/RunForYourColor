@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5636707025650472544, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Name
-      value: Bot_Purple Variant
+      value: Bot_Purple
       objectReference: {fileID: 0}
     - target: {fileID: 7394091123896775163, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Materials.Array.data[0]

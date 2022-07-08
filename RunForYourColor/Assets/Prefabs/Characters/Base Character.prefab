@@ -977,7 +977,7 @@ MonoBehaviour:
   _colorType: blue
   _wallTag: Wall
   _wallOffset: 1
-  _speed: 15
+  _speed: 10
   _horizontalSpeed: 0.6
   _respawnTime: 1
   _jumpForce: 10
