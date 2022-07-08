@@ -159,6 +159,10 @@ namespace RedPanda.StateMachine
                 if (MinDistanceForJumpInput <= Input.mousePosition.y - _lastFrameFingerPositionY)
                 {
                     SwitchState(JumpState);
+                    //Debug.Break();
+                    //Debug.Log("_lastFrameFingerPositionY " + _lastFrameFingerPositionY);
+                    //Debug.Log("mousePosition" + Input.mousePosition.y);
+                    //return;
                 }
 
                 _lastFrameFingerPositionY = 0f;
