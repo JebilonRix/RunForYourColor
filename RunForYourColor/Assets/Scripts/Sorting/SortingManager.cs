@@ -8,6 +8,7 @@ namespace RedPanda.Sorting
     public class SortingManager : MonoBehaviour
     {
         #region Fields And Properties
+        [SerializeField] private float _calculationRepeat = 0.1f;
         private List<CharacterStateManager> _characterList = new List<CharacterStateManager>();
         private float[] distances;
         private Transform _finishPoint;
@@ -33,7 +34,7 @@ namespace RedPanda.Sorting
         public void StartSorting()
         {
             IsStart = true;
-            InvokeRepeating(nameof(Sorting), 0f, 0.5f);
+            InvokeRepeating(nameof(Sorting), 0f, _calculationRepeat);
         }
         public void StopSorting()
         {

@@ -61,7 +61,7 @@ namespace RedPanda.StateMachine
         {
             _points.Clear();
 
-            string tag;
+            string tag = "";
 
             if (_characterStateManager.ColorType == "blue")
             {
@@ -71,10 +71,22 @@ namespace RedPanda.StateMachine
             {
                 tag = "Yellow";
             }
-            else
+            else if (_characterStateManager.ColorType == "pink")
             {
-                tag = "Red";
+                tag = "Pink";
             }
+            else if (_characterStateManager.ColorType == "purple")
+            {
+                tag = "Purple";
+            }
+            else if (_characterStateManager.ColorType == "green")
+            {
+                tag = "Green";
+            }
+            //else
+            //{
+            //    tag = "Red";
+            //}
 
             List<RaycastHit> _rayList = Physics.SphereCastAll(transform.position, 1000f, Vector3.forward, _whatPointIs).ToList();
 
