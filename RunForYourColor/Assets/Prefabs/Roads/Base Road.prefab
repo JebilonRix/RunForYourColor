@@ -696,7 +696,7 @@ MonoBehaviour:
   _colorType: 
   _speedAddAmount: 5
   speedUpMulti: 2
-  speedDownMulti: 1
+  speedDownMulti: 1.5
 --- !u!114 &7139005761721400094
 MonoBehaviour:
   m_ObjectHideFlags: 0
