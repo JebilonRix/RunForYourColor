@@ -13,19 +13,10 @@ namespace RedPanda.PointSystem
         [SerializeField] protected string _racerTag = "Racer";
         [SerializeField] protected string _colorType = "blue";
         [SerializeField] protected float _speedAddAmount = 1f;
-
-        protected CharacterStateManager _stateManager;
         #endregion Fields
 
         #region Unity Methods
         private void Awake() => GetComponent<BoxCollider>().isTrigger = true;
-        protected virtual void OnTriggerEnter(Collider other)
-        {
-            if (_stateManager == null)
-            {
-                _stateManager = other.GetComponent<CharacterStateManager>();
-            }
-        }
         #endregion Unity Methods
 
         #region Private Methods

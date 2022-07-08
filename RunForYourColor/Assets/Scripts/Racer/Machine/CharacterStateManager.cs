@@ -158,9 +158,10 @@ namespace RedPanda.StateMachine
             {
                 if (MinDistanceForJumpInput <= Input.mousePosition.y - _lastFrameFingerPositionY)
                 {
-                    _lastFrameFingerPositionY = 0f;
                     SwitchState(JumpState);
                 }
+
+                _lastFrameFingerPositionY = 0f;
             }
         }
         public void AnimHandler(CharacterBaseState currentState)

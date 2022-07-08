@@ -11,9 +11,8 @@ namespace RedPanda.PointSystem
 
         #region Unity Methods
 
-        protected override void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
-            base.OnTriggerEnter(other);
 
             if (other.CompareTag(_racerTag))
             {

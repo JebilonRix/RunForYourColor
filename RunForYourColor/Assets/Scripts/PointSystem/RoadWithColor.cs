@@ -9,7 +9,7 @@ namespace RedPanda.PointSystem
         [SerializeField] private float speedDownMulti;
 
         #region Unity Methods
-        protected override void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag(_racerTag))
             {
