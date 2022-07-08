@@ -5,14 +5,26 @@ namespace RedPanda
 {
     public class CoilBoing : MonoBehaviour
     {
-        [Range(1f, 20f)][SerializeField] private float _jumpForce = 5f;
+        [Range(1f, 20f)][SerializeField] private float _jumpForce = 7f;
+        [SerializeField] private string _colorType = "red";
         private const string _racerTag = "Racer";
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag(_racerTag))
+            if (!other.CompareTag(_racerTag))
             {
-                other.GetComponent<CharacterStateManager>().Jump(_jumpForce);
+                return;
+            }
+
+            CharacterStateManager character = other.GetComponent<CharacterStateManager>();
+
+            if (character.ColorType == _colorType)
+            {
+                character.Jump(_jumpForce);
+            }
+            else
+            {
+                character.Jump(_jumpForce * 0.5f);
             }
         }
     }

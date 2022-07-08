@@ -144,8 +144,8 @@ MonoBehaviour:
   _racerTag: Racer
   _colorType: 
   _speedAddAmount: 1
-  speedUpMulti: 0
-  speedDownMulti: 0
+  speedUpMulti: 5
+  speedDownMulti: 5
 --- !u!1 &2766283645444317162
 GameObject:
   m_ObjectHideFlags: 0

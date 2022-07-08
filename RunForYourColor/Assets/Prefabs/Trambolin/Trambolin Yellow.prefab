@@ -15,9 +15,13 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: f2b2e5d274f0d7249b215b5376db8362, type: 2}
+    - target: {fileID: 1273496754219163015, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _colorType
+      value: yellow
+      objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
-      value: Trambolin Yellow Variant
+      value: Trambolin Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Layer

@@ -11,9 +11,13 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: e1af96bee56acd9498dcc63c7bed5bb8, type: 2}
+    - target: {fileID: 1273496754219163015, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
+      propertyPath: _colorType
+      value: green
+      objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Name
-      value: Trambolin Green Variant
+      value: Trambolin Green
       objectReference: {fileID: 0}
     - target: {fileID: 1389025682330153691, guid: 9bc6b3ad1ff0f8f43a1d7253bbfe658f, type: 3}
       propertyPath: m_Layer
