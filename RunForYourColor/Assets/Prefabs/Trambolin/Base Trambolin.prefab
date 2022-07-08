@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpForce: 7
-  _reduceAmount: 0.0205
+  _reduceAmount: 0.005
   _colorType: red
 --- !u!114 &8270405074811534551
 MonoBehaviour:
