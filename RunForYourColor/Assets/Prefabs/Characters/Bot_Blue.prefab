@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bot_Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 7394091123896775163, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 679d4073e8dbe334095589556388910c, type: 2}
     - target: {fileID: 8895307006001105059, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Sprite
       value: 
