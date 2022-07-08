@@ -6,6 +6,7 @@ namespace RedPanda
     public class CoilBoing : MonoBehaviour
     {
         [Range(1f, 20f)][SerializeField] private float _jumpForce = 7f;
+        [Range(0.001f, 0.05f)][SerializeField] private float _reduceAmount = 0.025f;
         [SerializeField] private string _colorType = "red";
         private const string _racerTag = "Racer";
 
@@ -24,7 +25,7 @@ namespace RedPanda
             }
             else
             {
-                character.Jump(_jumpForce * 0.05f);
+                character.Jump(_jumpForce * _reduceAmount);
             }
         }
     }
