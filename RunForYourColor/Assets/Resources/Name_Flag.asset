@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3e909790c8db3478aefc589325b347, type: 3}
   m_Name: Name_Flag
   m_EditorClassIdentifier: 
-  _youSprite: {fileID: 21300000, guid: 1181e37950e38b644be5b3c038005e5d, type: 3}
+  _youSprite: {fileID: 21300000, guid: 96069b74bf4ae344cbb1371bef4a6c35, type: 3}
   _names:
-  - {fileID: 21300000, guid: 2038328abfc78de498b613497bb4a2d2, type: 3}
-  - {fileID: 21300000, guid: 6b93765657a95bf42962c17a52d4ca6d, type: 3}
-  - {fileID: 21300000, guid: bb4fa8db59a3a0d4393a306d152edae4, type: 3}
-  - {fileID: 21300000, guid: 008489c7d32ddf746ae8d9d732725762, type: 3}
-  - {fileID: 21300000, guid: 2bcbf396ab200384189f6261eace1cdc, type: 3}
+  - {fileID: 21300000, guid: ee6ceb2ed73326844a812343c96ae2a6, type: 3}
+  - {fileID: 21300000, guid: 2f6c931f47edbc648b2c46fa185abe91, type: 3}
+  - {fileID: 21300000, guid: b62106b9234e51f448be0f9d006474e6, type: 3}
+  - {fileID: 21300000, guid: f8e7895e11d5db345a715a33ac8b515d, type: 3}
+  - {fileID: 21300000, guid: f813c32d4e7e9464f83b277e019fe9c1, type: 3}
   _flags:
   - {fileID: 21300000, guid: 80d4be91a6a680a4da2c755c3038ad66, type: 3}
   - {fileID: 21300000, guid: d64cf08bc07e1cc42b930fb01267ce78, type: 3}

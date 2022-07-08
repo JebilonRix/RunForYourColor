@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Number
   m_EditorClassIdentifier: 
   _sortNumbers:
-  - {fileID: 21300000, guid: 36b54ce16324990439624a439292dba7, type: 3}
-  - {fileID: 21300000, guid: 6270bd8e30bbee34ba852cc00354c9e1, type: 3}
-  - {fileID: 21300000, guid: 64f5f5a6616669d4e8795db22f9c6c62, type: 3}
-  - {fileID: 21300000, guid: 4a86364614dfdd242abcd33c88ce1455, type: 3}
-  - {fileID: 21300000, guid: 52d33e45318379f48b605e5c9d7fa2ad, type: 3}
-  - {fileID: 21300000, guid: 14e6df3ab1a76b543ab85558640f5cc2, type: 3}
+  - {fileID: 21300000, guid: 29552ac23e65cc342945a9555dd145bf, type: 3}
+  - {fileID: 21300000, guid: 9899ef8656e7e124eb43c6a3ef7321e4, type: 3}
+  - {fileID: 21300000, guid: 7ea1fc68bd5c41143b4fabe3a364ff67, type: 3}
+  - {fileID: 21300000, guid: 98d829fd2aaa6cf4ea085b8f63d8ff79, type: 3}
+  - {fileID: 21300000, guid: d6ccc96904a179e4fa78b33f2616e782, type: 3}
+  - {fileID: 21300000, guid: 4649fe83a76fddf4dabacb3f582cfa64, type: 3}
