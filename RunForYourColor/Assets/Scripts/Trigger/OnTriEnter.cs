@@ -7,13 +7,22 @@ namespace RedPanda
     public class OnTriEnter : MonoBehaviour
     {
         public UnityEvent _unityEvent;
+        [SerializeField] private string _colorType = "red";
 
-        private void OnTriggerExit(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Racer"))
+            if (!other.CompareTag("Racer"))
             {
-                _unityEvent?.Invoke();
+                Debug.Log("tag yanlýþ");
             }
+
+            if (other.GetComponent<CharacterStateManager>().ColorType != _colorType)
+            {
+                Debug.Log("color type farklý");
+            }
+
+            Debug.Log("açýldý");
+            _unityEvent?.Invoke();
         }
     }
 }

@@ -11,10 +11,21 @@ namespace RedPanda
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Racer") && other.GetComponent<CharacterStateManager>().ColorType == _colorType)
+            if (!other.CompareTag("Racer"))
             {
-                _unityEvent?.Invoke();
+                return;
             }
+            if (other.GetComponent<CharacterStateManager>().ColorType != _colorType)
+            {
+                return;
+            }
+
+            Invoke(nameof(Delay), 0.5f);
+        }
+
+        private void Delay()
+        {
+            _unityEvent?.Invoke();
         }
     }
 }
