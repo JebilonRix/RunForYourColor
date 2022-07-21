@@ -108,5 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18449dc9a99470f49b6794681253ff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _knockbackForce: {x: 0, y: 1, z: -500}
+  _knockbackForce: {x: 0, y: 1, z: -750}
   _tag: Racer
