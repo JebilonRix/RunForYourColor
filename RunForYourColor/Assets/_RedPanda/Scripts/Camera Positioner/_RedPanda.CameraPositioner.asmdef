@@ -1,9 +1,7 @@
 {
-    "name": "_RedPanda.Camera",
+    "name": "_RedPanda.CameraPositioner",
     "rootNamespace": "RedPanda",
-    "references": [
-        "GUID:c8a109bc16474ea498be36433e53d838"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

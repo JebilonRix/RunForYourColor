@@ -1,8 +1,8 @@
 {
-    "name": "_RedPanda.Camera.Editor",
+    "name": "_RedPanda.CameraPositioner.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:e0d837c2169cd9f40869d4d5c2c6c40e"
+        "GUID:f54e83877b10e5544ad529fbe263505a"
     ],
     "includePlatforms": [
         "Editor"

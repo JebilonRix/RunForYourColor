@@ -7,13 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 383515881760816215, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
+      propertyPath: m_TagString
+      value: Racer
+      objectReference: {fileID: 0}
     - target: {fileID: 2557331488030911571, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3800230662338730439, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14e6df3ab1a76b543ab85558640f5cc2, type: 3}
     - target: {fileID: 4341177236312101795, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_TagString
-      value: Racer
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: _speed
@@ -41,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: _horizontalSpeed
-      value: 0.75
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4825874170761302291, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: _whatIsWall.m_Bits
@@ -73,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.91
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -81,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.02
+      value: -4.09
       objectReference: {fileID: 0}
     - target: {fileID: 5004145150237609178, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -113,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5619914410647205179, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_TagString
-      value: Racer
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5636707025650472544, guid: 22e750763fb70454c85ba313fad677d0, type: 3}
       propertyPath: m_Name

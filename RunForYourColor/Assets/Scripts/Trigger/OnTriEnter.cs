@@ -13,15 +13,16 @@ namespace RedPanda
         {
             if (!other.CompareTag("Racer"))
             {
-                Debug.Log("tag yanlýþ");
+                //Debug.Log("tag yanlýþ");
+                return;
             }
 
-            if (other.GetComponent<CharacterStateManager>().ColorType != _colorType)
-            {
-                Debug.Log("color type farklý");
-            }
+            //if (other.GetComponent<CharacterStateManager>().ColorType != _colorType)
+            //{
+            //    Debug.Log("color type farklý");
+            //}
 
-            Debug.Log("açýldý");
+            //Debug.Log("açýldý");
             _unityEvent?.Invoke();
         }
     }

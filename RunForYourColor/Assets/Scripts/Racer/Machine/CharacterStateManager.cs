@@ -1,3 +1,4 @@
+using RedPanda.CameraSystem;
 using UnityEngine;
 
 namespace RedPanda.StateMachine
@@ -21,6 +22,7 @@ namespace RedPanda.StateMachine
         #endregion State
 
         [Header("Basic")]
+        [SerializeField] private CameraPositioner _cameraPositioner;
         [SerializeField] private bool _isPlayer;
         [SerializeField] private string _colorType = "blue";
 
@@ -100,12 +102,26 @@ namespace RedPanda.StateMachine
 
             Speed = _maxSpeed;
         }
+        private void Start()
+        {
+            _cameraPositioner = Camera.main.GetComponent<CameraPositioner>();
+            SwitchState(IdleState);
+        }
         private void Update()
         {
             CurrentState.UpdateState(this);
 
             if (IsPlayer)
             {
+                if (CurrentState == ClimbState)
+                {
+                    _cameraPositioner.SetIndex(1);
+                }
+                else
+                {
+                    _cameraPositioner.SetIndex(0);
+                }
+
                 if (Input.GetMouseButtonDown(0))
                 {
                     _lastFrameFingerPositionX = Input.mousePosition.x;
@@ -126,7 +142,6 @@ namespace RedPanda.StateMachine
                 transform.Translate(new Vector3(_moveFactorX * _horizontalSpeed * Time.deltaTime, 0, 0));
             }
         }
-        private void Start() => SwitchState(IdleState);
         private void FixedUpdate() => CurrentState.FixedUpdateState(this);
         #endregion Unity Methods
 
