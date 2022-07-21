@@ -22,5 +22,14 @@ namespace RedPanda
         {
             SceneManager.LoadScene(levelName);
         }
+        public void LoadNextLevel()
+        {
+            if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCount)
+            {
+                SceneManager.LoadScene(0);
+            }
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

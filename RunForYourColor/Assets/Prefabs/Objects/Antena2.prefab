@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1313700352196777805}
   - component: {fileID: 3882037782053282695}
   - component: {fileID: 4230696679384045630}
+  - component: {fileID: 5751817140125427769}
   m_Layer: 0
   m_Name: Antena2
   m_TagString: Untagged
@@ -97,3 +98,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.6981213
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5751817140125427769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3377480622657356370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18449dc9a99470f49b6794681253ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knockbackForce: {x: 0, y: 1, z: -500}
+  _tag: Racer

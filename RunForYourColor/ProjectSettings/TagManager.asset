@@ -18,6 +18,7 @@ TagManager:
   - Purple
   - Pink
   - NameLine
+  - Obstacle
   layers:
   - Default
   - TransparentFX

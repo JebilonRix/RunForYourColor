@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 386859301225747155}
   - component: {fileID: 2502472203829585433}
   - component: {fileID: 5472549020995028780}
+  - component: {fileID: 4575310016539520299}
   m_Layer: 0
   m_Name: Antena1
   m_TagString: Untagged
@@ -99,3 +100,17 @@ CapsuleCollider:
   m_Height: 6.1845465
   m_Direction: 1
   m_Center: {x: 0.07792443, y: 0, z: 0}
+--- !u!114 &4575310016539520299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159757352291174348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18449dc9a99470f49b6794681253ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knockbackForce: {x: 0, y: 1, z: -500}
+  _tag: Racer

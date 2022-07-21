@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2227333439033425615}
   - component: {fileID: 4111193547472849413}
   - component: {fileID: 2384409292330696677}
+  - component: {fileID: -4721771983399108245}
   m_Layer: 2
   m_Name: Pipe4
   m_TagString: Wall
@@ -95,3 +96,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4613979, y: 2.128766, z: 0.623976}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4721771983399108245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453644653104262096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18449dc9a99470f49b6794681253ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knockbackForce: {x: 0, y: 1, z: -500}
+  _tag: Racer
