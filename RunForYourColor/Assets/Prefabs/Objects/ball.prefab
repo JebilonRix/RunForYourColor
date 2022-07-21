@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4569952987883882420}
   - component: {fileID: 7008707788158515507}
   - component: {fileID: -1782965139654373521}
+  - component: {fileID: -4692015592984452556}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -117,3 +118,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _knockbackForce: {x: 0, y: 1, z: -750}
   _tag: Racer
+--- !u!135 &-4692015592984452556
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624262090229180001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.668551
+  m_Center: {x: 0, y: 0, z: 0.00000002980232}
