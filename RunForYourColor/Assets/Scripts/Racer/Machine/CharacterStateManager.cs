@@ -1,5 +1,6 @@
 using RedPanda.CameraSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RedPanda.StateMachine
 {
@@ -222,9 +223,17 @@ namespace RedPanda.StateMachine
         }
         public void ToRespawn()
         {
-            Debug.Log("respawn" + " " + gameObject.name);
-            transform.position = LastCheckPoint.position;
-            SwitchState(RunState);
+            if (IsPlayer)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+            //Debug.Log("respawn" + " " + gameObject.name);
+            //transform.position = LastCheckPoint.position;
+            //SwitchState(RunState);
         }
         public void ResetSpeed() => Speed = _maxSpeed;
         public void UpdateSpeed(float amount) => Speed += amount;
