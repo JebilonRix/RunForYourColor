@@ -12,13 +12,6 @@ namespace RedPanda
         [SerializeField] private Image[] _posImages;
         private List<HeaderHandler> _positioning = new List<HeaderHandler>();
 
-        //private GameObject[] test;
-
-        //private void Start()
-        //{
-        //    test = GameObject.FindGameObjectsWithTag("NameLine");
-        //}
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Racer") == false)
@@ -39,7 +32,7 @@ namespace RedPanda
         {
             for (int i = 0; i < _posImages.Length; i++)
             {
-                _posImages[i].sprite = sort.GetRandomName(playerIndex == i);
+                _posImages[i].sprite = sort.GetName(playerIndex == i);
             }
         }
     }

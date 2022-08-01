@@ -13,9 +13,16 @@ namespace RedPanda.SpriteHandler
         [Header("Lines")]
         [SerializeField] private Sprite[] _endGameLines;
 
+        private int i = -1;
+
         public Sprite GetRandomName(bool isPlayer)
         {
             return isPlayer ? _youSprite : _names[Random.Range(0, _names.Length)];
+        }
+        public Sprite GetName(bool isPlayer)
+        {
+            i++;
+            return isPlayer ? _youSprite : _names[i];
         }
         public Sprite GetRandomFlag(bool isPlayer)
         {
@@ -26,6 +33,7 @@ namespace RedPanda.SpriteHandler
 
             return _flags[Random.Range(0, _flags.Length)];
         }
+
         public Sprite GetRandomLine()
         {
             return _flags[Random.Range(0, _endGameLines.Length)];
