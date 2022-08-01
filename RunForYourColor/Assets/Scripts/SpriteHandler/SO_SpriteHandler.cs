@@ -21,7 +21,11 @@ namespace RedPanda.SpriteHandler
         }
         public Sprite GetName(bool isPlayer)
         {
-            i++;
+            if (isPlayer == false)
+            {
+                i++;
+            }
+
             return isPlayer ? _youSprite : _names[i];
         }
         public Sprite GetRandomFlag(bool isPlayer)
